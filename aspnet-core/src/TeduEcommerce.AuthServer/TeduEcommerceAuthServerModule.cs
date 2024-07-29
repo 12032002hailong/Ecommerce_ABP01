@@ -37,6 +37,7 @@ using Volo.Abp.UI.Navigation.Urls;
 using Volo.Abp.UI;
 using Volo.Abp.VirtualFileSystem;
 using Volo.Abp.Account.Localization;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace TeduEcommerce;
 
@@ -62,7 +63,7 @@ public class TeduEcommerceAuthServerModule : AbpModule
         {
             builder.AddValidation(options =>
             {
-                options.AddAudiences("TeduEcommerce");
+                options.AddAudiences("TeduEcommerce","TeduEcommerce.Admin");
                 options.UseLocalServer();
                 options.UseAspNetCore();
             });
@@ -151,8 +152,8 @@ public class TeduEcommerceAuthServerModule : AbpModule
 
         context.Services.AddSingleton<IDistributedLockProvider>(sp =>
         {
-            var connection = ConnectionMultiplexer.Connect(configuration["Redis:Configuration"]!);
-            return new RedisDistributedSynchronizationProvider(connection.GetDatabase());
+             var connection = ConnectionMultiplexer.Connect(configuration["Redis:Configuration"]!);
+             return new RedisDistributedSynchronizationProvider(connection.GetDatabase());
         });
 
         context.Services.AddCors(options =>

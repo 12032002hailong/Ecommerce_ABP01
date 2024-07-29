@@ -11,6 +11,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\src\TeduEcommerce.EntityFrameworkCore\TeduEcommerce.EntityFrameworkCore.csproj" />
     <ProjectReference Include="..\TeduEcommerce.Application.Tests\TeduEcommerce.Application.Tests.csproj" />
+    <PackageReference Include="Volo.Abp.Caching.StackExchangeRedis" Version="8.0.4" />
     <PackageReference Include="Volo.Abp.EntityFrameworkCore.Sqlite" Version="8.2.0" />
   </ItemGroup>
 
