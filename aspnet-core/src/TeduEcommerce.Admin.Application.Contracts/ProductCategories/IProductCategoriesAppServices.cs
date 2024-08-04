@@ -16,6 +16,6 @@ namespace TeduEcommerce.Admin.ProductCategories
         CreateUpdateProductCategoryDto
         >
     {
-
+        Task<PagedResultDto<ProductCategoryInListDto>> GetListFilterAsync(BaseListFilterDto input);
     }
 }
