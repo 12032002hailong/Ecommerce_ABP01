@@ -1,0 +1,34 @@
+<p-panel header="Danh sách sản phẩm">
+  <!-- Filter (Search) -->
+  <div class="grid">
+    <div class="col-4">
+      <div class="text-center p-3 border-round-sm bg-primary font-bold">4</div>
+    </div>
+    <div class="col-8">
+      <div class="text-center p-3 border-round-sm bg-primary font-bold">8</div>
+    </div>
+  </div>
+  <!-- Table -->
+  <p-table #pnl [value]="products" [tableStyle]="{ 'min-width': '50rem' }">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Code</th>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Quantity</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-product>
+      <tr>
+        <td>{{ product.code }}</td>
+        <td>{{ product.name }}</td>
+        <td>{{ product.category }}</td>
+        <td>{{ product.quantity }}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+  <!-- Paginator -->
+  <p-paginator [rows]="10" [totalRecords]="120" [rowsPerPageOptions]="[10, 20, 30]"></p-paginator>
+  <!-- Block UI -->
+  <p-blockUI [blocked]="blockedPanel" [target]="pnl"></p-blockUI>
+</p-panel>
