@@ -1273,9 +1273,9 @@
                   "parametersOnMethod": [
                     {
                       "name": "input",
-                      "typeAsString": "TeduEcommerce.Admin.BaseListFilterDto, TeduEcommerce.Admin.Application.Contracts",
-                      "type": "TeduEcommerce.Admin.BaseListFilterDto",
-                      "typeSimple": "TeduEcommerce.Admin.BaseListFilterDto",
+                      "typeAsString": "TeduEcommerce.Admin.Products.ProductListFilterDto, TeduEcommerce.Admin.Application.Contracts",
+                      "type": "TeduEcommerce.Admin.Products.ProductListFilterDto",
+                      "typeSimple": "TeduEcommerce.Admin.Products.ProductListFilterDto",
                       "isOptional": false,
                       "defaultValue": null
                     }
@@ -1468,14 +1468,26 @@
               "parametersOnMethod": [
                 {
                   "name": "input",
-                  "typeAsString": "TeduEcommerce.Admin.BaseListFilterDto, TeduEcommerce.Admin.Application.Contracts",
-                  "type": "TeduEcommerce.Admin.BaseListFilterDto",
-                  "typeSimple": "TeduEcommerce.Admin.BaseListFilterDto",
+                  "typeAsString": "TeduEcommerce.Admin.Products.ProductListFilterDto, TeduEcommerce.Admin.Application.Contracts",
+                  "type": "TeduEcommerce.Admin.Products.ProductListFilterDto",
+                  "typeSimple": "TeduEcommerce.Admin.Products.ProductListFilterDto",
                   "isOptional": false,
                   "defaultValue": null
                 }
               ],
               "parameters": [
+                {
+                  "nameOnMethod": "input",
+                  "name": "CategoryId",
+                  "jsonName": null,
+                  "type": "System.Guid?",
+                  "typeSimple": "string?",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": "input"
+                },
                 {
                   "nameOnMethod": "input",
                   "name": "Keyword",
@@ -5122,6 +5134,27 @@
           "jsonName": null,
           "type": "System.String",
           "typeSimple": "string",
+          "isRequired": false,
+          "minLength": null,
+          "maxLength": null,
+          "minimum": null,
+          "maximum": null,
+          "regex": null
+        }
+      ]
+    },
+    "TeduEcommerce.Admin.Products.ProductListFilterDto": {
+      "baseType": "TeduEcommerce.Admin.BaseListFilterDto",
+      "isEnum": false,
+      "enumNames": null,
+      "enumValues": null,
+      "genericArguments": null,
+      "properties": [
+        {
+          "name": "CategoryId",
+          "jsonName": null,
+          "type": "System.Guid?",
+          "typeSimple": "string?",
           "isRequired": false,
           "minLength": null,
           "maxLength": null,

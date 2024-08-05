@@ -1,6 +1,6 @@
-import type { ProductType } from '../tedu-ecommerce/products/product-type.enum';
-import type { ProductType } from '../tedu-ecommerce/products/models';
 import type { EntityDto } from '@abp/ng.core';
+import type { BaseListFilterDto } from '../models';
+import { ProductType } from '@proxy/tedu-ecommerce/products';
 
 export interface CreateUpdateProductDto {
   manufacturerId?: string;
@@ -43,4 +43,8 @@ export interface ProductInListDto extends EntityDto<string> {
   isActive: boolean;
   categoryId?: string;
   thumbnailPicture?: string;
+}
+
+export interface ProductListFilterDto extends BaseListFilterDto {
+  categoryId?: string;
 }
