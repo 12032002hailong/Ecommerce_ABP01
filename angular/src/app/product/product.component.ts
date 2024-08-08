@@ -37,6 +37,7 @@ export class ProductComponent implements OnInit, OnDestroy {
   }
 
   loadData() {
+    this.toggleBlockUI(true);
     this.productService
       .getListFilter({
         keyword: this.categoryId,
@@ -49,8 +50,11 @@ export class ProductComponent implements OnInit, OnDestroy {
         next: (response: PagedResultDto<ProductInListDto>) => {
           this.items = response.items;
           this.totalCount = response.totalCount;
+          this.toggleBlockUI(false);
         },
-        error: () => {},
+        error: () => {
+          this.toggleBlockUI(false);
+        },
       });
   }
 
@@ -74,5 +78,14 @@ export class ProductComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.ngUnsubscribe.next();
     this.ngUnsubscribe.complete();
+  }
+  private toggleBlockUI(enabled: boolean) {
+    if (enabled === true) {
+      this.blockedPanel = true;
+    } else {
+      setTimeout(() => {
+        this.blockedPanel = false;
+      }, 1000);
+    }
   }
 }
