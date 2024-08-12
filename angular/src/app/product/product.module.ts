@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { SharedModule } from '../shared/shared.module';
 import { ProductRoutingModule } from './product-routing.module';
-import { ProductComponent } from './product.component';
 import { PanelModule } from 'primeng/panel';
 import { TableModule } from 'primeng/table';
 import { PaginatorModule } from 'primeng/paginator';
@@ -10,8 +9,13 @@ import { ButtonModule } from 'primeng/button';
 import { DropdownModule } from 'primeng/dropdown';
 import { InputTextModule } from 'primeng/inputtext';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { ProductComponent } from './product.component';
+import { ProductDetailComponent } from './product-detail.component';
+import { DynamicDialogModule } from 'primeng/dynamicdialog';
+import { CheckboxModule } from 'primeng/checkbox';
+import { EditorModule } from 'primeng/editor';
 @NgModule({
-  declarations: [ProductComponent],
+  declarations: [ProductDetailComponent, ProductComponent],
   imports: [
     SharedModule,
     ProductRoutingModule,
@@ -23,6 +27,9 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
     DropdownModule,
     InputTextModule,
     ProgressSpinnerModule,
+    DynamicDialogModule,
+    CheckboxModule,
+    EditorModule,
   ],
 })
 export class ProductModule {}

@@ -1,30 +1,43 @@
 <p-panel header="Danh sách sản phẩm">
-  <!-- Filter (Search) -->
+  <!--Filter (search panel)-->
   <div class="grid">
     <div class="col-4">
-      <p-button type="button" icon="fa fa-plus" iconPos="left" label="Thêm mới" />
+      <button
+        pButton
+        type="button"
+        (click)="showAddModal()"
+        icon="fa fa-plus"
+        iconPos="left"
+        label="Thêm mới"
+      ></button>
     </div>
     <div class="col-8">
       <div class="formgroup-inline">
         <div class="field">
-          <label for="firstname5" pInputText class="p-sr-only">Từ khoá</label>
-          <input id="firstname5" type="text" pInputText placeholder="Từ khoá tìm kiếm" />
+          <label for="txt-keyword" class="p-sr-only">Từ khóa</label>
+          <input id="txt-keyword" pInputText type="text" placeholder="Gõ từ khóa" />
         </div>
         <div class="field">
           <p-dropdown
             [options]="productCategories"
             [(ngModel)]="categoryId"
-            optionLabel="name"
             placeholder="Chọn danh mục"
-          />
+          ></p-dropdown>
         </div>
-
-        <p-button type="button" icon="fa fa-search" iconPos="left" label="Tìm kiếm" />
+        <button
+          type="button"
+          pButton
+          (click)="loadData()"
+          icon="fa fa-search"
+          iconPos="left"
+          label="Tìm"
+        ></button>
       </div>
     </div>
   </div>
-  <!-- Table -->
-  <p-table #pnl [value]="items" [tableStyle]="{ 'min-width': '50rem' }">
+
+  <!--Table-->
+  <p-table #pnl [value]="items">
     <ng-template pTemplate="header">
       <tr>
         <th>Mã</th>
@@ -41,26 +54,26 @@
       <tr>
         <td>{{ row.code }}</td>
         <td>{{ row.sku }}</td>
+        <td>{{ row.name }}</td>
         <td>{{ row.productType }}</td>
         <td>{{ row.categoryId }}</td>
         <td>{{ row.sortOrder }}</td>
-        <td>{{ row.sku }}</td>
-        <td>{{ row.visiblity }}</td>
+        <td>{{ row.visibility }}</td>
         <td>{{ row.isActive }}</td>
       </tr>
     </ng-template>
     <ng-template pTemplate="summary">
-      <div class="text-align:left">Tổng số bản ghi : {{ totalCount | number }}</div>
+      <div style="text-align: left">Tổng số bản ghi: {{ totalCount | number }}</div>
     </ng-template>
   </p-table>
-  <!-- Paginator -->
+  <!--Paginator-->
   <p-paginator
     [rows]="maxResultCount"
     [totalRecords]="totalCount"
     (onPageChange)="pageChanged($event)"
-    [rowsPerPageOptions]="[10, 20, 30]"
+    [rowsPerPageOptions]="[10, 20, 30, 50, 100]"
   ></p-paginator>
-  <!-- Block UI -->
+  <!--Block UI-->
   <p-blockUI [blocked]="blockedPanel" [target]="pnl">
     <p-progressSpinner></p-progressSpinner>
   </p-blockUI>

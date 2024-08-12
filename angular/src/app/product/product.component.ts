@@ -1,12 +1,15 @@
 import { AuthService, PagedResultDto } from '@abp/ng.core';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ProductsService } from '../proxy/products/products.service';
-import { ProductInListDto } from '@proxy/products';
+import { ProductDto, ProductInListDto } from '@proxy/products';
 import { Subject, takeUntil } from 'rxjs';
 import { ProductCategoriesService, ProductCategoryInListDto } from '@proxy/product-categories';
+import { DialogService } from 'primeng/dynamicdialog';
+import { ProductDetailComponent } from './product-detail.component';
+import { NotificationService } from '../shared/services/notification.service';
 
 @Component({
-  selector: 'app-home',
+  selector: 'app-product',
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.scss'],
 })
@@ -28,7 +31,9 @@ export class ProductComponent implements OnInit, OnDestroy {
 
   constructor(
     private productService: ProductsService,
-    private productCategoriesService: ProductCategoriesService
+    private productCategoriesService: ProductCategoriesService,
+    private dialogService: DialogService,
+    private notificationService: NotificationService
   ) {}
 
   ngOnInit(): void {
@@ -40,7 +45,7 @@ export class ProductComponent implements OnInit, OnDestroy {
     this.toggleBlockUI(true);
     this.productService
       .getListFilter({
-        keyword: this.categoryId,
+        keyword: this.keyword ? this.keyword : 'abc',
         categoryId: this.categoryId,
         maxResultCount: this.maxResultCount,
         skipCount: this.skipCount,
@@ -75,10 +80,20 @@ export class ProductComponent implements OnInit, OnDestroy {
     this.loadData();
   }
 
-  ngOnDestroy(): void {
-    this.ngUnsubscribe.next();
-    this.ngUnsubscribe.complete();
+  showAddModal() {
+    const ref = this.dialogService.open(ProductDetailComponent, {
+      header: 'Thêm mới sản phẩm',
+      width: '70%',
+    });
+
+    ref.onClose.subscribe((data: ProductDto) => {
+      if (data) {
+        this.loadData();
+        this.notificationService.showSuccess('Thêm mới sản phẩm thành công');
+      }
+    });
   }
+
   private toggleBlockUI(enabled: boolean) {
     if (enabled === true) {
       this.blockedPanel = true;
@@ -87,5 +102,10 @@ export class ProductComponent implements OnInit, OnDestroy {
         this.blockedPanel = false;
       }, 1000);
     }
+  }
+
+  ngOnDestroy(): void {
+    this.ngUnsubscribe.next();
+    this.ngUnsubscribe.complete();
   }
 }
