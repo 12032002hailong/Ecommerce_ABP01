@@ -49,10 +49,10 @@ namespace TeduEcommerce.Admin.ProductCategories
             var query = await Repository.GetQueryableAsync();
             query = query.WhereIf(!string.IsNullOrWhiteSpace(input.Keyword), x => x.Name.Contains(input.Keyword));
 
-            var totoalCount = await AsyncExecuter.LongCountAsync(query);
+            var totalCount = await AsyncExecuter.LongCountAsync(query);
             var data = await AsyncExecuter.ToListAsync(query.Skip(input.SkipCount).Take(input.MaxResultCount));
 
-            return new PagedResultDto<ProductCategoryInListDto>(totoalCount, ObjectMapper.Map<List<ProductCategory>, List<ProductCategoryInListDto>>(data));
+            return new PagedResultDto<ProductCategoryInListDto>(totalCount, ObjectMapper.Map<List<ProductCategory>, List<ProductCategoryInListDto>>(data));
 
         }
     }
