@@ -16,13 +16,9 @@ namespace TeduEcommerce.Admin.ProductCategories
         Guid,
         PagedResultRequestDto,
         CreateUpdateProductCategoryDto,
-        CreateUpdateProductCategoryDto
-        >, IProductCategoriesAppServices
-
+        CreateUpdateProductCategoryDto>, IProductCategoriesAppService
     {
-
-
-        public ProductCategoriesAppService(IRepository<ProductCategory, Guid> repository) 
+        public ProductCategoriesAppService(IRepository<ProductCategory, Guid> repository)
             : base(repository)
         {
         }
@@ -41,7 +37,6 @@ namespace TeduEcommerce.Admin.ProductCategories
 
             return ObjectMapper.Map<List<ProductCategory>, List<ProductCategoryInListDto>>(data);
 
-
         }
 
         public async Task<PagedResultDto<ProductCategoryInListDto>> GetListFilterAsync(BaseListFilterDto input)
@@ -53,7 +48,6 @@ namespace TeduEcommerce.Admin.ProductCategories
             var data = await AsyncExecuter.ToListAsync(query.Skip(input.SkipCount).Take(input.MaxResultCount));
 
             return new PagedResultDto<ProductCategoryInListDto>(totalCount, ObjectMapper.Map<List<ProductCategory>, List<ProductCategoryInListDto>>(data));
-
         }
     }
 }

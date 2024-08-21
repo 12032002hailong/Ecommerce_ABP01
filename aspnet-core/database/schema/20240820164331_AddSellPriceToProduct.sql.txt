@@ -1,0 +1,10 @@
+BEGIN TRANSACTION;
+GO
+
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20240820164331_AddSellPriceToProduct', N'8.0.4');
+GO
+
+COMMIT;
+GO
+

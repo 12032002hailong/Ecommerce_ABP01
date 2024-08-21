@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using TeduEcommerce.Products;
 using Volo.Abp.Application.Dtos;
 
 namespace TeduEcommerce.Admin.Products
 {
-    public class ProductDto: IEntityDto<Guid>
+    public class ProductDto : IEntityDto<Guid>
     {
         public Guid ManufacturerId { get; set; }
         public string Name { get; set; }
@@ -23,6 +21,7 @@ namespace TeduEcommerce.Admin.Products
         public string SeoMetaDescription { get; set; }
         public string Description { get; set; }
         public string ThumbnailPicture { get; set; }
+
         public double SellPrice { get; set; }
         public Guid Id { get; set; }
     }

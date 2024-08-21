@@ -17,7 +17,7 @@ namespace TeduEcommerce.Admin.Products
         PagedResultRequestDto,
         CreateUpdateProductDto,
         CreateUpdateProductDto
-        >, IProductsAppServices
+        >, IProductsAppService
 
     {
 

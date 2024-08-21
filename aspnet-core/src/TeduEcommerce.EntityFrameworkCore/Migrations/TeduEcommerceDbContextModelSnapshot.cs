@@ -586,6 +586,9 @@ namespace TeduEcommerce.Migrations
                         .IsUnicode(false)
                         .HasColumnType("varchar(50)");
 
+                    b.Property<double>("SellPrice")
+                        .HasColumnType("float");
+
                     b.Property<string>("SeoMetaDescription")
                         .IsRequired()
                         .HasMaxLength(250)
