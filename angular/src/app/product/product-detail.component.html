@@ -1,25 +1,60 @@
-<form [formGroup]="form" (ngSubmit)="saveChange()">
+<form [formGroup]="form" skipValidation (ngSubmit)="saveChange()">
   <p-panel #pnl header="Danh sách sản phẩm">
     <!--form grid-->
     <div class="formgrid grid">
       <div class="field col-12">
-        <label for="name" class="block">Tên</label>
-        <input id="name" pInputText type="text" class="w-full" formControlName="name" />
+        <label for="name" class="block">Tên <span class="required">*</span></label>
+        <input
+          id="name"
+          pInputText
+          (keyup)="generateSlug()"
+          type="text"
+          class="w-full"
+          formControlName="name"
+        />
+        <app-validation-message
+          [entityForm]="form"
+          fileName="name"
+          [validationMessages]="validationMessages"
+        >
+        </app-validation-message>
       </div>
       <div class="field col-12">
-        <label for="code" class="block">Code</label>
+        <label for="code" class="block">Code <span class="required">*</span></label>
         <input id="code" pInputText type="text" formControlName="code" />
+        <app-validation-message
+          [entityForm]="form"
+          fileName="code"
+          [validationMessages]="validationMessages"
+        >
+        </app-validation-message>
       </div>
       <div class="field col-12">
-        <label for="slug" class="block">Slug</label>
+        <label for="slug" class="block">Slug <span class="required">*</span></label>
         <input id="slug" pInputText type="text" class="w-full" formControlName="slug" />
+        <app-validation-message
+          [entityForm]="form"
+          fileName="slug"
+          [validationMessages]="validationMessages"
+        >
+        </app-validation-message>
       </div>
       <div class="field col-12">
-        <label for="sku" class="block">SKU</label>
+        <label for="sku" class="block"
+          >SKU <span class="required">*</span> <span class="required">*</span></label
+        >
         <input id="sku" pInputText type="text" class="w-full" formControlName="sku" />
+        <app-validation-message
+          [entityForm]="form"
+          fileName="sku"
+          [validationMessages]="validationMessages"
+        >
+        </app-validation-message>
       </div>
       <div class="field col-12">
-        <label for="manufacturerId" class="block">Nhà sản xuất</label>
+        <label for="manufacturerId" class="block"
+          >Nhà sản xuất <span class="required">*</span></label
+        >
         <p-dropdown
           [options]="manufacturers"
           formControlName="manufacturerId"
@@ -28,9 +63,15 @@
           autoWidth="false"
           [style]="{ width: '100%' }"
         ></p-dropdown>
+        <app-validation-message
+          [entityForm]="form"
+          fileName="manufacturerId"
+          [validationMessages]="validationMessages"
+        >
+        </app-validation-message>
       </div>
       <div class="field col-12">
-        <label for="categoryId" class="block">Danh mục</label>
+        <label for="categoryId" class="block">Danh mục <span class="required">*</span></label>
         <p-dropdown
           [options]="productCategories"
           formControlName="categoryId"
@@ -39,9 +80,15 @@
           autoWidth="false"
           [style]="{ width: '100%' }"
         ></p-dropdown>
+        <app-validation-message
+          [entityForm]="form"
+          fileName="categoryId"
+          [validationMessages]="validationMessages"
+        >
+        </app-validation-message>
       </div>
       <div class="field col-12">
-        <label for="productType" class="block">Loại sản phẩm</label>
+        <label for="productType" class="block">Loại sản phẩm <span class="required">*</span></label>
         <p-dropdown
           [options]="productTypes"
           formControlName="productType"
@@ -50,40 +97,91 @@
           autoWidth="false"
           [style]="{ width: '100%' }"
         ></p-dropdown>
+        <app-validation-message
+          [entityForm]="form"
+          fileName="productType"
+          [validationMessages]="validationMessages"
+        >
+        </app-validation-message>
       </div>
       <div class="field col-12">
-        <label for="slug" class="block">Thứ tự</label>
+        <label for="slug" class="block">Thứ tự <span class="required">*</span></label>
         <p-inputNumber formControlName="sortOrder"></p-inputNumber>
+        <app-validation-message
+          [entityForm]="form"
+          fileName="sortOrder"
+          [validationMessages]="validationMessages"
+        >
+        </app-validation-message>
       </div>
       <div class="field col-12">
-        <label for="sellPrice" class="block">Giá bán</label>
+        <label for="sellPrice" class="block">Giá bán <span class="required">*</span></label>
         <p-inputNumber formControlName="sellPrice"></p-inputNumber>
+        <app-validation-message
+          [entityForm]="form"
+          fileName="sellPrice"
+          [validationMessages]="validationMessages"
+        >
+        </app-validation-message>
       </div>
       <div class="field-checkbox col-12 md:col-3">
         <p-checkbox formControlName="visibility" binary="true" id="visibility"></p-checkbox>
-        <label for="visibility">Hiển thị</label>
+        <label for="visibility">Hiển thị <span class="required">*</span></label>
+        <app-validation-message
+          [entityForm]="form"
+          fileName="visibility"
+          [validationMessages]="validationMessages"
+        >
+        </app-validation-message>
       </div>
       <div class="field-checkbox col-12 md:col-3">
         <p-checkbox formControlName="isActive" binary="true" id="isActive"></p-checkbox>
-        <label for="isActive">Kích hoạt</label>
+        <label for="isActive">Kích hoạt <span class="required">*</span></label>
+        <app-validation-message
+          [entityForm]="form"
+          fileName="isActive"
+          [validationMessages]="validationMessages"
+        >
+        </app-validation-message>
       </div>
 
       <div class="field col-12">
-        <label for="seoMetaDescription" class="block">Mô tả SEO</label>
+        <label for="seoMetaDescription" class="block"
+          >Mô tả SEO <span class="required">*</span></label
+        >
         <textarea
           id="seoMetaDescription"
           pInputTextarea
           class="w-full"
           formControlName="seoMetaDescription"
         ></textarea>
+        <app-validation-message
+          [entityForm]="form"
+          fileName="seoMetaDescription"
+          [validationMessages]="validationMessages"
+        >
+        </app-validation-message>
       </div>
       <div class="field col-12">
-        <label for="description" class="block">Mô tả</label>
+        <label for="description" class="block">Mô tả <span class="required">*</span></label>
         <p-editor formControlName="description" [style]="{ height: '320px' }"></p-editor>
       </div>
+      <app-validation-message
+        [entityForm]="form"
+        fileName="description"
+        [validationMessages]="validationMessages"
+      >
+      </app-validation-message>
     </div>
     <ng-template pTemplate="footer">
-      <button type="submit" pButton icon="fa fa-save" iconPos="left" label="Lưu lại"></button>
+      <button
+        type="submit"
+        [disabled]="!form.valid || btnDisabled"
+        pButton
+        icon="fa fa-save"
+        iconPos="left"
+        label="Lưu lại"
+      ></button>
     </ng-template>
     <!--Block UI-->
     <p-blockUI [blocked]="blockedPanel" [target]="pnl">
