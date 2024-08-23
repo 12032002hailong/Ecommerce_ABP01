@@ -7,6 +7,7 @@ using TeduEcommerce.Products;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Application.Services;
 using Volo.Abp.Domain.Repositories;
+using Volo.Abp.Uow;
 
 namespace TeduEcommerce.Admin.Products
 {
