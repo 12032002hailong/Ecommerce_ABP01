@@ -13,8 +13,8 @@ using Volo.Abp.EntityFrameworkCore;
 namespace TeduEcommerce.Migrations
 {
     [DbContext(typeof(TeduEcommerceDbContext))]
-    [Migration("20240724182739_CreateBussinessEntities")]
-    partial class CreateBussinessEntities
+    [Migration("20240826035324_InitialMigration")]
+    partial class InitialMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -544,6 +544,16 @@ namespace TeduEcommerce.Migrations
                         .HasColumnType("nvarchar(40)")
                         .HasColumnName("ConcurrencyStamp");
 
+                    b.Property<string>("CreategoryName")
+                        .IsRequired()
+                        .HasMaxLength(250)
+                        .HasColumnType("nvarchar(250)");
+
+                    b.Property<string>("CreategorySlug")
+                        .IsRequired()
+                        .HasMaxLength(250)
+                        .HasColumnType("nvarchar(250)");
+
                     b.Property<DateTime>("CreationTime")
                         .HasColumnType("datetime2")
                         .HasColumnName("CreationTime");
@@ -589,6 +599,9 @@ namespace TeduEcommerce.Migrations
                         .IsUnicode(false)
                         .HasColumnType("varchar(50)");
 
+                    b.Property<double>("SellPrice")
+                        .HasColumnType("float");
+
                     b.Property<string>("SeoMetaDescription")
                         .IsRequired()
                         .HasMaxLength(250)
@@ -608,7 +621,7 @@ namespace TeduEcommerce.Migrations
                         .HasMaxLength(250)
                         .HasColumnType("nvarchar(250)");
 
-                    b.Property<bool>("Visiblity")
+                    b.Property<bool>("Visibility")
                         .HasColumnType("bit");
 
                     b.HasKey("Id");

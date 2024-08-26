@@ -8,11 +8,11 @@ using Volo.Abp.Application.Services;
 namespace TeduEcommerce.Admin.Products
 {
     public interface IProductsAppService : ICrudAppService
-        <ProductDto,
-        Guid,
-        PagedResultRequestDto,
-        CreateUpdateProductDto,
-        CreateUpdateProductDto>
+       <ProductDto,
+       Guid,
+       PagedResultRequestDto,
+       CreateUpdateProductDto,
+       CreateUpdateProductDto>
     {
         Task<PagedResultDto<ProductInListDto>> GetListFilterAsync(ProductListFilterDto input);
         Task<List<ProductInListDto>> GetListAllAsync();

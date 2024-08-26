@@ -44,12 +44,14 @@ export class ProductComponent implements OnInit, OnDestroy {
 
   loadData() {
     this.toggleBlockUI(true);
+    this.loadProductCategories();
+
     this.productService
       .getListFilter({
-        keyword: this.keyword,
-        categoryId: this.categoryId,
-        maxResultCount: this.maxResultCount,
-        skipCount: this.skipCount,
+        keyword: this?.keyword,
+        categoryId: this?.categoryId,
+        maxResultCount: this?.maxResultCount,
+        skipCount: this?.skipCount,
       })
       .pipe(takeUntil(this.ngUnsubscribe))
       .subscribe({
@@ -61,6 +63,14 @@ export class ProductComponent implements OnInit, OnDestroy {
         error: () => {
           this.toggleBlockUI(false);
         },
+      });
+    this.productService
+      .getListAll()
+      .pipe(takeUntil(this.ngUnsubscribe))
+      .subscribe((response: any) => {
+        this.items = response.items;
+        this.totalCount = response.totalCount;
+        this.toggleBlockUI(false);
       });
   }
 

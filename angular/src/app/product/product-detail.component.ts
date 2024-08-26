@@ -9,7 +9,7 @@ import { ManufacturersService } from '../proxy/manufacturers/manufacturers.servi
 import { ManufacturerInListDto } from '@proxy/manufacturers';
 import { DynamicDialogConfig, DynamicDialogRef } from 'primeng/dynamicdialog';
 import { UtilityService } from '../shared/services/utility.service';
-import { productTypeOptions } from '@proxy/tedu-ecommerce/products';
+import { ProductType, productTypeOptions } from '@proxy/tedu-ecommerce/products';
 
 @Component({
   selector: 'app-product-detail',
@@ -169,9 +169,6 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
   }
 
   saveChange() {
-    console.log(this.form.value);
-    console.log(this.config.data);
-
     this.toggleBlockUI(true);
     if (this.utilityService.isEmpty(this.config.data?.id) == true) {
       this.productService
@@ -179,8 +176,8 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
         .pipe(takeUntil(this.ngUnsubscribe))
         .subscribe({
           next: () => {
-            this.ref.close(this.form.value);
             this.toggleBlockUI(false);
+            this.ref.close(this.form.value);
           },
           error: () => {
             this.toggleBlockUI(false);
@@ -227,11 +224,19 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
       productType: new FormControl(this.selectedEntity.productType || null, Validators.required),
       sortOrder: new FormControl(this.selectedEntity.sortOrder || null, Validators.required),
       sellPrice: new FormControl(this.selectedEntity.sellPrice || null, Validators.required),
-      visibility: new FormControl(this.selectedEntity.visiblity || true),
+      thumbnailPicture: new FormControl(
+        this.selectedEntity.thumbnailPicture || null,
+        Validators.required
+      ),
+      visibility: new FormControl(this.selectedEntity.visibility || true),
       isActive: new FormControl(this.selectedEntity.isActive || true),
       seoMetaDescription: new FormControl(this.selectedEntity.seoMetaDescription || null),
       description: new FormControl(this.selectedEntity.description || null),
     });
+  }
+
+  getProductTypeName(value: number) {
+    return ProductType[value];
   }
 
   private toggleBlockUI(enabled: boolean) {

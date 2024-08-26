@@ -15,6 +15,7 @@ import { DynamicDialogModule } from 'primeng/dynamicdialog';
 import { CheckboxModule } from 'primeng/checkbox';
 import { EditorModule } from 'primeng/editor';
 import { TeduSharedModule } from '../shared/modules/tedu-shared.module';
+import { BadgeModule } from 'primeng/badge';
 @NgModule({
   declarations: [ProductDetailComponent, ProductComponent],
   imports: [
@@ -32,6 +33,7 @@ import { TeduSharedModule } from '../shared/modules/tedu-shared.module';
     CheckboxModule,
     EditorModule,
     TeduSharedModule,
+    BadgeModule,
   ],
 })
 export class ProductModule {}

@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿
+using AutoMapper;
 using TeduEcommerce.Admin.Manufacturers;
 using TeduEcommerce.Admin.ProductCategories;
 using TeduEcommerce.Admin.Products;
@@ -22,6 +23,7 @@ public class TeduEcommerceAdminApplicationAutoMapperProfile : Profile
         CreateMap<Product, ProductInListDto>();
         CreateMap<CreateUpdateProductDto, Product>();
 
+        //Manufacturer
         CreateMap<Manufacturer, ManufacturerDto>();
         CreateMap<Manufacturer, ManufacturerInListDto>();
         CreateMap<CreateUpdateManufacturerDto, Manufacturer>();

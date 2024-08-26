@@ -17,15 +17,21 @@ namespace TeduEcommerce.Admin.Products
         Guid,
         PagedResultRequestDto,
         CreateUpdateProductDto,
-        CreateUpdateProductDto
-        >, IProductsAppService
-
+        CreateUpdateProductDto>, IProductsAppService
     {
-
-
-        public ProductsAppService(IRepository<Product, Guid> repository) 
+        public ProductsAppService(IRepository<Product, Guid> repository)
             : base(repository)
         {
+        }
+
+        public override Task<ProductDto> CreateAsync(CreateUpdateProductDto input)
+        {
+            return base.CreateAsync(input);
+        }
+
+        public override Task<ProductDto> UpdateAsync(Guid id, CreateUpdateProductDto input)
+        {
+            return base.UpdateAsync(id, input);
         }
 
         public async Task DeleteMultipleAsync(IEnumerable<Guid> ids)
@@ -41,22 +47,19 @@ namespace TeduEcommerce.Admin.Products
             var data = await AsyncExecuter.ToListAsync(query);
 
             return ObjectMapper.Map<List<Product>, List<ProductInListDto>>(data);
-
-
         }
 
         public async Task<PagedResultDto<ProductInListDto>> GetListFilterAsync(ProductListFilterDto input)
         {
             var query = await Repository.GetQueryableAsync();
-              query = query.WhereIf(!string.IsNullOrWhiteSpace(input.Keyword), x => x.Name.Contains(input.Keyword));
-           
+            string keyword = input.Keyword;
+            query = query.WhereIf(!string.IsNullOrWhiteSpace(keyword), x => x.Name.Contains(keyword));
             query = query.WhereIf(input.CategoryId.HasValue, x => x.CategoryId == input.CategoryId);
 
-            var totoalCount = await AsyncExecuter.LongCountAsync(query);
+            var totalCount = await AsyncExecuter.LongCountAsync(query);
             var data = await AsyncExecuter.ToListAsync(query.Skip(input.SkipCount).Take(input.MaxResultCount));
 
-            return new PagedResultDto<ProductInListDto>(totoalCount, ObjectMapper.Map<List<Product>, List<ProductInListDto>>(data));
-
+            return new PagedResultDto<ProductInListDto>(totalCount, ObjectMapper.Map<List<Product>, List<ProductInListDto>>(data));
         }
     }
 }

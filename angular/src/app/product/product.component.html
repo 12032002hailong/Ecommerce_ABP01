@@ -8,13 +8,14 @@
         (click)="showAddModal()"
         icon="fa fa-plus"
         iconPos="left"
-        label="Thêm mới"
+        label="Thêm"
       ></button>
       <button
         pButton
         type="button"
         (click)="showEditModal()"
         *ngIf="selectedItems.length === 1"
+        class="ml-1 p-button-help"
         icon="fa fa-minus"
         iconPos="left"
         label="Sửa"
@@ -46,7 +47,7 @@
   </div>
 
   <!--Table-->
-  <p-table #pnl [value]="items" [(selection)]="selectedItems">
+  <p-table #pnl [value]="items" [(selection)]="selectedItems" selectionMode="multiple">
     <ng-template pTemplate="header">
       <tr>
         <th style="width: 10px">
@@ -63,7 +64,7 @@
       </tr>
     </ng-template>
     <ng-template pTemplate="body" let-row>
-      <tr>
+      <tr [pSelectableRow]="row">
         <td style="width: 10px">
           <span class="ui-column-title">
             <p-tableCheckbox [value]="row"></p-tableCheckbox>
@@ -72,11 +73,17 @@
         <td>{{ row.code }}</td>
         <td>{{ row.sku }}</td>
         <td>{{ row.name }}</td>
-        <td>{{ row.productType }}</td>
+        <td>{{ getProductTypeName(row.productType) }}</td>
         <td>{{ row.categoryId }}</td>
         <td>{{ row.sortOrder }}</td>
-        <td>{{ row.visibility }}</td>
-        <td>{{ row.isActive }}</td>
+        <td>
+          <p-badge *ngIf="row.visibility === 1" severity="success" value="Hiển thị"></p-badge>
+          <p-badge *ngIf="row.visibility === 0" severity="danger" value="Ẩn"></p-badge>
+        </td>
+        <td>
+          <p-badge *ngIf="row.isActive === 1" severity="success" value="Kích hoạt"></p-badge>
+          <p-badge *ngIf="row.visibility === 0" severity="danger" value="Khoá"></p-badge>
+        </td>
       </tr>
     </ng-template>
     <ng-template pTemplate="summary">
