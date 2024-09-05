@@ -2,11 +2,12 @@ import { AuthService, PagedResultDto } from '@abp/ng.core';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ProductsService } from '../proxy/products/products.service';
 import { ProductDto, ProductInListDto } from '@proxy/products';
-import { Subject, takeUntil } from 'rxjs';
+import { Subject, take, takeUntil } from 'rxjs';
 import { ProductCategoriesService, ProductCategoryInListDto } from '@proxy/product-categories';
 import { DialogService } from 'primeng/dynamicdialog';
 import { ProductDetailComponent } from './product-detail.component';
 import { NotificationService } from '../shared/services/notification.service';
+import { ConfirmationService } from 'primeng/api';
 
 @Component({
   selector: 'app-product',
@@ -34,7 +35,8 @@ export class ProductComponent implements OnInit, OnDestroy {
     private productService: ProductsService,
     private productCategoriesService: ProductCategoriesService,
     private dialogService: DialogService,
-    private notificationService: NotificationService
+    private notificationService: NotificationService,
+    private confirmationService: ConfirmationService
   ) {}
 
   ngOnInit(): void {
@@ -127,6 +129,41 @@ export class ProductComponent implements OnInit, OnDestroy {
         this.notificationService.showSuccess('Cập nhật sản phẩm thành công');
       }
     });
+  }
+
+  deleteItems() {
+    if (this.selectedItems.length === 0) {
+      this.notificationService.showError('Phải chọn ít nhất một sản phẩm');
+      return;
+    }
+    var ids = [];
+    this.selectedItems.forEach(element => {
+      ids.push(element.id);
+    });
+    this.confirmationService.confirm({
+      message: 'Bạn có chắc chắn muốn xoá sản phẩm này ?',
+      accept: () => {
+        this.deleteItemsConfirmed(ids);
+      },
+    });
+  }
+
+  deleteItemsConfirmed(ids: string[]) {
+    this.toggleBlockUI(true);
+    this.productService
+      .deleteMultiple(ids)
+      .pipe(takeUntil(this.ngUnsubscribe))
+      .subscribe({
+        next: () => {
+          this.notificationService.showSuccess('Xoá sản phẩm thành công');
+          this.loadData();
+          this.selectedItems = [];
+          this.toggleBlockUI(false);
+        },
+        error: () => {
+          this.toggleBlockUI(false);
+        },
+      });
   }
 
   private toggleBlockUI(enabled: boolean) {

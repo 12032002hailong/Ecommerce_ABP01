@@ -1,5 +1,5 @@
 import { AuthService, PagedResultDto } from '@abp/ng.core';
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { ProductsService } from '../proxy/products/products.service';
 import { ProductDto } from '@proxy/products';
 import { forkJoin, Subject, takeUntil } from 'rxjs';
@@ -10,6 +10,8 @@ import { ManufacturerInListDto } from '@proxy/manufacturers';
 import { DynamicDialogConfig, DynamicDialogRef } from 'primeng/dynamicdialog';
 import { UtilityService } from '../shared/services/utility.service';
 import { ProductType, productTypeOptions } from '@proxy/tedu-ecommerce/products';
+import { NotificationService } from '../shared/services/notification.service';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-product-detail',
@@ -21,6 +23,7 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
   blockedPanel: boolean = false;
   btnDisabled = false;
   public form: FormGroup;
+  public thumbnailImage;
 
   //Dropdown
   productCategories: any[] = [];
@@ -35,7 +38,10 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
     private fb: FormBuilder,
     private config: DynamicDialogConfig,
     private ref: DynamicDialogRef,
-    private utilityService: UtilityService
+    private utilityService: UtilityService,
+    private notificationService: NotificationService,
+    private cd: ChangeDetectorRef,
+    private sanitizer: DomSanitizer
   ) {}
 
   validationMessages = {
@@ -145,7 +151,9 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
             this.loadFormDetail(this.config.data?.id);
           }
         },
-        error: () => {
+        error: err => {
+          this.notificationService.showError(err.message);
+
           this.toggleBlockUI(false);
         },
       });
@@ -159,6 +167,7 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
       .subscribe({
         next: (response: ProductDto) => {
           this.selectedEntity = response;
+          this.loadThumbnail(this.selectedEntity.thumbnailPicture);
           this.buildForm();
           this.toggleBlockUI(false);
         },
@@ -192,7 +201,8 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
             this.toggleBlockUI(false);
             this.ref.close(this.form.value);
           },
-          error: () => {
+          error: err => {
+            this.notificationService.showError(err.message);
             this.toggleBlockUI(false);
           },
         });
@@ -232,7 +242,23 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
       isActive: new FormControl(this.selectedEntity.isActive || true),
       seoMetaDescription: new FormControl(this.selectedEntity.seoMetaDescription || null),
       description: new FormControl(this.selectedEntity.description || null),
+      thumbnailPictureName: new FormControl(this.selectedEntity.description || null),
+      thumbnailPictureContent: new FormControl(null),
     });
+  }
+
+  loadThumbnail(fileName: string) {
+    this.productService
+      .getThumbnailImage(fileName)
+      .pipe(takeUntil(this.ngUnsubscribe))
+      .subscribe({
+        next: (response: string) => {
+          var fileExt = this.selectedEntity.thumbnailPicture?.split('.').pop();
+          this.thumbnailImage = this.sanitizer.bypassSecurityTrustResourceUrl(
+            `data:image/${fileExt};base64, ${response}`
+          );
+        },
+      });
   }
 
   getProductTypeName(value: number) {
@@ -250,7 +276,27 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
       }, 1000);
     }
   }
+
+  onFileChange(event) {
+    const reader = new FileReader();
+    if (event.target.files && event.target.files.length) {
+      const [file] = event.target.files;
+      reader.readAsDataURL(file);
+      reader.onload = () => {
+        this.form.patchValue({
+          thumbnailPictureName: file.name,
+          thumbnailPictureContent: reader.result,
+        });
+        this.cd.markForCheck();
+      };
+    }
+  }
+
   ngOnDestroy(): void {
-    throw '';
+    if (this.ref) {
+      this.ref.close();
+    }
+    this.ngUnsubscribe.next();
+    this.ngUnsubscribe.complete();
   }
 }
