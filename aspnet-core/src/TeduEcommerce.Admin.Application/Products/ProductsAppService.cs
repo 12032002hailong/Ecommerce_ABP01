@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Authorization;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,6 +17,7 @@ using Volo.Abp.Uow;
 
 namespace TeduEcommerce.Admin.Products
 {
+    [Authorize]
     public class ProductsAppService : CrudAppService<
         Product,
         ProductDto,
@@ -42,8 +44,11 @@ namespace TeduEcommerce.Admin.Products
 
         public override async Task<ProductDto> CreateAsync(CreateUpdateProductDto input)
         {
-            var product = await _productManager.CreateAsync(input.ManufacturerId, input.Name, input.Code, input.Slug, input.ProductType, input.SKU,
-                input.SortOrder, input.Visibility, input.IsActive, input.CategoryId, input.SeoMetaDescription, input.Description, input.SellPrice);
+            var product = await _productManager.CreateAsync(
+                input.ManufacturerId, input.Name, input.Code, input.Slug, 
+                input.ProductType, input.SKU,
+                input.SortOrder, input.Visibility, input.IsActive, input.CategoryId, 
+                input.SeoMetaDescription, input.Description, input.SellPrice);
 
             if (input.ThumbnailPictureContent != null && input.ThumbnailPictureContent.Length > 0)
             {
