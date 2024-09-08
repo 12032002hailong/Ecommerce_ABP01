@@ -5,7 +5,10 @@ import { Subject, takeUntil } from 'rxjs';
 import { LayoutService } from 'src/app/layout/service/app.layout.service';
 import { ACCESS_TOKEN, REFRESH_TOKEN } from 'src/app/shared/constants/keys.const';
 import { LoginRequestDto } from 'src/app/shared/models/login-request.dto';
+import { LoginResponseDto } from 'src/app/shared/models/login-response.dto';
 import { AuthService } from 'src/app/shared/services/auth.service';
+import { TokenStorageService } from 'src/app/shared/services/token.service';
+import { NotificationService } from '../../shared/services/notification.service';
 
 @Component({
   selector: 'app-login',
@@ -26,12 +29,15 @@ export class LoginComponent implements OnDestroy {
   valCheck: string[] = ['remember'];
   password!: string;
   loginForm: FormGroup;
+  public blockedPanel = false;
 
   constructor(
     public layoutService: LayoutService,
     private fb: FormBuilder,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private tokenService: TokenStorageService,
+    private notificationService: NotificationService
   ) {
     this.loginForm = this.fb.group({
       username: new FormControl(``, Validators.required),
@@ -40,6 +46,7 @@ export class LoginComponent implements OnDestroy {
   }
 
   login() {
+    this.toggleBlockUI(true);
     let request: LoginRequestDto = {
       username: this.loginForm.controls['username'].value,
       password: this.loginForm.controls['password'].value,
@@ -47,11 +54,28 @@ export class LoginComponent implements OnDestroy {
     this.authService
       .login(request)
       .pipe(takeUntil(this.ngUnsubscribe))
-      .subscribe(res => {
-        localStorage.setItem(ACCESS_TOKEN, res.access_token);
-        localStorage.setItem(REFRESH_TOKEN, res.refresh_token);
-        this.router.navigate(['']);
+      .subscribe({
+        next: (res: LoginResponseDto) => {
+          this.tokenService.saveToken(res.access_token);
+          this.tokenService.saveRefreshToken(res.refresh_token);
+          this.toggleBlockUI(false);
+          this.router.navigate(['']);
+        },
+        error: () => {
+          this.notificationService.showError('Đăng nhập không thành công');
+          this.toggleBlockUI(false);
+        },
       });
+  }
+
+  private toggleBlockUI(enabled: boolean) {
+    if (enabled == true) {
+      this.blockedPanel = true;
+    } else {
+      setTimeout(() => {
+        this.blockedPanel = false;
+      }, 1000);
+    }
   }
 
   ngOnDestroy(): void {
