@@ -2,7 +2,7 @@ import { AuthService, PagedResultDto } from '@abp/ng.core';
 import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { ProductsService } from '../proxy/products/products.service';
 import { ProductDto } from '@proxy/products';
-import { forkJoin, Subject, takeUntil } from 'rxjs';
+import { forkJoin, Subject, take, takeUntil } from 'rxjs';
 import { ProductCategoriesService, ProductCategoryInListDto } from '@proxy/product-categories';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ManufacturersService } from '../proxy/manufacturers/manufacturers.service';
@@ -146,6 +146,7 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
           });
           //Load edit data to form
           if (this.utilityService.isEmpty(this.config.data?.id) == true) {
+            this.getNewSuggestionCode();
             this.toggleBlockUI(false);
           } else {
             this.loadFormDetail(this.config.data?.id);
@@ -156,6 +157,20 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
 
           this.toggleBlockUI(false);
         },
+      });
+  }
+
+  getNewSuggestionCode() {
+    this.productService
+      .getSuggestNewCode()
+      .pipe(takeUntil(this.ngUnsubscribe))
+      .subscribe({
+        next: (response: string) => {
+          this.form.patchValue({
+            code: response,
+          });
+        },
+        error: () => {},
       });
   }
 
