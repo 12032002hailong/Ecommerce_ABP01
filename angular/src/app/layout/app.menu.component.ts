@@ -23,6 +23,13 @@ export class AppMenuComponent implements OnInit {
           { label: 'Danh sách sản phẩm', icon: 'pi pi-fw pi-image', routerLink: ['/product'] },
         ],
       },
+      {
+        label: 'Thuộc tính',
+        items: [
+          { label: 'Danh sách sản phẩm', icon: 'pi pi-fw pi-image', routerLink: ['/product'] },
+          { label: 'Thuộc tính sản phẩm', icon: 'pi pi-fw pi-image', routerLink: ['/attribute'] },
+        ],
+      },
     ];
   }
 }

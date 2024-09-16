@@ -66,14 +66,6 @@ export class ProductComponent implements OnInit, OnDestroy {
           this.toggleBlockUI(false);
         },
       });
-    this.productService
-      .getListAll()
-      .pipe(takeUntil(this.ngUnsubscribe))
-      .subscribe((response: any) => {
-        this.items = response.items;
-        this.totalCount = response.totalCount;
-        this.toggleBlockUI(false);
-      });
   }
 
   loadProductCategories() {

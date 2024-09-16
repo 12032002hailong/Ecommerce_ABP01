@@ -11,7 +11,7 @@ using Volo.Abp.Application.Dtos;
 using Volo.Abp.Application.Services;
 using Volo.Abp.Domain.Repositories;
 
-namespace TeduEcommerce.Admin.ProductCategories
+namespace TeduEcommerce.Admin.ProductAttributes
 {
     [Authorize]
     public class ProductAttributesAppService : CrudAppService<
