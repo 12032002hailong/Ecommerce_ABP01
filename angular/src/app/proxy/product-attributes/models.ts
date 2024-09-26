@@ -1,5 +1,5 @@
-import type { AttributeType } from '../tedu-ecommerce/product-attributes/attribute-type.enum';
 import type { EntityDto } from '@abp/ng.core';
+import { AttributeType } from '@proxy/tedu-ecommerce/product-attributes';
 
 export interface CreateUpdateProductAttributeDto {
   code?: string;

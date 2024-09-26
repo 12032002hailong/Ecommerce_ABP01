@@ -30,6 +30,7 @@ using Volo.Abp.Modularity;
 using Volo.Abp.Security.Claims;
 using Volo.Abp.Swashbuckle;
 using Volo.Abp.VirtualFileSystem;
+using Microsoft.IdentityModel.Tokens;
 
 namespace TeduEcommerce.Admin;
 
@@ -106,6 +107,12 @@ public class TeduEcommerceAdminHttpApiHostModule : AbpModule
                 options.Authority = configuration["AuthServer:Authority"];
                 options.RequireHttpsMetadata = configuration.GetValue<bool>("AuthServer:RequireHttpsMetadata");
                 options.Audience = "TeduEcommerce.Admin";
+                options.TokenValidationParameters = new
+                TokenValidationParameters()
+                {
+                    ValidateAudience = false,
+                    ValidateIssuer = false,
+                };
             });
 
         context.Services.Configure<AbpClaimsPrincipalFactoryOptions>(options =>

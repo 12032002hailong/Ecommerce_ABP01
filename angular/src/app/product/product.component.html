@@ -71,6 +71,7 @@
         <th>Thứ tự</th>
         <th>Hiển thị</th>
         <th>Kích hoạt</th>
+        <th>Thuộc tính</th>
       </tr>
     </ng-template>
     <ng-template pTemplate="body" let-row>
@@ -84,15 +85,26 @@
         <td>{{ row.sku }}</td>
         <td>{{ row.name }}</td>
         <td>{{ getProductTypeName(row.productType) }}</td>
-        <td>{{ row.categoryId }}</td>
+        <td>{{ row.categoryName }}</td>
         <td>{{ row.sortOrder }}</td>
         <td>
-          <p-badge *ngIf="row.visibility === 1" severity="success" value="Hiển thị"></p-badge>
-          <p-badge *ngIf="row.visibility === 0" severity="danger" value="Ẩn"></p-badge>
+          <p-badge *ngIf="row.visibility === true" severity="success" value="Hiển thị"></p-badge>
+          <p-badge *ngIf="row.visibility === false" severity="danger" value="Ẩn"></p-badge>
         </td>
         <td>
-          <p-badge *ngIf="row.isActive === 1" severity="success" value="Kích hoạt"></p-badge>
-          <p-badge *ngIf="row.visibility === 0" severity="danger" value="Khoá"></p-badge>
+          <p-badge *ngIf="row.isActive === true" severity="success" value="Kích hoạt"></p-badge>
+          <p-badge *ngIf="row.visibility === false" severity="danger" value="Khoá"></p-badge>
+        </td>
+        <td>
+          <button
+            pButton
+            type="button"
+            pRipple
+            label="Thuộc tính"
+            icon="fa fa-pencil"
+            class="p-button-text"
+            (click)="manageProductAttribute(row.id)"
+          ></button>
         </td>
       </tr>
     </ng-template>

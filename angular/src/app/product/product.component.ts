@@ -8,6 +8,8 @@ import { DialogService } from 'primeng/dynamicdialog';
 import { ProductDetailComponent } from './product-detail.component';
 import { NotificationService } from '../shared/services/notification.service';
 import { ConfirmationService } from 'primeng/api';
+import { ProductType } from '@proxy/tedu-ecommerce/products';
+import { ProductAttributeComponent } from './product-attribute.component';
 
 @Component({
   selector: 'app-product',
@@ -123,6 +125,24 @@ export class ProductComponent implements OnInit, OnDestroy {
     });
   }
 
+  manageProductAttribute(id: string) {
+    const ref = this.dialogService.open(ProductAttributeComponent, {
+      data: {
+        id: id,
+      },
+      header: 'Quản lý thuộc tính sản phẩm',
+      width: '70%',
+    });
+
+    ref.onClose.subscribe((data: ProductDto) => {
+      if (data) {
+        this.loadData();
+        this.selectedItems = [];
+        this.notificationService.showSuccess('Cập nhật thuộc tính sản phẩm thành công');
+      }
+    });
+  }
+
   deleteItems() {
     if (this.selectedItems.length === 0) {
       this.notificationService.showError('Phải chọn ít nhất một sản phẩm');
@@ -156,6 +176,10 @@ export class ProductComponent implements OnInit, OnDestroy {
           this.toggleBlockUI(false);
         },
       });
+  }
+
+  getProductTypeName(value: number) {
+    return ProductType[value];
   }
 
   private toggleBlockUI(enabled: boolean) {

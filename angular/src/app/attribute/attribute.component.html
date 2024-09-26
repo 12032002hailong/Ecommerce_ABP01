@@ -83,20 +83,20 @@
         <td>{{ row.label }}</td>
         <td>{{ row.sortOrder }}</td>
         <td>
-          <p-badge *ngIf="row.visibility === 1" severity="success" value="Hiển thị"></p-badge>
-          <p-badge *ngIf="row.visibility === 0" severity="danger" value="Ẩn"></p-badge>
+          <p-badge *ngIf="row.visibility === true" severity="success" value="Hiển thị"></p-badge>
+          <p-badge *ngIf="row.visibility === false" severity="danger" value="Ẩn"></p-badge>
         </td>
         <td>
-          <p-badge *ngIf="row.isRequired === 1" severity="success" value="Có"></p-badge>
-          <p-badge *ngIf="row.isRequired === 0" severity="danger" value="Không"></p-badge>
+          <p-badge *ngIf="row.isRequired === true" severity="success" value="Có"></p-badge>
+          <p-badge *ngIf="row.isRequired === false" severity="danger" value="Không"></p-badge>
         </td>
         <td>
-          <p-badge *ngIf="row.isUnique === 1" severity="success" value="Có"></p-badge>
-          <p-badge *ngIf="row.isUnique === 0" severity="danger" value="Không"></p-badge>
+          <p-badge *ngIf="row.isUnique === true" severity="success" value="Có"></p-badge>
+          <p-badge *ngIf="row.isUnique === false" severity="danger" value="Không"></p-badge>
         </td>
         <td>
-          <p-badge *ngIf="row.isActive === 1" value="Kích hoạt" severity="success"></p-badge>
-          <p-badge *ngIf="row.isActive === 0" value="Khoá" severity="danger"></p-badge>
+          <p-badge *ngIf="row.isActive === true" value="Kích hoạt" severity="success"></p-badge>
+          <p-badge *ngIf="row.isActive === false" value="Khoá" severity="danger"></p-badge>
         </td>
       </tr>
     </ng-template>

@@ -18,8 +18,9 @@ import { TeduSharedModule } from '../shared/modules/tedu-shared.module';
 import { BadgeModule } from 'primeng/badge';
 import { ImageModule } from 'primeng/image';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { ProductAttributeComponent } from './product-attribute.component';
 @NgModule({
-  declarations: [ProductDetailComponent, ProductComponent],
+  declarations: [ProductDetailComponent, ProductComponent, ProductAttributeComponent],
   imports: [
     SharedModule,
     ProductRoutingModule,
