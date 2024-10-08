@@ -1,5 +1,5 @@
-import { AttributeType } from '@proxy/tedu-ecommerce/product-attributes';
 import type { BaseListFilterDto } from '../../models';
+import type { AttributeType } from '../../tedu-ecommerce/product-attributes/attribute-type.enum';
 
 export interface AddUpdateProductAttributeDto {
   productId?: string;

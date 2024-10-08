@@ -19,6 +19,11 @@ const routes: Routes = [
     component: AppLayoutComponent,
   },
   {
+    path: 'role',
+    loadChildren: () => import('./role/role.module').then(m => m.RoleModule),
+    component: AppLayoutComponent,
+  },
+  {
     path: 'attribute',
     loadChildren: () => import('./attribute/attribute.module').then(m => m.AttributeModule),
     component: AppLayoutComponent,

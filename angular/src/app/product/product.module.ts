@@ -19,6 +19,8 @@ import { BadgeModule } from 'primeng/badge';
 import { ImageModule } from 'primeng/image';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ProductAttributeComponent } from './product-attribute.component';
+import { CalendarModule } from 'primeng/calendar';
+
 @NgModule({
   declarations: [ProductDetailComponent, ProductComponent, ProductAttributeComponent],
   imports: [
@@ -35,6 +37,7 @@ import { ProductAttributeComponent } from './product-attribute.component';
     DynamicDialogModule,
     CheckboxModule,
     EditorModule,
+    CalendarModule,
     TeduSharedModule,
     BadgeModule,
     ImageModule,
