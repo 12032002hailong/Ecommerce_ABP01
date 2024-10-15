@@ -5,8 +5,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TeduEcommerce.Admin.ProductCategories;
-using TeduEcommerce.ProductCategories;
 using TeduEcommerce.Roles;
 using Volo.Abp;
 using Volo.Abp.Application.Dtos;
