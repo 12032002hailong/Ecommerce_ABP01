@@ -163,16 +163,6 @@ public class TeduEcommerceAdminHttpApiHostModule : AbpModule
         });
     }
 
-    private void ConfigureLocalization()
-    {
-        Configure<AbpLocalizationOptions>(options =>
-        {
-            options.Languages.Add(new LanguageInfo("en", "en", "English"));
-            options.Languages.Add(new LanguageInfo("vi", "vn", "Tiếng Việt"));
-
-        });
-    }
-
     private void ConfigureCors(ServiceConfigurationContext context, IConfiguration configuration)
     {
         context.Services.AddCors(options =>
@@ -208,17 +198,7 @@ public class TeduEcommerceAdminHttpApiHostModule : AbpModule
                 new CultureInfo("vi")
             };
 
-        app.UseAbpRequestLocalization(options =>
-        {
-            options.DefaultRequestCulture = new RequestCulture("vi");
-            options.SupportedCultures = supportedCultures;
-            options.SupportedUICultures = supportedCultures;
-            options.RequestCultureProviders = new List<IRequestCultureProvider>
-                {
-                    new QueryStringRequestCultureProvider(),
-                    new CookieRequestCultureProvider()
-                };
-        });
+        app.UseAbpRequestLocalization();
         app.UseCorrelationId();
         app.UseStaticFiles();
         app.UseRouting();
