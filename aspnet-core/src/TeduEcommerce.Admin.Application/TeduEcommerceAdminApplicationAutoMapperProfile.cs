@@ -1,10 +1,11 @@
 ﻿
 using AutoMapper;
-using TeduEcommerce.Admin.Manufacturers;
-using TeduEcommerce.Admin.ProductAttributes;
-using TeduEcommerce.Admin.ProductCategories;
-using TeduEcommerce.Admin.Products;
-using TeduEcommerce.Admin.Roles;
+using TeduEcommerce.Admin.Catalog.Manufacturers;
+using TeduEcommerce.Admin.Catalog.ProductAttributes;
+using TeduEcommerce.Admin.Catalog.ProductCategories;
+using TeduEcommerce.Admin.Catalog.Products;
+using TeduEcommerce.Admin.System.Roles;
+using TeduEcommerce.Admin.System.Users;
 using TeduEcommerce.Manufacturers;
 using TeduEcommerce.ProductAttributes;
 using TeduEcommerce.ProductCategories;
@@ -49,5 +50,9 @@ public class TeduEcommerceAdminApplicationAutoMapperProfile : Profile
             : null));
         CreateMap<CreateUpdateRoleDto, IdentityRole>();
 
+
+        //User
+        CreateMap<IdentityUser, UserDto>();
+        CreateMap<IdentityUser, UserInListDto>();
     }
 }
