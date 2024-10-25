@@ -773,16 +773,16 @@
       "rootPath": "app",
       "remoteServiceName": "Default",
       "controllers": {
-        "TeduEcommerce.Admin.Manufacturers.ManufacturersAppService": {
+        "TeduEcommerce.Admin.Catalog.Manufacturers.ManufacturersAppService": {
           "controllerName": "Manufacturers",
           "controllerGroupName": "Manufacturers",
           "isRemoteService": true,
           "isIntegrationService": false,
           "apiVersion": null,
-          "type": "TeduEcommerce.Admin.Manufacturers.ManufacturersAppService",
+          "type": "TeduEcommerce.Admin.Catalog.Manufacturers.ManufacturersAppService",
           "interfaces": [
             {
-              "type": "TeduEcommerce.Admin.Manufacturers.IManufacturersAppService",
+              "type": "TeduEcommerce.Admin.Catalog.Manufacturers.IManufacturersAppService",
               "name": "IManufacturersAppService",
               "methods": [
                 {
@@ -798,16 +798,16 @@
                     }
                   ],
                   "returnValue": {
-                    "type": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Manufacturers.ManufacturerInListDto>",
-                    "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Manufacturers.ManufacturerInListDto>"
+                    "type": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Catalog.Manufacturers.ManufacturerInListDto>",
+                    "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Catalog.Manufacturers.ManufacturerInListDto>"
                   }
                 },
                 {
                   "name": "GetListAllAsync",
                   "parametersOnMethod": [],
                   "returnValue": {
-                    "type": "System.Collections.Generic.List<TeduEcommerce.Admin.Manufacturers.ManufacturerInListDto>",
-                    "typeSimple": "[TeduEcommerce.Admin.Manufacturers.ManufacturerInListDto]"
+                    "type": "System.Collections.Generic.List<TeduEcommerce.Admin.Catalog.Manufacturers.ManufacturerInListDto>",
+                    "typeSimple": "[TeduEcommerce.Admin.Catalog.Manufacturers.ManufacturerInListDto]"
                   }
                 },
                 {
@@ -840,8 +840,8 @@
                     }
                   ],
                   "returnValue": {
-                    "type": "TeduEcommerce.Admin.Manufacturers.ManufacturerDto",
-                    "typeSimple": "TeduEcommerce.Admin.Manufacturers.ManufacturerDto"
+                    "type": "TeduEcommerce.Admin.Catalog.Manufacturers.ManufacturerDto",
+                    "typeSimple": "TeduEcommerce.Admin.Catalog.Manufacturers.ManufacturerDto"
                   }
                 },
                 {
@@ -857,8 +857,8 @@
                     }
                   ],
                   "returnValue": {
-                    "type": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Manufacturers.ManufacturerDto>",
-                    "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Manufacturers.ManufacturerDto>"
+                    "type": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Catalog.Manufacturers.ManufacturerDto>",
+                    "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Catalog.Manufacturers.ManufacturerDto>"
                   }
                 },
                 {
@@ -866,16 +866,16 @@
                   "parametersOnMethod": [
                     {
                       "name": "input",
-                      "typeAsString": "TeduEcommerce.Admin.Manufacturers.CreateUpdateManufacturerDto, TeduEcommerce.Admin.Application.Contracts",
-                      "type": "TeduEcommerce.Admin.Manufacturers.CreateUpdateManufacturerDto",
-                      "typeSimple": "TeduEcommerce.Admin.Manufacturers.CreateUpdateManufacturerDto",
+                      "typeAsString": "TeduEcommerce.Admin.Catalog.Manufacturers.CreateUpdateManufacturerDto, TeduEcommerce.Admin.Application.Contracts",
+                      "type": "TeduEcommerce.Admin.Catalog.Manufacturers.CreateUpdateManufacturerDto",
+                      "typeSimple": "TeduEcommerce.Admin.Catalog.Manufacturers.CreateUpdateManufacturerDto",
                       "isOptional": false,
                       "defaultValue": null
                     }
                   ],
                   "returnValue": {
-                    "type": "TeduEcommerce.Admin.Manufacturers.ManufacturerDto",
-                    "typeSimple": "TeduEcommerce.Admin.Manufacturers.ManufacturerDto"
+                    "type": "TeduEcommerce.Admin.Catalog.Manufacturers.ManufacturerDto",
+                    "typeSimple": "TeduEcommerce.Admin.Catalog.Manufacturers.ManufacturerDto"
                   }
                 },
                 {
@@ -891,16 +891,16 @@
                     },
                     {
                       "name": "input",
-                      "typeAsString": "TeduEcommerce.Admin.Manufacturers.CreateUpdateManufacturerDto, TeduEcommerce.Admin.Application.Contracts",
-                      "type": "TeduEcommerce.Admin.Manufacturers.CreateUpdateManufacturerDto",
-                      "typeSimple": "TeduEcommerce.Admin.Manufacturers.CreateUpdateManufacturerDto",
+                      "typeAsString": "TeduEcommerce.Admin.Catalog.Manufacturers.CreateUpdateManufacturerDto, TeduEcommerce.Admin.Application.Contracts",
+                      "type": "TeduEcommerce.Admin.Catalog.Manufacturers.CreateUpdateManufacturerDto",
+                      "typeSimple": "TeduEcommerce.Admin.Catalog.Manufacturers.CreateUpdateManufacturerDto",
                       "isOptional": false,
                       "defaultValue": null
                     }
                   ],
                   "returnValue": {
-                    "type": "TeduEcommerce.Admin.Manufacturers.ManufacturerDto",
-                    "typeSimple": "TeduEcommerce.Admin.Manufacturers.ManufacturerDto"
+                    "type": "TeduEcommerce.Admin.Catalog.Manufacturers.ManufacturerDto",
+                    "typeSimple": "TeduEcommerce.Admin.Catalog.Manufacturers.ManufacturerDto"
                   }
                 },
                 {
@@ -959,7 +959,7 @@
                 "typeSimple": "System.Void"
               },
               "allowAnonymous": false,
-              "implementFrom": "TeduEcommerce.Admin.Manufacturers.IManufacturersAppService"
+              "implementFrom": "TeduEcommerce.Admin.Catalog.Manufacturers.IManufacturersAppService"
             },
             "GetListAllAsync": {
               "uniqueName": "GetListAllAsync",
@@ -970,11 +970,11 @@
               "parametersOnMethod": [],
               "parameters": [],
               "returnValue": {
-                "type": "System.Collections.Generic.List<TeduEcommerce.Admin.Manufacturers.ManufacturerInListDto>",
-                "typeSimple": "[TeduEcommerce.Admin.Manufacturers.ManufacturerInListDto]"
+                "type": "System.Collections.Generic.List<TeduEcommerce.Admin.Catalog.Manufacturers.ManufacturerInListDto>",
+                "typeSimple": "[TeduEcommerce.Admin.Catalog.Manufacturers.ManufacturerInListDto]"
               },
               "allowAnonymous": false,
-              "implementFrom": "TeduEcommerce.Admin.Manufacturers.IManufacturersAppService"
+              "implementFrom": "TeduEcommerce.Admin.Catalog.Manufacturers.IManufacturersAppService"
             },
             "GetListFilterAsyncByInput": {
               "uniqueName": "GetListFilterAsyncByInput",
@@ -1031,11 +1031,11 @@
                 }
               ],
               "returnValue": {
-                "type": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Manufacturers.ManufacturerInListDto>",
-                "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Manufacturers.ManufacturerInListDto>"
+                "type": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Catalog.Manufacturers.ManufacturerInListDto>",
+                "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Catalog.Manufacturers.ManufacturerInListDto>"
               },
               "allowAnonymous": false,
-              "implementFrom": "TeduEcommerce.Admin.Manufacturers.IManufacturersAppService"
+              "implementFrom": "TeduEcommerce.Admin.Catalog.Manufacturers.IManufacturersAppService"
             },
             "CreateAsyncByInput": {
               "uniqueName": "CreateAsyncByInput",
@@ -1046,9 +1046,9 @@
               "parametersOnMethod": [
                 {
                   "name": "input",
-                  "typeAsString": "TeduEcommerce.Admin.Manufacturers.CreateUpdateManufacturerDto, TeduEcommerce.Admin.Application.Contracts",
-                  "type": "TeduEcommerce.Admin.Manufacturers.CreateUpdateManufacturerDto",
-                  "typeSimple": "TeduEcommerce.Admin.Manufacturers.CreateUpdateManufacturerDto",
+                  "typeAsString": "TeduEcommerce.Admin.Catalog.Manufacturers.CreateUpdateManufacturerDto, TeduEcommerce.Admin.Application.Contracts",
+                  "type": "TeduEcommerce.Admin.Catalog.Manufacturers.CreateUpdateManufacturerDto",
+                  "typeSimple": "TeduEcommerce.Admin.Catalog.Manufacturers.CreateUpdateManufacturerDto",
                   "isOptional": false,
                   "defaultValue": null
                 }
@@ -1058,8 +1058,8 @@
                   "nameOnMethod": "input",
                   "name": "input",
                   "jsonName": null,
-                  "type": "TeduEcommerce.Admin.Manufacturers.CreateUpdateManufacturerDto",
-                  "typeSimple": "TeduEcommerce.Admin.Manufacturers.CreateUpdateManufacturerDto",
+                  "type": "TeduEcommerce.Admin.Catalog.Manufacturers.CreateUpdateManufacturerDto",
+                  "typeSimple": "TeduEcommerce.Admin.Catalog.Manufacturers.CreateUpdateManufacturerDto",
                   "isOptional": false,
                   "defaultValue": null,
                   "constraintTypes": null,
@@ -1068,11 +1068,11 @@
                 }
               ],
               "returnValue": {
-                "type": "TeduEcommerce.Admin.Manufacturers.ManufacturerDto",
-                "typeSimple": "TeduEcommerce.Admin.Manufacturers.ManufacturerDto"
+                "type": "TeduEcommerce.Admin.Catalog.Manufacturers.ManufacturerDto",
+                "typeSimple": "TeduEcommerce.Admin.Catalog.Manufacturers.ManufacturerDto"
               },
               "allowAnonymous": false,
-              "implementFrom": "Volo.Abp.Application.Services.ICreateAppService<TeduEcommerce.Admin.Manufacturers.ManufacturerDto,TeduEcommerce.Admin.Manufacturers.CreateUpdateManufacturerDto>"
+              "implementFrom": "Volo.Abp.Application.Services.ICreateAppService<TeduEcommerce.Admin.Catalog.Manufacturers.ManufacturerDto,TeduEcommerce.Admin.Catalog.Manufacturers.CreateUpdateManufacturerDto>"
             },
             "UpdateAsyncByIdAndInput": {
               "uniqueName": "UpdateAsyncByIdAndInput",
@@ -1091,9 +1091,9 @@
                 },
                 {
                   "name": "input",
-                  "typeAsString": "TeduEcommerce.Admin.Manufacturers.CreateUpdateManufacturerDto, TeduEcommerce.Admin.Application.Contracts",
-                  "type": "TeduEcommerce.Admin.Manufacturers.CreateUpdateManufacturerDto",
-                  "typeSimple": "TeduEcommerce.Admin.Manufacturers.CreateUpdateManufacturerDto",
+                  "typeAsString": "TeduEcommerce.Admin.Catalog.Manufacturers.CreateUpdateManufacturerDto, TeduEcommerce.Admin.Application.Contracts",
+                  "type": "TeduEcommerce.Admin.Catalog.Manufacturers.CreateUpdateManufacturerDto",
+                  "typeSimple": "TeduEcommerce.Admin.Catalog.Manufacturers.CreateUpdateManufacturerDto",
                   "isOptional": false,
                   "defaultValue": null
                 }
@@ -1115,8 +1115,8 @@
                   "nameOnMethod": "input",
                   "name": "input",
                   "jsonName": null,
-                  "type": "TeduEcommerce.Admin.Manufacturers.CreateUpdateManufacturerDto",
-                  "typeSimple": "TeduEcommerce.Admin.Manufacturers.CreateUpdateManufacturerDto",
+                  "type": "TeduEcommerce.Admin.Catalog.Manufacturers.CreateUpdateManufacturerDto",
+                  "typeSimple": "TeduEcommerce.Admin.Catalog.Manufacturers.CreateUpdateManufacturerDto",
                   "isOptional": false,
                   "defaultValue": null,
                   "constraintTypes": null,
@@ -1125,11 +1125,11 @@
                 }
               ],
               "returnValue": {
-                "type": "TeduEcommerce.Admin.Manufacturers.ManufacturerDto",
-                "typeSimple": "TeduEcommerce.Admin.Manufacturers.ManufacturerDto"
+                "type": "TeduEcommerce.Admin.Catalog.Manufacturers.ManufacturerDto",
+                "typeSimple": "TeduEcommerce.Admin.Catalog.Manufacturers.ManufacturerDto"
               },
               "allowAnonymous": false,
-              "implementFrom": "Volo.Abp.Application.Services.IUpdateAppService<TeduEcommerce.Admin.Manufacturers.ManufacturerDto,System.Guid,TeduEcommerce.Admin.Manufacturers.CreateUpdateManufacturerDto>"
+              "implementFrom": "Volo.Abp.Application.Services.IUpdateAppService<TeduEcommerce.Admin.Catalog.Manufacturers.ManufacturerDto,System.Guid,TeduEcommerce.Admin.Catalog.Manufacturers.CreateUpdateManufacturerDto>"
             },
             "DeleteAsyncById": {
               "uniqueName": "DeleteAsyncById",
@@ -1199,11 +1199,11 @@
                 }
               ],
               "returnValue": {
-                "type": "TeduEcommerce.Admin.Manufacturers.ManufacturerDto",
-                "typeSimple": "TeduEcommerce.Admin.Manufacturers.ManufacturerDto"
+                "type": "TeduEcommerce.Admin.Catalog.Manufacturers.ManufacturerDto",
+                "typeSimple": "TeduEcommerce.Admin.Catalog.Manufacturers.ManufacturerDto"
               },
               "allowAnonymous": false,
-              "implementFrom": "Volo.Abp.Application.Services.IReadOnlyAppService<TeduEcommerce.Admin.Manufacturers.ManufacturerDto,TeduEcommerce.Admin.Manufacturers.ManufacturerDto,System.Guid,Volo.Abp.Application.Dtos.PagedResultRequestDto>"
+              "implementFrom": "Volo.Abp.Application.Services.IReadOnlyAppService<TeduEcommerce.Admin.Catalog.Manufacturers.ManufacturerDto,TeduEcommerce.Admin.Catalog.Manufacturers.ManufacturerDto,System.Guid,Volo.Abp.Application.Dtos.PagedResultRequestDto>"
             },
             "GetListAsyncByInput": {
               "uniqueName": "GetListAsyncByInput",
@@ -1248,24 +1248,24 @@
                 }
               ],
               "returnValue": {
-                "type": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Manufacturers.ManufacturerDto>",
-                "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Manufacturers.ManufacturerDto>"
+                "type": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Catalog.Manufacturers.ManufacturerDto>",
+                "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Catalog.Manufacturers.ManufacturerDto>"
               },
               "allowAnonymous": false,
-              "implementFrom": "Volo.Abp.Application.Services.IReadOnlyAppService<TeduEcommerce.Admin.Manufacturers.ManufacturerDto,TeduEcommerce.Admin.Manufacturers.ManufacturerDto,System.Guid,Volo.Abp.Application.Dtos.PagedResultRequestDto>"
+              "implementFrom": "Volo.Abp.Application.Services.IReadOnlyAppService<TeduEcommerce.Admin.Catalog.Manufacturers.ManufacturerDto,TeduEcommerce.Admin.Catalog.Manufacturers.ManufacturerDto,System.Guid,Volo.Abp.Application.Dtos.PagedResultRequestDto>"
             }
           }
         },
-        "TeduEcommerce.Admin.ProductAttributes.ProductAttributesAppService": {
+        "TeduEcommerce.Admin.Catalog.ProductAttributes.ProductAttributesAppService": {
           "controllerName": "ProductAttributes",
           "controllerGroupName": "ProductAttributes",
           "isRemoteService": true,
           "isIntegrationService": false,
           "apiVersion": null,
-          "type": "TeduEcommerce.Admin.ProductAttributes.ProductAttributesAppService",
+          "type": "TeduEcommerce.Admin.Catalog.ProductAttributes.ProductAttributesAppService",
           "interfaces": [
             {
-              "type": "TeduEcommerce.Admin.ProductAttributes.IProductAttributesAppService",
+              "type": "TeduEcommerce.Admin.Catalog.ProductAttributes.IProductAttributesAppService",
               "name": "IProductAttributesAppService",
               "methods": [
                 {
@@ -1281,16 +1281,16 @@
                     }
                   ],
                   "returnValue": {
-                    "type": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.ProductAttributes.ProductAttributeInListDto>",
-                    "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.ProductAttributes.ProductAttributeInListDto>"
+                    "type": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Catalog.ProductAttributes.ProductAttributeInListDto>",
+                    "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Catalog.ProductAttributes.ProductAttributeInListDto>"
                   }
                 },
                 {
                   "name": "GetListAllAsync",
                   "parametersOnMethod": [],
                   "returnValue": {
-                    "type": "System.Collections.Generic.List<TeduEcommerce.Admin.ProductAttributes.ProductAttributeInListDto>",
-                    "typeSimple": "[TeduEcommerce.Admin.ProductAttributes.ProductAttributeInListDto]"
+                    "type": "System.Collections.Generic.List<TeduEcommerce.Admin.Catalog.ProductAttributes.ProductAttributeInListDto>",
+                    "typeSimple": "[TeduEcommerce.Admin.Catalog.ProductAttributes.ProductAttributeInListDto]"
                   }
                 },
                 {
@@ -1323,8 +1323,8 @@
                     }
                   ],
                   "returnValue": {
-                    "type": "TeduEcommerce.Admin.ProductAttributes.ProductAttributeDto",
-                    "typeSimple": "TeduEcommerce.Admin.ProductAttributes.ProductAttributeDto"
+                    "type": "TeduEcommerce.Admin.Catalog.ProductAttributes.ProductAttributeDto",
+                    "typeSimple": "TeduEcommerce.Admin.Catalog.ProductAttributes.ProductAttributeDto"
                   }
                 },
                 {
@@ -1340,8 +1340,8 @@
                     }
                   ],
                   "returnValue": {
-                    "type": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.ProductAttributes.ProductAttributeDto>",
-                    "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.ProductAttributes.ProductAttributeDto>"
+                    "type": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Catalog.ProductAttributes.ProductAttributeDto>",
+                    "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Catalog.ProductAttributes.ProductAttributeDto>"
                   }
                 },
                 {
@@ -1349,16 +1349,16 @@
                   "parametersOnMethod": [
                     {
                       "name": "input",
-                      "typeAsString": "TeduEcommerce.Admin.ProductAttributes.CreateUpdateProductAttributeDto, TeduEcommerce.Admin.Application.Contracts",
-                      "type": "TeduEcommerce.Admin.ProductAttributes.CreateUpdateProductAttributeDto",
-                      "typeSimple": "TeduEcommerce.Admin.ProductAttributes.CreateUpdateProductAttributeDto",
+                      "typeAsString": "TeduEcommerce.Admin.Catalog.ProductAttributes.CreateUpdateProductAttributeDto, TeduEcommerce.Admin.Application.Contracts",
+                      "type": "TeduEcommerce.Admin.Catalog.ProductAttributes.CreateUpdateProductAttributeDto",
+                      "typeSimple": "TeduEcommerce.Admin.Catalog.ProductAttributes.CreateUpdateProductAttributeDto",
                       "isOptional": false,
                       "defaultValue": null
                     }
                   ],
                   "returnValue": {
-                    "type": "TeduEcommerce.Admin.ProductAttributes.ProductAttributeDto",
-                    "typeSimple": "TeduEcommerce.Admin.ProductAttributes.ProductAttributeDto"
+                    "type": "TeduEcommerce.Admin.Catalog.ProductAttributes.ProductAttributeDto",
+                    "typeSimple": "TeduEcommerce.Admin.Catalog.ProductAttributes.ProductAttributeDto"
                   }
                 },
                 {
@@ -1374,16 +1374,16 @@
                     },
                     {
                       "name": "input",
-                      "typeAsString": "TeduEcommerce.Admin.ProductAttributes.CreateUpdateProductAttributeDto, TeduEcommerce.Admin.Application.Contracts",
-                      "type": "TeduEcommerce.Admin.ProductAttributes.CreateUpdateProductAttributeDto",
-                      "typeSimple": "TeduEcommerce.Admin.ProductAttributes.CreateUpdateProductAttributeDto",
+                      "typeAsString": "TeduEcommerce.Admin.Catalog.ProductAttributes.CreateUpdateProductAttributeDto, TeduEcommerce.Admin.Application.Contracts",
+                      "type": "TeduEcommerce.Admin.Catalog.ProductAttributes.CreateUpdateProductAttributeDto",
+                      "typeSimple": "TeduEcommerce.Admin.Catalog.ProductAttributes.CreateUpdateProductAttributeDto",
                       "isOptional": false,
                       "defaultValue": null
                     }
                   ],
                   "returnValue": {
-                    "type": "TeduEcommerce.Admin.ProductAttributes.ProductAttributeDto",
-                    "typeSimple": "TeduEcommerce.Admin.ProductAttributes.ProductAttributeDto"
+                    "type": "TeduEcommerce.Admin.Catalog.ProductAttributes.ProductAttributeDto",
+                    "typeSimple": "TeduEcommerce.Admin.Catalog.ProductAttributes.ProductAttributeDto"
                   }
                 },
                 {
@@ -1442,7 +1442,7 @@
                 "typeSimple": "System.Void"
               },
               "allowAnonymous": false,
-              "implementFrom": "TeduEcommerce.Admin.ProductAttributes.IProductAttributesAppService"
+              "implementFrom": "TeduEcommerce.Admin.Catalog.ProductAttributes.IProductAttributesAppService"
             },
             "GetListAllAsync": {
               "uniqueName": "GetListAllAsync",
@@ -1453,11 +1453,11 @@
               "parametersOnMethod": [],
               "parameters": [],
               "returnValue": {
-                "type": "System.Collections.Generic.List<TeduEcommerce.Admin.ProductAttributes.ProductAttributeInListDto>",
-                "typeSimple": "[TeduEcommerce.Admin.ProductAttributes.ProductAttributeInListDto]"
+                "type": "System.Collections.Generic.List<TeduEcommerce.Admin.Catalog.ProductAttributes.ProductAttributeInListDto>",
+                "typeSimple": "[TeduEcommerce.Admin.Catalog.ProductAttributes.ProductAttributeInListDto]"
               },
               "allowAnonymous": false,
-              "implementFrom": "TeduEcommerce.Admin.ProductAttributes.IProductAttributesAppService"
+              "implementFrom": "TeduEcommerce.Admin.Catalog.ProductAttributes.IProductAttributesAppService"
             },
             "GetListFilterAsyncByInput": {
               "uniqueName": "GetListFilterAsyncByInput",
@@ -1514,11 +1514,11 @@
                 }
               ],
               "returnValue": {
-                "type": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.ProductAttributes.ProductAttributeInListDto>",
-                "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.ProductAttributes.ProductAttributeInListDto>"
+                "type": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Catalog.ProductAttributes.ProductAttributeInListDto>",
+                "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Catalog.ProductAttributes.ProductAttributeInListDto>"
               },
               "allowAnonymous": false,
-              "implementFrom": "TeduEcommerce.Admin.ProductAttributes.IProductAttributesAppService"
+              "implementFrom": "TeduEcommerce.Admin.Catalog.ProductAttributes.IProductAttributesAppService"
             },
             "CreateAsyncByInput": {
               "uniqueName": "CreateAsyncByInput",
@@ -1529,9 +1529,9 @@
               "parametersOnMethod": [
                 {
                   "name": "input",
-                  "typeAsString": "TeduEcommerce.Admin.ProductAttributes.CreateUpdateProductAttributeDto, TeduEcommerce.Admin.Application.Contracts",
-                  "type": "TeduEcommerce.Admin.ProductAttributes.CreateUpdateProductAttributeDto",
-                  "typeSimple": "TeduEcommerce.Admin.ProductAttributes.CreateUpdateProductAttributeDto",
+                  "typeAsString": "TeduEcommerce.Admin.Catalog.ProductAttributes.CreateUpdateProductAttributeDto, TeduEcommerce.Admin.Application.Contracts",
+                  "type": "TeduEcommerce.Admin.Catalog.ProductAttributes.CreateUpdateProductAttributeDto",
+                  "typeSimple": "TeduEcommerce.Admin.Catalog.ProductAttributes.CreateUpdateProductAttributeDto",
                   "isOptional": false,
                   "defaultValue": null
                 }
@@ -1541,8 +1541,8 @@
                   "nameOnMethod": "input",
                   "name": "input",
                   "jsonName": null,
-                  "type": "TeduEcommerce.Admin.ProductAttributes.CreateUpdateProductAttributeDto",
-                  "typeSimple": "TeduEcommerce.Admin.ProductAttributes.CreateUpdateProductAttributeDto",
+                  "type": "TeduEcommerce.Admin.Catalog.ProductAttributes.CreateUpdateProductAttributeDto",
+                  "typeSimple": "TeduEcommerce.Admin.Catalog.ProductAttributes.CreateUpdateProductAttributeDto",
                   "isOptional": false,
                   "defaultValue": null,
                   "constraintTypes": null,
@@ -1551,11 +1551,11 @@
                 }
               ],
               "returnValue": {
-                "type": "TeduEcommerce.Admin.ProductAttributes.ProductAttributeDto",
-                "typeSimple": "TeduEcommerce.Admin.ProductAttributes.ProductAttributeDto"
+                "type": "TeduEcommerce.Admin.Catalog.ProductAttributes.ProductAttributeDto",
+                "typeSimple": "TeduEcommerce.Admin.Catalog.ProductAttributes.ProductAttributeDto"
               },
               "allowAnonymous": false,
-              "implementFrom": "Volo.Abp.Application.Services.ICreateAppService<TeduEcommerce.Admin.ProductAttributes.ProductAttributeDto,TeduEcommerce.Admin.ProductAttributes.CreateUpdateProductAttributeDto>"
+              "implementFrom": "Volo.Abp.Application.Services.ICreateAppService<TeduEcommerce.Admin.Catalog.ProductAttributes.ProductAttributeDto,TeduEcommerce.Admin.Catalog.ProductAttributes.CreateUpdateProductAttributeDto>"
             },
             "UpdateAsyncByIdAndInput": {
               "uniqueName": "UpdateAsyncByIdAndInput",
@@ -1574,9 +1574,9 @@
                 },
                 {
                   "name": "input",
-                  "typeAsString": "TeduEcommerce.Admin.ProductAttributes.CreateUpdateProductAttributeDto, TeduEcommerce.Admin.Application.Contracts",
-                  "type": "TeduEcommerce.Admin.ProductAttributes.CreateUpdateProductAttributeDto",
-                  "typeSimple": "TeduEcommerce.Admin.ProductAttributes.CreateUpdateProductAttributeDto",
+                  "typeAsString": "TeduEcommerce.Admin.Catalog.ProductAttributes.CreateUpdateProductAttributeDto, TeduEcommerce.Admin.Application.Contracts",
+                  "type": "TeduEcommerce.Admin.Catalog.ProductAttributes.CreateUpdateProductAttributeDto",
+                  "typeSimple": "TeduEcommerce.Admin.Catalog.ProductAttributes.CreateUpdateProductAttributeDto",
                   "isOptional": false,
                   "defaultValue": null
                 }
@@ -1598,8 +1598,8 @@
                   "nameOnMethod": "input",
                   "name": "input",
                   "jsonName": null,
-                  "type": "TeduEcommerce.Admin.ProductAttributes.CreateUpdateProductAttributeDto",
-                  "typeSimple": "TeduEcommerce.Admin.ProductAttributes.CreateUpdateProductAttributeDto",
+                  "type": "TeduEcommerce.Admin.Catalog.ProductAttributes.CreateUpdateProductAttributeDto",
+                  "typeSimple": "TeduEcommerce.Admin.Catalog.ProductAttributes.CreateUpdateProductAttributeDto",
                   "isOptional": false,
                   "defaultValue": null,
                   "constraintTypes": null,
@@ -1608,11 +1608,11 @@
                 }
               ],
               "returnValue": {
-                "type": "TeduEcommerce.Admin.ProductAttributes.ProductAttributeDto",
-                "typeSimple": "TeduEcommerce.Admin.ProductAttributes.ProductAttributeDto"
+                "type": "TeduEcommerce.Admin.Catalog.ProductAttributes.ProductAttributeDto",
+                "typeSimple": "TeduEcommerce.Admin.Catalog.ProductAttributes.ProductAttributeDto"
               },
               "allowAnonymous": false,
-              "implementFrom": "Volo.Abp.Application.Services.IUpdateAppService<TeduEcommerce.Admin.ProductAttributes.ProductAttributeDto,System.Guid,TeduEcommerce.Admin.ProductAttributes.CreateUpdateProductAttributeDto>"
+              "implementFrom": "Volo.Abp.Application.Services.IUpdateAppService<TeduEcommerce.Admin.Catalog.ProductAttributes.ProductAttributeDto,System.Guid,TeduEcommerce.Admin.Catalog.ProductAttributes.CreateUpdateProductAttributeDto>"
             },
             "DeleteAsyncById": {
               "uniqueName": "DeleteAsyncById",
@@ -1682,11 +1682,11 @@
                 }
               ],
               "returnValue": {
-                "type": "TeduEcommerce.Admin.ProductAttributes.ProductAttributeDto",
-                "typeSimple": "TeduEcommerce.Admin.ProductAttributes.ProductAttributeDto"
+                "type": "TeduEcommerce.Admin.Catalog.ProductAttributes.ProductAttributeDto",
+                "typeSimple": "TeduEcommerce.Admin.Catalog.ProductAttributes.ProductAttributeDto"
               },
               "allowAnonymous": false,
-              "implementFrom": "Volo.Abp.Application.Services.IReadOnlyAppService<TeduEcommerce.Admin.ProductAttributes.ProductAttributeDto,TeduEcommerce.Admin.ProductAttributes.ProductAttributeDto,System.Guid,Volo.Abp.Application.Dtos.PagedResultRequestDto>"
+              "implementFrom": "Volo.Abp.Application.Services.IReadOnlyAppService<TeduEcommerce.Admin.Catalog.ProductAttributes.ProductAttributeDto,TeduEcommerce.Admin.Catalog.ProductAttributes.ProductAttributeDto,System.Guid,Volo.Abp.Application.Dtos.PagedResultRequestDto>"
             },
             "GetListAsyncByInput": {
               "uniqueName": "GetListAsyncByInput",
@@ -1731,24 +1731,24 @@
                 }
               ],
               "returnValue": {
-                "type": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.ProductAttributes.ProductAttributeDto>",
-                "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.ProductAttributes.ProductAttributeDto>"
+                "type": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Catalog.ProductAttributes.ProductAttributeDto>",
+                "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Catalog.ProductAttributes.ProductAttributeDto>"
               },
               "allowAnonymous": false,
-              "implementFrom": "Volo.Abp.Application.Services.IReadOnlyAppService<TeduEcommerce.Admin.ProductAttributes.ProductAttributeDto,TeduEcommerce.Admin.ProductAttributes.ProductAttributeDto,System.Guid,Volo.Abp.Application.Dtos.PagedResultRequestDto>"
+              "implementFrom": "Volo.Abp.Application.Services.IReadOnlyAppService<TeduEcommerce.Admin.Catalog.ProductAttributes.ProductAttributeDto,TeduEcommerce.Admin.Catalog.ProductAttributes.ProductAttributeDto,System.Guid,Volo.Abp.Application.Dtos.PagedResultRequestDto>"
             }
           }
         },
-        "TeduEcommerce.Admin.ProductCategories.ProductCategoriesAppService": {
+        "TeduEcommerce.Admin.Catalog.ProductCategories.ProductCategoriesAppService": {
           "controllerName": "ProductCategories",
           "controllerGroupName": "ProductCategories",
           "isRemoteService": true,
           "isIntegrationService": false,
           "apiVersion": null,
-          "type": "TeduEcommerce.Admin.ProductCategories.ProductCategoriesAppService",
+          "type": "TeduEcommerce.Admin.Catalog.ProductCategories.ProductCategoriesAppService",
           "interfaces": [
             {
-              "type": "TeduEcommerce.Admin.ProductCategories.IProductCategoriesAppService",
+              "type": "TeduEcommerce.Admin.Catalog.ProductCategories.IProductCategoriesAppService",
               "name": "IProductCategoriesAppService",
               "methods": [
                 {
@@ -1764,16 +1764,16 @@
                     }
                   ],
                   "returnValue": {
-                    "type": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.ProductCategories.ProductCategoryInListDto>",
-                    "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.ProductCategories.ProductCategoryInListDto>"
+                    "type": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Catalog.ProductCategories.ProductCategoryInListDto>",
+                    "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Catalog.ProductCategories.ProductCategoryInListDto>"
                   }
                 },
                 {
                   "name": "GetListAllAsync",
                   "parametersOnMethod": [],
                   "returnValue": {
-                    "type": "System.Collections.Generic.List<TeduEcommerce.Admin.ProductCategories.ProductCategoryInListDto>",
-                    "typeSimple": "[TeduEcommerce.Admin.ProductCategories.ProductCategoryInListDto]"
+                    "type": "System.Collections.Generic.List<TeduEcommerce.Admin.Catalog.ProductCategories.ProductCategoryInListDto>",
+                    "typeSimple": "[TeduEcommerce.Admin.Catalog.ProductCategories.ProductCategoryInListDto]"
                   }
                 },
                 {
@@ -1806,8 +1806,8 @@
                     }
                   ],
                   "returnValue": {
-                    "type": "TeduEcommerce.Admin.ProductCategories.ProductCategoryDto",
-                    "typeSimple": "TeduEcommerce.Admin.ProductCategories.ProductCategoryDto"
+                    "type": "TeduEcommerce.Admin.Catalog.ProductCategories.ProductCategoryDto",
+                    "typeSimple": "TeduEcommerce.Admin.Catalog.ProductCategories.ProductCategoryDto"
                   }
                 },
                 {
@@ -1823,8 +1823,8 @@
                     }
                   ],
                   "returnValue": {
-                    "type": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.ProductCategories.ProductCategoryDto>",
-                    "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.ProductCategories.ProductCategoryDto>"
+                    "type": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Catalog.ProductCategories.ProductCategoryDto>",
+                    "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Catalog.ProductCategories.ProductCategoryDto>"
                   }
                 },
                 {
@@ -1832,16 +1832,16 @@
                   "parametersOnMethod": [
                     {
                       "name": "input",
-                      "typeAsString": "TeduEcommerce.Admin.ProductCategories.CreateUpdateProductCategoryDto, TeduEcommerce.Admin.Application.Contracts",
-                      "type": "TeduEcommerce.Admin.ProductCategories.CreateUpdateProductCategoryDto",
-                      "typeSimple": "TeduEcommerce.Admin.ProductCategories.CreateUpdateProductCategoryDto",
+                      "typeAsString": "TeduEcommerce.Admin.Catalog.ProductCategories.CreateUpdateProductCategoryDto, TeduEcommerce.Admin.Application.Contracts",
+                      "type": "TeduEcommerce.Admin.Catalog.ProductCategories.CreateUpdateProductCategoryDto",
+                      "typeSimple": "TeduEcommerce.Admin.Catalog.ProductCategories.CreateUpdateProductCategoryDto",
                       "isOptional": false,
                       "defaultValue": null
                     }
                   ],
                   "returnValue": {
-                    "type": "TeduEcommerce.Admin.ProductCategories.ProductCategoryDto",
-                    "typeSimple": "TeduEcommerce.Admin.ProductCategories.ProductCategoryDto"
+                    "type": "TeduEcommerce.Admin.Catalog.ProductCategories.ProductCategoryDto",
+                    "typeSimple": "TeduEcommerce.Admin.Catalog.ProductCategories.ProductCategoryDto"
                   }
                 },
                 {
@@ -1857,16 +1857,16 @@
                     },
                     {
                       "name": "input",
-                      "typeAsString": "TeduEcommerce.Admin.ProductCategories.CreateUpdateProductCategoryDto, TeduEcommerce.Admin.Application.Contracts",
-                      "type": "TeduEcommerce.Admin.ProductCategories.CreateUpdateProductCategoryDto",
-                      "typeSimple": "TeduEcommerce.Admin.ProductCategories.CreateUpdateProductCategoryDto",
+                      "typeAsString": "TeduEcommerce.Admin.Catalog.ProductCategories.CreateUpdateProductCategoryDto, TeduEcommerce.Admin.Application.Contracts",
+                      "type": "TeduEcommerce.Admin.Catalog.ProductCategories.CreateUpdateProductCategoryDto",
+                      "typeSimple": "TeduEcommerce.Admin.Catalog.ProductCategories.CreateUpdateProductCategoryDto",
                       "isOptional": false,
                       "defaultValue": null
                     }
                   ],
                   "returnValue": {
-                    "type": "TeduEcommerce.Admin.ProductCategories.ProductCategoryDto",
-                    "typeSimple": "TeduEcommerce.Admin.ProductCategories.ProductCategoryDto"
+                    "type": "TeduEcommerce.Admin.Catalog.ProductCategories.ProductCategoryDto",
+                    "typeSimple": "TeduEcommerce.Admin.Catalog.ProductCategories.ProductCategoryDto"
                   }
                 },
                 {
@@ -1925,7 +1925,7 @@
                 "typeSimple": "System.Void"
               },
               "allowAnonymous": false,
-              "implementFrom": "TeduEcommerce.Admin.ProductCategories.IProductCategoriesAppService"
+              "implementFrom": "TeduEcommerce.Admin.Catalog.ProductCategories.IProductCategoriesAppService"
             },
             "GetListAllAsync": {
               "uniqueName": "GetListAllAsync",
@@ -1936,11 +1936,11 @@
               "parametersOnMethod": [],
               "parameters": [],
               "returnValue": {
-                "type": "System.Collections.Generic.List<TeduEcommerce.Admin.ProductCategories.ProductCategoryInListDto>",
-                "typeSimple": "[TeduEcommerce.Admin.ProductCategories.ProductCategoryInListDto]"
+                "type": "System.Collections.Generic.List<TeduEcommerce.Admin.Catalog.ProductCategories.ProductCategoryInListDto>",
+                "typeSimple": "[TeduEcommerce.Admin.Catalog.ProductCategories.ProductCategoryInListDto]"
               },
               "allowAnonymous": false,
-              "implementFrom": "TeduEcommerce.Admin.ProductCategories.IProductCategoriesAppService"
+              "implementFrom": "TeduEcommerce.Admin.Catalog.ProductCategories.IProductCategoriesAppService"
             },
             "GetListFilterAsyncByInput": {
               "uniqueName": "GetListFilterAsyncByInput",
@@ -1997,11 +1997,11 @@
                 }
               ],
               "returnValue": {
-                "type": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.ProductCategories.ProductCategoryInListDto>",
-                "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.ProductCategories.ProductCategoryInListDto>"
+                "type": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Catalog.ProductCategories.ProductCategoryInListDto>",
+                "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Catalog.ProductCategories.ProductCategoryInListDto>"
               },
               "allowAnonymous": false,
-              "implementFrom": "TeduEcommerce.Admin.ProductCategories.IProductCategoriesAppService"
+              "implementFrom": "TeduEcommerce.Admin.Catalog.ProductCategories.IProductCategoriesAppService"
             },
             "CreateAsyncByInput": {
               "uniqueName": "CreateAsyncByInput",
@@ -2012,9 +2012,9 @@
               "parametersOnMethod": [
                 {
                   "name": "input",
-                  "typeAsString": "TeduEcommerce.Admin.ProductCategories.CreateUpdateProductCategoryDto, TeduEcommerce.Admin.Application.Contracts",
-                  "type": "TeduEcommerce.Admin.ProductCategories.CreateUpdateProductCategoryDto",
-                  "typeSimple": "TeduEcommerce.Admin.ProductCategories.CreateUpdateProductCategoryDto",
+                  "typeAsString": "TeduEcommerce.Admin.Catalog.ProductCategories.CreateUpdateProductCategoryDto, TeduEcommerce.Admin.Application.Contracts",
+                  "type": "TeduEcommerce.Admin.Catalog.ProductCategories.CreateUpdateProductCategoryDto",
+                  "typeSimple": "TeduEcommerce.Admin.Catalog.ProductCategories.CreateUpdateProductCategoryDto",
                   "isOptional": false,
                   "defaultValue": null
                 }
@@ -2024,8 +2024,8 @@
                   "nameOnMethod": "input",
                   "name": "input",
                   "jsonName": null,
-                  "type": "TeduEcommerce.Admin.ProductCategories.CreateUpdateProductCategoryDto",
-                  "typeSimple": "TeduEcommerce.Admin.ProductCategories.CreateUpdateProductCategoryDto",
+                  "type": "TeduEcommerce.Admin.Catalog.ProductCategories.CreateUpdateProductCategoryDto",
+                  "typeSimple": "TeduEcommerce.Admin.Catalog.ProductCategories.CreateUpdateProductCategoryDto",
                   "isOptional": false,
                   "defaultValue": null,
                   "constraintTypes": null,
@@ -2034,11 +2034,11 @@
                 }
               ],
               "returnValue": {
-                "type": "TeduEcommerce.Admin.ProductCategories.ProductCategoryDto",
-                "typeSimple": "TeduEcommerce.Admin.ProductCategories.ProductCategoryDto"
+                "type": "TeduEcommerce.Admin.Catalog.ProductCategories.ProductCategoryDto",
+                "typeSimple": "TeduEcommerce.Admin.Catalog.ProductCategories.ProductCategoryDto"
               },
               "allowAnonymous": false,
-              "implementFrom": "Volo.Abp.Application.Services.ICreateAppService<TeduEcommerce.Admin.ProductCategories.ProductCategoryDto,TeduEcommerce.Admin.ProductCategories.CreateUpdateProductCategoryDto>"
+              "implementFrom": "Volo.Abp.Application.Services.ICreateAppService<TeduEcommerce.Admin.Catalog.ProductCategories.ProductCategoryDto,TeduEcommerce.Admin.Catalog.ProductCategories.CreateUpdateProductCategoryDto>"
             },
             "UpdateAsyncByIdAndInput": {
               "uniqueName": "UpdateAsyncByIdAndInput",
@@ -2057,9 +2057,9 @@
                 },
                 {
                   "name": "input",
-                  "typeAsString": "TeduEcommerce.Admin.ProductCategories.CreateUpdateProductCategoryDto, TeduEcommerce.Admin.Application.Contracts",
-                  "type": "TeduEcommerce.Admin.ProductCategories.CreateUpdateProductCategoryDto",
-                  "typeSimple": "TeduEcommerce.Admin.ProductCategories.CreateUpdateProductCategoryDto",
+                  "typeAsString": "TeduEcommerce.Admin.Catalog.ProductCategories.CreateUpdateProductCategoryDto, TeduEcommerce.Admin.Application.Contracts",
+                  "type": "TeduEcommerce.Admin.Catalog.ProductCategories.CreateUpdateProductCategoryDto",
+                  "typeSimple": "TeduEcommerce.Admin.Catalog.ProductCategories.CreateUpdateProductCategoryDto",
                   "isOptional": false,
                   "defaultValue": null
                 }
@@ -2081,8 +2081,8 @@
                   "nameOnMethod": "input",
                   "name": "input",
                   "jsonName": null,
-                  "type": "TeduEcommerce.Admin.ProductCategories.CreateUpdateProductCategoryDto",
-                  "typeSimple": "TeduEcommerce.Admin.ProductCategories.CreateUpdateProductCategoryDto",
+                  "type": "TeduEcommerce.Admin.Catalog.ProductCategories.CreateUpdateProductCategoryDto",
+                  "typeSimple": "TeduEcommerce.Admin.Catalog.ProductCategories.CreateUpdateProductCategoryDto",
                   "isOptional": false,
                   "defaultValue": null,
                   "constraintTypes": null,
@@ -2091,11 +2091,11 @@
                 }
               ],
               "returnValue": {
-                "type": "TeduEcommerce.Admin.ProductCategories.ProductCategoryDto",
-                "typeSimple": "TeduEcommerce.Admin.ProductCategories.ProductCategoryDto"
+                "type": "TeduEcommerce.Admin.Catalog.ProductCategories.ProductCategoryDto",
+                "typeSimple": "TeduEcommerce.Admin.Catalog.ProductCategories.ProductCategoryDto"
               },
               "allowAnonymous": false,
-              "implementFrom": "Volo.Abp.Application.Services.IUpdateAppService<TeduEcommerce.Admin.ProductCategories.ProductCategoryDto,System.Guid,TeduEcommerce.Admin.ProductCategories.CreateUpdateProductCategoryDto>"
+              "implementFrom": "Volo.Abp.Application.Services.IUpdateAppService<TeduEcommerce.Admin.Catalog.ProductCategories.ProductCategoryDto,System.Guid,TeduEcommerce.Admin.Catalog.ProductCategories.CreateUpdateProductCategoryDto>"
             },
             "DeleteAsyncById": {
               "uniqueName": "DeleteAsyncById",
@@ -2165,11 +2165,11 @@
                 }
               ],
               "returnValue": {
-                "type": "TeduEcommerce.Admin.ProductCategories.ProductCategoryDto",
-                "typeSimple": "TeduEcommerce.Admin.ProductCategories.ProductCategoryDto"
+                "type": "TeduEcommerce.Admin.Catalog.ProductCategories.ProductCategoryDto",
+                "typeSimple": "TeduEcommerce.Admin.Catalog.ProductCategories.ProductCategoryDto"
               },
               "allowAnonymous": false,
-              "implementFrom": "Volo.Abp.Application.Services.IReadOnlyAppService<TeduEcommerce.Admin.ProductCategories.ProductCategoryDto,TeduEcommerce.Admin.ProductCategories.ProductCategoryDto,System.Guid,Volo.Abp.Application.Dtos.PagedResultRequestDto>"
+              "implementFrom": "Volo.Abp.Application.Services.IReadOnlyAppService<TeduEcommerce.Admin.Catalog.ProductCategories.ProductCategoryDto,TeduEcommerce.Admin.Catalog.ProductCategories.ProductCategoryDto,System.Guid,Volo.Abp.Application.Dtos.PagedResultRequestDto>"
             },
             "GetListAsyncByInput": {
               "uniqueName": "GetListAsyncByInput",
@@ -2214,24 +2214,24 @@
                 }
               ],
               "returnValue": {
-                "type": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.ProductCategories.ProductCategoryDto>",
-                "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.ProductCategories.ProductCategoryDto>"
+                "type": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Catalog.ProductCategories.ProductCategoryDto>",
+                "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Catalog.ProductCategories.ProductCategoryDto>"
               },
               "allowAnonymous": false,
-              "implementFrom": "Volo.Abp.Application.Services.IReadOnlyAppService<TeduEcommerce.Admin.ProductCategories.ProductCategoryDto,TeduEcommerce.Admin.ProductCategories.ProductCategoryDto,System.Guid,Volo.Abp.Application.Dtos.PagedResultRequestDto>"
+              "implementFrom": "Volo.Abp.Application.Services.IReadOnlyAppService<TeduEcommerce.Admin.Catalog.ProductCategories.ProductCategoryDto,TeduEcommerce.Admin.Catalog.ProductCategories.ProductCategoryDto,System.Guid,Volo.Abp.Application.Dtos.PagedResultRequestDto>"
             }
           }
         },
-        "TeduEcommerce.Admin.Products.ProductsAppService": {
+        "TeduEcommerce.Admin.Catalog.Products.ProductsAppService": {
           "controllerName": "Products",
           "controllerGroupName": "Products",
           "isRemoteService": true,
           "isIntegrationService": false,
           "apiVersion": null,
-          "type": "TeduEcommerce.Admin.Products.ProductsAppService",
+          "type": "TeduEcommerce.Admin.Catalog.Products.ProductsAppService",
           "interfaces": [
             {
-              "type": "TeduEcommerce.Admin.Products.IProductsAppService",
+              "type": "TeduEcommerce.Admin.Catalog.Products.IProductsAppService",
               "name": "IProductsAppService",
               "methods": [
                 {
@@ -2239,24 +2239,24 @@
                   "parametersOnMethod": [
                     {
                       "name": "input",
-                      "typeAsString": "TeduEcommerce.Admin.Products.ProductListFilterDto, TeduEcommerce.Admin.Application.Contracts",
-                      "type": "TeduEcommerce.Admin.Products.ProductListFilterDto",
-                      "typeSimple": "TeduEcommerce.Admin.Products.ProductListFilterDto",
+                      "typeAsString": "TeduEcommerce.Admin.Catalog.Products.ProductListFilterDto, TeduEcommerce.Admin.Application.Contracts",
+                      "type": "TeduEcommerce.Admin.Catalog.Products.ProductListFilterDto",
+                      "typeSimple": "TeduEcommerce.Admin.Catalog.Products.ProductListFilterDto",
                       "isOptional": false,
                       "defaultValue": null
                     }
                   ],
                   "returnValue": {
-                    "type": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Products.ProductInListDto>",
-                    "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Products.ProductInListDto>"
+                    "type": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Catalog.Products.ProductInListDto>",
+                    "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Catalog.Products.ProductInListDto>"
                   }
                 },
                 {
                   "name": "GetListAllAsync",
                   "parametersOnMethod": [],
                   "returnValue": {
-                    "type": "System.Collections.Generic.List<TeduEcommerce.Admin.Products.ProductInListDto>",
-                    "typeSimple": "[TeduEcommerce.Admin.Products.ProductInListDto]"
+                    "type": "System.Collections.Generic.List<TeduEcommerce.Admin.Catalog.Products.ProductInListDto>",
+                    "typeSimple": "[TeduEcommerce.Admin.Catalog.Products.ProductInListDto]"
                   }
                 },
                 {
@@ -2306,16 +2306,16 @@
                   "parametersOnMethod": [
                     {
                       "name": "input",
-                      "typeAsString": "TeduEcommerce.Admin.Products.Attributes.AddUpdateProductAttributeDto, TeduEcommerce.Admin.Application.Contracts",
-                      "type": "TeduEcommerce.Admin.Products.Attributes.AddUpdateProductAttributeDto",
-                      "typeSimple": "TeduEcommerce.Admin.Products.Attributes.AddUpdateProductAttributeDto",
+                      "typeAsString": "TeduEcommerce.Admin.Catalog.Products.Attributes.AddUpdateProductAttributeDto, TeduEcommerce.Admin.Application.Contracts",
+                      "type": "TeduEcommerce.Admin.Catalog.Products.Attributes.AddUpdateProductAttributeDto",
+                      "typeSimple": "TeduEcommerce.Admin.Catalog.Products.Attributes.AddUpdateProductAttributeDto",
                       "isOptional": false,
                       "defaultValue": null
                     }
                   ],
                   "returnValue": {
-                    "type": "TeduEcommerce.Admin.Products.Attributes.ProductAttributeValueDto",
-                    "typeSimple": "TeduEcommerce.Admin.Products.Attributes.ProductAttributeValueDto"
+                    "type": "TeduEcommerce.Admin.Catalog.Products.Attributes.ProductAttributeValueDto",
+                    "typeSimple": "TeduEcommerce.Admin.Catalog.Products.Attributes.ProductAttributeValueDto"
                   }
                 },
                 {
@@ -2331,16 +2331,16 @@
                     },
                     {
                       "name": "input",
-                      "typeAsString": "TeduEcommerce.Admin.Products.Attributes.AddUpdateProductAttributeDto, TeduEcommerce.Admin.Application.Contracts",
-                      "type": "TeduEcommerce.Admin.Products.Attributes.AddUpdateProductAttributeDto",
-                      "typeSimple": "TeduEcommerce.Admin.Products.Attributes.AddUpdateProductAttributeDto",
+                      "typeAsString": "TeduEcommerce.Admin.Catalog.Products.Attributes.AddUpdateProductAttributeDto, TeduEcommerce.Admin.Application.Contracts",
+                      "type": "TeduEcommerce.Admin.Catalog.Products.Attributes.AddUpdateProductAttributeDto",
+                      "typeSimple": "TeduEcommerce.Admin.Catalog.Products.Attributes.AddUpdateProductAttributeDto",
                       "isOptional": false,
                       "defaultValue": null
                     }
                   ],
                   "returnValue": {
-                    "type": "TeduEcommerce.Admin.Products.Attributes.ProductAttributeValueDto",
-                    "typeSimple": "TeduEcommerce.Admin.Products.Attributes.ProductAttributeValueDto"
+                    "type": "TeduEcommerce.Admin.Catalog.Products.Attributes.ProductAttributeValueDto",
+                    "typeSimple": "TeduEcommerce.Admin.Catalog.Products.Attributes.ProductAttributeValueDto"
                   }
                 },
                 {
@@ -2381,8 +2381,8 @@
                     }
                   ],
                   "returnValue": {
-                    "type": "System.Collections.Generic.List<TeduEcommerce.Admin.Products.Attributes.ProductAttributeValueDto>",
-                    "typeSimple": "[TeduEcommerce.Admin.Products.Attributes.ProductAttributeValueDto]"
+                    "type": "System.Collections.Generic.List<TeduEcommerce.Admin.Catalog.Products.Attributes.ProductAttributeValueDto>",
+                    "typeSimple": "[TeduEcommerce.Admin.Catalog.Products.Attributes.ProductAttributeValueDto]"
                   }
                 },
                 {
@@ -2390,16 +2390,16 @@
                   "parametersOnMethod": [
                     {
                       "name": "input",
-                      "typeAsString": "TeduEcommerce.Admin.Products.Attributes.ProductAttributeListFilterDto, TeduEcommerce.Admin.Application.Contracts",
-                      "type": "TeduEcommerce.Admin.Products.Attributes.ProductAttributeListFilterDto",
-                      "typeSimple": "TeduEcommerce.Admin.Products.Attributes.ProductAttributeListFilterDto",
+                      "typeAsString": "TeduEcommerce.Admin.Catalog.Products.Attributes.ProductAttributeListFilterDto, TeduEcommerce.Admin.Application.Contracts",
+                      "type": "TeduEcommerce.Admin.Catalog.Products.Attributes.ProductAttributeListFilterDto",
+                      "typeSimple": "TeduEcommerce.Admin.Catalog.Products.Attributes.ProductAttributeListFilterDto",
                       "isOptional": false,
                       "defaultValue": null
                     }
                   ],
                   "returnValue": {
-                    "type": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Products.Attributes.ProductAttributeValueDto>",
-                    "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Products.Attributes.ProductAttributeValueDto>"
+                    "type": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Catalog.Products.Attributes.ProductAttributeValueDto>",
+                    "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Catalog.Products.Attributes.ProductAttributeValueDto>"
                   }
                 },
                 {
@@ -2415,8 +2415,8 @@
                     }
                   ],
                   "returnValue": {
-                    "type": "TeduEcommerce.Admin.Products.ProductDto",
-                    "typeSimple": "TeduEcommerce.Admin.Products.ProductDto"
+                    "type": "TeduEcommerce.Admin.Catalog.Products.ProductDto",
+                    "typeSimple": "TeduEcommerce.Admin.Catalog.Products.ProductDto"
                   }
                 },
                 {
@@ -2432,8 +2432,8 @@
                     }
                   ],
                   "returnValue": {
-                    "type": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Products.ProductDto>",
-                    "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Products.ProductDto>"
+                    "type": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Catalog.Products.ProductDto>",
+                    "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Catalog.Products.ProductDto>"
                   }
                 },
                 {
@@ -2441,16 +2441,16 @@
                   "parametersOnMethod": [
                     {
                       "name": "input",
-                      "typeAsString": "TeduEcommerce.Admin.Products.CreateUpdateProductDto, TeduEcommerce.Admin.Application.Contracts",
-                      "type": "TeduEcommerce.Admin.Products.CreateUpdateProductDto",
-                      "typeSimple": "TeduEcommerce.Admin.Products.CreateUpdateProductDto",
+                      "typeAsString": "TeduEcommerce.Admin.Catalog.Products.CreateUpdateProductDto, TeduEcommerce.Admin.Application.Contracts",
+                      "type": "TeduEcommerce.Admin.Catalog.Products.CreateUpdateProductDto",
+                      "typeSimple": "TeduEcommerce.Admin.Catalog.Products.CreateUpdateProductDto",
                       "isOptional": false,
                       "defaultValue": null
                     }
                   ],
                   "returnValue": {
-                    "type": "TeduEcommerce.Admin.Products.ProductDto",
-                    "typeSimple": "TeduEcommerce.Admin.Products.ProductDto"
+                    "type": "TeduEcommerce.Admin.Catalog.Products.ProductDto",
+                    "typeSimple": "TeduEcommerce.Admin.Catalog.Products.ProductDto"
                   }
                 },
                 {
@@ -2466,16 +2466,16 @@
                     },
                     {
                       "name": "input",
-                      "typeAsString": "TeduEcommerce.Admin.Products.CreateUpdateProductDto, TeduEcommerce.Admin.Application.Contracts",
-                      "type": "TeduEcommerce.Admin.Products.CreateUpdateProductDto",
-                      "typeSimple": "TeduEcommerce.Admin.Products.CreateUpdateProductDto",
+                      "typeAsString": "TeduEcommerce.Admin.Catalog.Products.CreateUpdateProductDto, TeduEcommerce.Admin.Application.Contracts",
+                      "type": "TeduEcommerce.Admin.Catalog.Products.CreateUpdateProductDto",
+                      "typeSimple": "TeduEcommerce.Admin.Catalog.Products.CreateUpdateProductDto",
                       "isOptional": false,
                       "defaultValue": null
                     }
                   ],
                   "returnValue": {
-                    "type": "TeduEcommerce.Admin.Products.ProductDto",
-                    "typeSimple": "TeduEcommerce.Admin.Products.ProductDto"
+                    "type": "TeduEcommerce.Admin.Catalog.Products.ProductDto",
+                    "typeSimple": "TeduEcommerce.Admin.Catalog.Products.ProductDto"
                   }
                 },
                 {
@@ -2508,9 +2508,9 @@
               "parametersOnMethod": [
                 {
                   "name": "input",
-                  "typeAsString": "TeduEcommerce.Admin.Products.CreateUpdateProductDto, TeduEcommerce.Admin.Application.Contracts",
-                  "type": "TeduEcommerce.Admin.Products.CreateUpdateProductDto",
-                  "typeSimple": "TeduEcommerce.Admin.Products.CreateUpdateProductDto",
+                  "typeAsString": "TeduEcommerce.Admin.Catalog.Products.CreateUpdateProductDto, TeduEcommerce.Admin.Application.Contracts",
+                  "type": "TeduEcommerce.Admin.Catalog.Products.CreateUpdateProductDto",
+                  "typeSimple": "TeduEcommerce.Admin.Catalog.Products.CreateUpdateProductDto",
                   "isOptional": false,
                   "defaultValue": null
                 }
@@ -2520,8 +2520,8 @@
                   "nameOnMethod": "input",
                   "name": "input",
                   "jsonName": null,
-                  "type": "TeduEcommerce.Admin.Products.CreateUpdateProductDto",
-                  "typeSimple": "TeduEcommerce.Admin.Products.CreateUpdateProductDto",
+                  "type": "TeduEcommerce.Admin.Catalog.Products.CreateUpdateProductDto",
+                  "typeSimple": "TeduEcommerce.Admin.Catalog.Products.CreateUpdateProductDto",
                   "isOptional": false,
                   "defaultValue": null,
                   "constraintTypes": null,
@@ -2530,11 +2530,11 @@
                 }
               ],
               "returnValue": {
-                "type": "TeduEcommerce.Admin.Products.ProductDto",
-                "typeSimple": "TeduEcommerce.Admin.Products.ProductDto"
+                "type": "TeduEcommerce.Admin.Catalog.Products.ProductDto",
+                "typeSimple": "TeduEcommerce.Admin.Catalog.Products.ProductDto"
               },
               "allowAnonymous": false,
-              "implementFrom": "Volo.Abp.Application.Services.ICreateAppService<TeduEcommerce.Admin.Products.ProductDto,TeduEcommerce.Admin.Products.CreateUpdateProductDto>"
+              "implementFrom": "Volo.Abp.Application.Services.ICreateAppService<TeduEcommerce.Admin.Catalog.Products.ProductDto,TeduEcommerce.Admin.Catalog.Products.CreateUpdateProductDto>"
             },
             "UpdateAsyncByIdAndInput": {
               "uniqueName": "UpdateAsyncByIdAndInput",
@@ -2553,9 +2553,9 @@
                 },
                 {
                   "name": "input",
-                  "typeAsString": "TeduEcommerce.Admin.Products.CreateUpdateProductDto, TeduEcommerce.Admin.Application.Contracts",
-                  "type": "TeduEcommerce.Admin.Products.CreateUpdateProductDto",
-                  "typeSimple": "TeduEcommerce.Admin.Products.CreateUpdateProductDto",
+                  "typeAsString": "TeduEcommerce.Admin.Catalog.Products.CreateUpdateProductDto, TeduEcommerce.Admin.Application.Contracts",
+                  "type": "TeduEcommerce.Admin.Catalog.Products.CreateUpdateProductDto",
+                  "typeSimple": "TeduEcommerce.Admin.Catalog.Products.CreateUpdateProductDto",
                   "isOptional": false,
                   "defaultValue": null
                 }
@@ -2577,8 +2577,8 @@
                   "nameOnMethod": "input",
                   "name": "input",
                   "jsonName": null,
-                  "type": "TeduEcommerce.Admin.Products.CreateUpdateProductDto",
-                  "typeSimple": "TeduEcommerce.Admin.Products.CreateUpdateProductDto",
+                  "type": "TeduEcommerce.Admin.Catalog.Products.CreateUpdateProductDto",
+                  "typeSimple": "TeduEcommerce.Admin.Catalog.Products.CreateUpdateProductDto",
                   "isOptional": false,
                   "defaultValue": null,
                   "constraintTypes": null,
@@ -2587,11 +2587,11 @@
                 }
               ],
               "returnValue": {
-                "type": "TeduEcommerce.Admin.Products.ProductDto",
-                "typeSimple": "TeduEcommerce.Admin.Products.ProductDto"
+                "type": "TeduEcommerce.Admin.Catalog.Products.ProductDto",
+                "typeSimple": "TeduEcommerce.Admin.Catalog.Products.ProductDto"
               },
               "allowAnonymous": false,
-              "implementFrom": "Volo.Abp.Application.Services.IUpdateAppService<TeduEcommerce.Admin.Products.ProductDto,System.Guid,TeduEcommerce.Admin.Products.CreateUpdateProductDto>"
+              "implementFrom": "Volo.Abp.Application.Services.IUpdateAppService<TeduEcommerce.Admin.Catalog.Products.ProductDto,System.Guid,TeduEcommerce.Admin.Catalog.Products.CreateUpdateProductDto>"
             },
             "DeleteMultipleAsyncByIds": {
               "uniqueName": "DeleteMultipleAsyncByIds",
@@ -2628,7 +2628,7 @@
                 "typeSimple": "System.Void"
               },
               "allowAnonymous": false,
-              "implementFrom": "TeduEcommerce.Admin.Products.IProductsAppService"
+              "implementFrom": "TeduEcommerce.Admin.Catalog.Products.IProductsAppService"
             },
             "GetListAllAsync": {
               "uniqueName": "GetListAllAsync",
@@ -2639,11 +2639,11 @@
               "parametersOnMethod": [],
               "parameters": [],
               "returnValue": {
-                "type": "System.Collections.Generic.List<TeduEcommerce.Admin.Products.ProductInListDto>",
-                "typeSimple": "[TeduEcommerce.Admin.Products.ProductInListDto]"
+                "type": "System.Collections.Generic.List<TeduEcommerce.Admin.Catalog.Products.ProductInListDto>",
+                "typeSimple": "[TeduEcommerce.Admin.Catalog.Products.ProductInListDto]"
               },
               "allowAnonymous": false,
-              "implementFrom": "TeduEcommerce.Admin.Products.IProductsAppService"
+              "implementFrom": "TeduEcommerce.Admin.Catalog.Products.IProductsAppService"
             },
             "GetListFilterAsyncByInput": {
               "uniqueName": "GetListFilterAsyncByInput",
@@ -2654,9 +2654,9 @@
               "parametersOnMethod": [
                 {
                   "name": "input",
-                  "typeAsString": "TeduEcommerce.Admin.Products.ProductListFilterDto, TeduEcommerce.Admin.Application.Contracts",
-                  "type": "TeduEcommerce.Admin.Products.ProductListFilterDto",
-                  "typeSimple": "TeduEcommerce.Admin.Products.ProductListFilterDto",
+                  "typeAsString": "TeduEcommerce.Admin.Catalog.Products.ProductListFilterDto, TeduEcommerce.Admin.Application.Contracts",
+                  "type": "TeduEcommerce.Admin.Catalog.Products.ProductListFilterDto",
+                  "typeSimple": "TeduEcommerce.Admin.Catalog.Products.ProductListFilterDto",
                   "isOptional": false,
                   "defaultValue": null
                 }
@@ -2712,11 +2712,11 @@
                 }
               ],
               "returnValue": {
-                "type": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Products.ProductInListDto>",
-                "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Products.ProductInListDto>"
+                "type": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Catalog.Products.ProductInListDto>",
+                "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Catalog.Products.ProductInListDto>"
               },
               "allowAnonymous": false,
-              "implementFrom": "TeduEcommerce.Admin.Products.IProductsAppService"
+              "implementFrom": "TeduEcommerce.Admin.Catalog.Products.IProductsAppService"
             },
             "GetThumbnailImageAsyncByFileName": {
               "uniqueName": "GetThumbnailImageAsyncByFileName",
@@ -2753,7 +2753,7 @@
                 "typeSimple": "string"
               },
               "allowAnonymous": false,
-              "implementFrom": "TeduEcommerce.Admin.Products.IProductsAppService"
+              "implementFrom": "TeduEcommerce.Admin.Catalog.Products.IProductsAppService"
             },
             "GetSuggestNewCodeAsync": {
               "uniqueName": "GetSuggestNewCodeAsync",
@@ -2768,7 +2768,7 @@
                 "typeSimple": "string"
               },
               "allowAnonymous": false,
-              "implementFrom": "TeduEcommerce.Admin.Products.IProductsAppService"
+              "implementFrom": "TeduEcommerce.Admin.Catalog.Products.IProductsAppService"
             },
             "AddProductAttributeAsyncByInput": {
               "uniqueName": "AddProductAttributeAsyncByInput",
@@ -2779,9 +2779,9 @@
               "parametersOnMethod": [
                 {
                   "name": "input",
-                  "typeAsString": "TeduEcommerce.Admin.Products.Attributes.AddUpdateProductAttributeDto, TeduEcommerce.Admin.Application.Contracts",
-                  "type": "TeduEcommerce.Admin.Products.Attributes.AddUpdateProductAttributeDto",
-                  "typeSimple": "TeduEcommerce.Admin.Products.Attributes.AddUpdateProductAttributeDto",
+                  "typeAsString": "TeduEcommerce.Admin.Catalog.Products.Attributes.AddUpdateProductAttributeDto, TeduEcommerce.Admin.Application.Contracts",
+                  "type": "TeduEcommerce.Admin.Catalog.Products.Attributes.AddUpdateProductAttributeDto",
+                  "typeSimple": "TeduEcommerce.Admin.Catalog.Products.Attributes.AddUpdateProductAttributeDto",
                   "isOptional": false,
                   "defaultValue": null
                 }
@@ -2791,8 +2791,8 @@
                   "nameOnMethod": "input",
                   "name": "input",
                   "jsonName": null,
-                  "type": "TeduEcommerce.Admin.Products.Attributes.AddUpdateProductAttributeDto",
-                  "typeSimple": "TeduEcommerce.Admin.Products.Attributes.AddUpdateProductAttributeDto",
+                  "type": "TeduEcommerce.Admin.Catalog.Products.Attributes.AddUpdateProductAttributeDto",
+                  "typeSimple": "TeduEcommerce.Admin.Catalog.Products.Attributes.AddUpdateProductAttributeDto",
                   "isOptional": false,
                   "defaultValue": null,
                   "constraintTypes": null,
@@ -2801,11 +2801,11 @@
                 }
               ],
               "returnValue": {
-                "type": "TeduEcommerce.Admin.Products.Attributes.ProductAttributeValueDto",
-                "typeSimple": "TeduEcommerce.Admin.Products.Attributes.ProductAttributeValueDto"
+                "type": "TeduEcommerce.Admin.Catalog.Products.Attributes.ProductAttributeValueDto",
+                "typeSimple": "TeduEcommerce.Admin.Catalog.Products.Attributes.ProductAttributeValueDto"
               },
               "allowAnonymous": false,
-              "implementFrom": "TeduEcommerce.Admin.Products.IProductsAppService"
+              "implementFrom": "TeduEcommerce.Admin.Catalog.Products.IProductsAppService"
             },
             "RemoveProductAttributeAsyncByAttributeIdAndId": {
               "uniqueName": "RemoveProductAttributeAsyncByAttributeIdAndId",
@@ -2862,7 +2862,7 @@
                 "typeSimple": "System.Void"
               },
               "allowAnonymous": false,
-              "implementFrom": "TeduEcommerce.Admin.Products.IProductsAppService"
+              "implementFrom": "TeduEcommerce.Admin.Catalog.Products.IProductsAppService"
             },
             "GetListProductAttributeAllAsyncByProductId": {
               "uniqueName": "GetListProductAttributeAllAsyncByProductId",
@@ -2895,11 +2895,11 @@
                 }
               ],
               "returnValue": {
-                "type": "System.Collections.Generic.List<TeduEcommerce.Admin.Products.Attributes.ProductAttributeValueDto>",
-                "typeSimple": "[TeduEcommerce.Admin.Products.Attributes.ProductAttributeValueDto]"
+                "type": "System.Collections.Generic.List<TeduEcommerce.Admin.Catalog.Products.Attributes.ProductAttributeValueDto>",
+                "typeSimple": "[TeduEcommerce.Admin.Catalog.Products.Attributes.ProductAttributeValueDto]"
               },
               "allowAnonymous": false,
-              "implementFrom": "TeduEcommerce.Admin.Products.IProductsAppService"
+              "implementFrom": "TeduEcommerce.Admin.Catalog.Products.IProductsAppService"
             },
             "GetListProductAttributesAsyncByInput": {
               "uniqueName": "GetListProductAttributesAsyncByInput",
@@ -2910,9 +2910,9 @@
               "parametersOnMethod": [
                 {
                   "name": "input",
-                  "typeAsString": "TeduEcommerce.Admin.Products.Attributes.ProductAttributeListFilterDto, TeduEcommerce.Admin.Application.Contracts",
-                  "type": "TeduEcommerce.Admin.Products.Attributes.ProductAttributeListFilterDto",
-                  "typeSimple": "TeduEcommerce.Admin.Products.Attributes.ProductAttributeListFilterDto",
+                  "typeAsString": "TeduEcommerce.Admin.Catalog.Products.Attributes.ProductAttributeListFilterDto, TeduEcommerce.Admin.Application.Contracts",
+                  "type": "TeduEcommerce.Admin.Catalog.Products.Attributes.ProductAttributeListFilterDto",
+                  "typeSimple": "TeduEcommerce.Admin.Catalog.Products.Attributes.ProductAttributeListFilterDto",
                   "isOptional": false,
                   "defaultValue": null
                 }
@@ -2968,11 +2968,11 @@
                 }
               ],
               "returnValue": {
-                "type": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Products.Attributes.ProductAttributeValueDto>",
-                "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Products.Attributes.ProductAttributeValueDto>"
+                "type": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Catalog.Products.Attributes.ProductAttributeValueDto>",
+                "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Catalog.Products.Attributes.ProductAttributeValueDto>"
               },
               "allowAnonymous": false,
-              "implementFrom": "TeduEcommerce.Admin.Products.IProductsAppService"
+              "implementFrom": "TeduEcommerce.Admin.Catalog.Products.IProductsAppService"
             },
             "UpdateProductAttributeAsyncByIdAndInput": {
               "uniqueName": "UpdateProductAttributeAsyncByIdAndInput",
@@ -2991,9 +2991,9 @@
                 },
                 {
                   "name": "input",
-                  "typeAsString": "TeduEcommerce.Admin.Products.Attributes.AddUpdateProductAttributeDto, TeduEcommerce.Admin.Application.Contracts",
-                  "type": "TeduEcommerce.Admin.Products.Attributes.AddUpdateProductAttributeDto",
-                  "typeSimple": "TeduEcommerce.Admin.Products.Attributes.AddUpdateProductAttributeDto",
+                  "typeAsString": "TeduEcommerce.Admin.Catalog.Products.Attributes.AddUpdateProductAttributeDto, TeduEcommerce.Admin.Application.Contracts",
+                  "type": "TeduEcommerce.Admin.Catalog.Products.Attributes.AddUpdateProductAttributeDto",
+                  "typeSimple": "TeduEcommerce.Admin.Catalog.Products.Attributes.AddUpdateProductAttributeDto",
                   "isOptional": false,
                   "defaultValue": null
                 }
@@ -3015,8 +3015,8 @@
                   "nameOnMethod": "input",
                   "name": "input",
                   "jsonName": null,
-                  "type": "TeduEcommerce.Admin.Products.Attributes.AddUpdateProductAttributeDto",
-                  "typeSimple": "TeduEcommerce.Admin.Products.Attributes.AddUpdateProductAttributeDto",
+                  "type": "TeduEcommerce.Admin.Catalog.Products.Attributes.AddUpdateProductAttributeDto",
+                  "typeSimple": "TeduEcommerce.Admin.Catalog.Products.Attributes.AddUpdateProductAttributeDto",
                   "isOptional": false,
                   "defaultValue": null,
                   "constraintTypes": null,
@@ -3025,11 +3025,11 @@
                 }
               ],
               "returnValue": {
-                "type": "TeduEcommerce.Admin.Products.Attributes.ProductAttributeValueDto",
-                "typeSimple": "TeduEcommerce.Admin.Products.Attributes.ProductAttributeValueDto"
+                "type": "TeduEcommerce.Admin.Catalog.Products.Attributes.ProductAttributeValueDto",
+                "typeSimple": "TeduEcommerce.Admin.Catalog.Products.Attributes.ProductAttributeValueDto"
               },
               "allowAnonymous": false,
-              "implementFrom": "TeduEcommerce.Admin.Products.IProductsAppService"
+              "implementFrom": "TeduEcommerce.Admin.Catalog.Products.IProductsAppService"
             },
             "DeleteAsyncById": {
               "uniqueName": "DeleteAsyncById",
@@ -3099,11 +3099,11 @@
                 }
               ],
               "returnValue": {
-                "type": "TeduEcommerce.Admin.Products.ProductDto",
-                "typeSimple": "TeduEcommerce.Admin.Products.ProductDto"
+                "type": "TeduEcommerce.Admin.Catalog.Products.ProductDto",
+                "typeSimple": "TeduEcommerce.Admin.Catalog.Products.ProductDto"
               },
               "allowAnonymous": false,
-              "implementFrom": "Volo.Abp.Application.Services.IReadOnlyAppService<TeduEcommerce.Admin.Products.ProductDto,TeduEcommerce.Admin.Products.ProductDto,System.Guid,Volo.Abp.Application.Dtos.PagedResultRequestDto>"
+              "implementFrom": "Volo.Abp.Application.Services.IReadOnlyAppService<TeduEcommerce.Admin.Catalog.Products.ProductDto,TeduEcommerce.Admin.Catalog.Products.ProductDto,System.Guid,Volo.Abp.Application.Dtos.PagedResultRequestDto>"
             },
             "GetListAsyncByInput": {
               "uniqueName": "GetListAsyncByInput",
@@ -3148,24 +3148,24 @@
                 }
               ],
               "returnValue": {
-                "type": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Products.ProductDto>",
-                "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Products.ProductDto>"
+                "type": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Catalog.Products.ProductDto>",
+                "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Catalog.Products.ProductDto>"
               },
               "allowAnonymous": false,
-              "implementFrom": "Volo.Abp.Application.Services.IReadOnlyAppService<TeduEcommerce.Admin.Products.ProductDto,TeduEcommerce.Admin.Products.ProductDto,System.Guid,Volo.Abp.Application.Dtos.PagedResultRequestDto>"
+              "implementFrom": "Volo.Abp.Application.Services.IReadOnlyAppService<TeduEcommerce.Admin.Catalog.Products.ProductDto,TeduEcommerce.Admin.Catalog.Products.ProductDto,System.Guid,Volo.Abp.Application.Dtos.PagedResultRequestDto>"
             }
           }
         },
-        "TeduEcommerce.Admin.Roles.RolesAppService": {
+        "TeduEcommerce.Admin.System.Roles.RolesAppService": {
           "controllerName": "Roles",
           "controllerGroupName": "Roles",
           "isRemoteService": true,
           "isIntegrationService": false,
           "apiVersion": null,
-          "type": "TeduEcommerce.Admin.Roles.RolesAppService",
+          "type": "TeduEcommerce.Admin.System.Roles.RolesAppService",
           "interfaces": [
             {
-              "type": "TeduEcommerce.Admin.Roles.IRolesAppService",
+              "type": "TeduEcommerce.Admin.System.Roles.IRolesAppService",
               "name": "IRolesAppService",
               "methods": [
                 {
@@ -3181,16 +3181,16 @@
                     }
                   ],
                   "returnValue": {
-                    "type": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Roles.RoleInListDto>",
-                    "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Roles.RoleInListDto>"
+                    "type": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.System.Roles.RoleInListDto>",
+                    "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.System.Roles.RoleInListDto>"
                   }
                 },
                 {
                   "name": "GetListAllAsync",
                   "parametersOnMethod": [],
                   "returnValue": {
-                    "type": "System.Collections.Generic.List<TeduEcommerce.Admin.Roles.RoleInListDto>",
-                    "typeSimple": "[TeduEcommerce.Admin.Roles.RoleInListDto]"
+                    "type": "System.Collections.Generic.List<TeduEcommerce.Admin.System.Roles.RoleInListDto>",
+                    "typeSimple": "[TeduEcommerce.Admin.System.Roles.RoleInListDto]"
                   }
                 },
                 {
@@ -3281,8 +3281,8 @@
                     }
                   ],
                   "returnValue": {
-                    "type": "TeduEcommerce.Admin.Roles.RoleDto",
-                    "typeSimple": "TeduEcommerce.Admin.Roles.RoleDto"
+                    "type": "TeduEcommerce.Admin.System.Roles.RoleDto",
+                    "typeSimple": "TeduEcommerce.Admin.System.Roles.RoleDto"
                   }
                 },
                 {
@@ -3298,8 +3298,8 @@
                     }
                   ],
                   "returnValue": {
-                    "type": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Roles.RoleDto>",
-                    "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Roles.RoleDto>"
+                    "type": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.System.Roles.RoleDto>",
+                    "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.System.Roles.RoleDto>"
                   }
                 },
                 {
@@ -3307,16 +3307,16 @@
                   "parametersOnMethod": [
                     {
                       "name": "input",
-                      "typeAsString": "TeduEcommerce.Admin.Roles.CreateUpdateRoleDto, TeduEcommerce.Admin.Application.Contracts",
-                      "type": "TeduEcommerce.Admin.Roles.CreateUpdateRoleDto",
-                      "typeSimple": "TeduEcommerce.Admin.Roles.CreateUpdateRoleDto",
+                      "typeAsString": "TeduEcommerce.Admin.System.Roles.CreateUpdateRoleDto, TeduEcommerce.Admin.Application.Contracts",
+                      "type": "TeduEcommerce.Admin.System.Roles.CreateUpdateRoleDto",
+                      "typeSimple": "TeduEcommerce.Admin.System.Roles.CreateUpdateRoleDto",
                       "isOptional": false,
                       "defaultValue": null
                     }
                   ],
                   "returnValue": {
-                    "type": "TeduEcommerce.Admin.Roles.RoleDto",
-                    "typeSimple": "TeduEcommerce.Admin.Roles.RoleDto"
+                    "type": "TeduEcommerce.Admin.System.Roles.RoleDto",
+                    "typeSimple": "TeduEcommerce.Admin.System.Roles.RoleDto"
                   }
                 },
                 {
@@ -3332,16 +3332,16 @@
                     },
                     {
                       "name": "input",
-                      "typeAsString": "TeduEcommerce.Admin.Roles.CreateUpdateRoleDto, TeduEcommerce.Admin.Application.Contracts",
-                      "type": "TeduEcommerce.Admin.Roles.CreateUpdateRoleDto",
-                      "typeSimple": "TeduEcommerce.Admin.Roles.CreateUpdateRoleDto",
+                      "typeAsString": "TeduEcommerce.Admin.System.Roles.CreateUpdateRoleDto, TeduEcommerce.Admin.Application.Contracts",
+                      "type": "TeduEcommerce.Admin.System.Roles.CreateUpdateRoleDto",
+                      "typeSimple": "TeduEcommerce.Admin.System.Roles.CreateUpdateRoleDto",
                       "isOptional": false,
                       "defaultValue": null
                     }
                   ],
                   "returnValue": {
-                    "type": "TeduEcommerce.Admin.Roles.RoleDto",
-                    "typeSimple": "TeduEcommerce.Admin.Roles.RoleDto"
+                    "type": "TeduEcommerce.Admin.System.Roles.RoleDto",
+                    "typeSimple": "TeduEcommerce.Admin.System.Roles.RoleDto"
                   }
                 },
                 {
@@ -3400,7 +3400,7 @@
                 "typeSimple": "System.Void"
               },
               "allowAnonymous": false,
-              "implementFrom": "TeduEcommerce.Admin.Roles.IRolesAppService"
+              "implementFrom": "TeduEcommerce.Admin.System.Roles.IRolesAppService"
             },
             "GetListAllAsync": {
               "uniqueName": "GetListAllAsync",
@@ -3411,11 +3411,11 @@
               "parametersOnMethod": [],
               "parameters": [],
               "returnValue": {
-                "type": "System.Collections.Generic.List<TeduEcommerce.Admin.Roles.RoleInListDto>",
-                "typeSimple": "[TeduEcommerce.Admin.Roles.RoleInListDto]"
+                "type": "System.Collections.Generic.List<TeduEcommerce.Admin.System.Roles.RoleInListDto>",
+                "typeSimple": "[TeduEcommerce.Admin.System.Roles.RoleInListDto]"
               },
               "allowAnonymous": false,
-              "implementFrom": "TeduEcommerce.Admin.Roles.IRolesAppService"
+              "implementFrom": "TeduEcommerce.Admin.System.Roles.IRolesAppService"
             },
             "GetListFilterAsyncByInput": {
               "uniqueName": "GetListFilterAsyncByInput",
@@ -3472,11 +3472,11 @@
                 }
               ],
               "returnValue": {
-                "type": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Roles.RoleInListDto>",
-                "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Roles.RoleInListDto>"
+                "type": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.System.Roles.RoleInListDto>",
+                "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.System.Roles.RoleInListDto>"
               },
               "allowAnonymous": false,
-              "implementFrom": "TeduEcommerce.Admin.Roles.IRolesAppService"
+              "implementFrom": "TeduEcommerce.Admin.System.Roles.IRolesAppService"
             },
             "CreateAsyncByInput": {
               "uniqueName": "CreateAsyncByInput",
@@ -3487,9 +3487,9 @@
               "parametersOnMethod": [
                 {
                   "name": "input",
-                  "typeAsString": "TeduEcommerce.Admin.Roles.CreateUpdateRoleDto, TeduEcommerce.Admin.Application.Contracts",
-                  "type": "TeduEcommerce.Admin.Roles.CreateUpdateRoleDto",
-                  "typeSimple": "TeduEcommerce.Admin.Roles.CreateUpdateRoleDto",
+                  "typeAsString": "TeduEcommerce.Admin.System.Roles.CreateUpdateRoleDto, TeduEcommerce.Admin.Application.Contracts",
+                  "type": "TeduEcommerce.Admin.System.Roles.CreateUpdateRoleDto",
+                  "typeSimple": "TeduEcommerce.Admin.System.Roles.CreateUpdateRoleDto",
                   "isOptional": false,
                   "defaultValue": null
                 }
@@ -3499,8 +3499,8 @@
                   "nameOnMethod": "input",
                   "name": "input",
                   "jsonName": null,
-                  "type": "TeduEcommerce.Admin.Roles.CreateUpdateRoleDto",
-                  "typeSimple": "TeduEcommerce.Admin.Roles.CreateUpdateRoleDto",
+                  "type": "TeduEcommerce.Admin.System.Roles.CreateUpdateRoleDto",
+                  "typeSimple": "TeduEcommerce.Admin.System.Roles.CreateUpdateRoleDto",
                   "isOptional": false,
                   "defaultValue": null,
                   "constraintTypes": null,
@@ -3509,11 +3509,11 @@
                 }
               ],
               "returnValue": {
-                "type": "TeduEcommerce.Admin.Roles.RoleDto",
-                "typeSimple": "TeduEcommerce.Admin.Roles.RoleDto"
+                "type": "TeduEcommerce.Admin.System.Roles.RoleDto",
+                "typeSimple": "TeduEcommerce.Admin.System.Roles.RoleDto"
               },
               "allowAnonymous": false,
-              "implementFrom": "Volo.Abp.Application.Services.ICreateAppService<TeduEcommerce.Admin.Roles.RoleDto,TeduEcommerce.Admin.Roles.CreateUpdateRoleDto>"
+              "implementFrom": "Volo.Abp.Application.Services.ICreateAppService<TeduEcommerce.Admin.System.Roles.RoleDto,TeduEcommerce.Admin.System.Roles.CreateUpdateRoleDto>"
             },
             "UpdateAsyncByIdAndInput": {
               "uniqueName": "UpdateAsyncByIdAndInput",
@@ -3532,9 +3532,9 @@
                 },
                 {
                   "name": "input",
-                  "typeAsString": "TeduEcommerce.Admin.Roles.CreateUpdateRoleDto, TeduEcommerce.Admin.Application.Contracts",
-                  "type": "TeduEcommerce.Admin.Roles.CreateUpdateRoleDto",
-                  "typeSimple": "TeduEcommerce.Admin.Roles.CreateUpdateRoleDto",
+                  "typeAsString": "TeduEcommerce.Admin.System.Roles.CreateUpdateRoleDto, TeduEcommerce.Admin.Application.Contracts",
+                  "type": "TeduEcommerce.Admin.System.Roles.CreateUpdateRoleDto",
+                  "typeSimple": "TeduEcommerce.Admin.System.Roles.CreateUpdateRoleDto",
                   "isOptional": false,
                   "defaultValue": null
                 }
@@ -3556,8 +3556,8 @@
                   "nameOnMethod": "input",
                   "name": "input",
                   "jsonName": null,
-                  "type": "TeduEcommerce.Admin.Roles.CreateUpdateRoleDto",
-                  "typeSimple": "TeduEcommerce.Admin.Roles.CreateUpdateRoleDto",
+                  "type": "TeduEcommerce.Admin.System.Roles.CreateUpdateRoleDto",
+                  "typeSimple": "TeduEcommerce.Admin.System.Roles.CreateUpdateRoleDto",
                   "isOptional": false,
                   "defaultValue": null,
                   "constraintTypes": null,
@@ -3566,11 +3566,11 @@
                 }
               ],
               "returnValue": {
-                "type": "TeduEcommerce.Admin.Roles.RoleDto",
-                "typeSimple": "TeduEcommerce.Admin.Roles.RoleDto"
+                "type": "TeduEcommerce.Admin.System.Roles.RoleDto",
+                "typeSimple": "TeduEcommerce.Admin.System.Roles.RoleDto"
               },
               "allowAnonymous": false,
-              "implementFrom": "Volo.Abp.Application.Services.IUpdateAppService<TeduEcommerce.Admin.Roles.RoleDto,System.Guid,TeduEcommerce.Admin.Roles.CreateUpdateRoleDto>"
+              "implementFrom": "Volo.Abp.Application.Services.IUpdateAppService<TeduEcommerce.Admin.System.Roles.RoleDto,System.Guid,TeduEcommerce.Admin.System.Roles.CreateUpdateRoleDto>"
             },
             "GetPermissionsAsyncByProviderNameAndProviderKey": {
               "uniqueName": "GetPermissionsAsyncByProviderNameAndProviderKey",
@@ -3627,7 +3627,7 @@
                 "typeSimple": "Volo.Abp.PermissionManagement.GetPermissionListResultDto"
               },
               "allowAnonymous": false,
-              "implementFrom": "TeduEcommerce.Admin.Roles.IRolesAppService"
+              "implementFrom": "TeduEcommerce.Admin.System.Roles.IRolesAppService"
             },
             "UpdatePermissionsAsyncByProviderNameAndProviderKeyAndInput": {
               "uniqueName": "UpdatePermissionsAsyncByProviderNameAndProviderKeyAndInput",
@@ -3704,7 +3704,7 @@
                 "typeSimple": "System.Void"
               },
               "allowAnonymous": false,
-              "implementFrom": "TeduEcommerce.Admin.Roles.IRolesAppService"
+              "implementFrom": "TeduEcommerce.Admin.System.Roles.IRolesAppService"
             },
             "DeleteAsyncById": {
               "uniqueName": "DeleteAsyncById",
@@ -3774,11 +3774,11 @@
                 }
               ],
               "returnValue": {
-                "type": "TeduEcommerce.Admin.Roles.RoleDto",
-                "typeSimple": "TeduEcommerce.Admin.Roles.RoleDto"
+                "type": "TeduEcommerce.Admin.System.Roles.RoleDto",
+                "typeSimple": "TeduEcommerce.Admin.System.Roles.RoleDto"
               },
               "allowAnonymous": false,
-              "implementFrom": "Volo.Abp.Application.Services.IReadOnlyAppService<TeduEcommerce.Admin.Roles.RoleDto,TeduEcommerce.Admin.Roles.RoleDto,System.Guid,Volo.Abp.Application.Dtos.PagedResultRequestDto>"
+              "implementFrom": "Volo.Abp.Application.Services.IReadOnlyAppService<TeduEcommerce.Admin.System.Roles.RoleDto,TeduEcommerce.Admin.System.Roles.RoleDto,System.Guid,Volo.Abp.Application.Dtos.PagedResultRequestDto>"
             },
             "GetListAsyncByInput": {
               "uniqueName": "GetListAsyncByInput",
@@ -3823,11 +3823,525 @@
                 }
               ],
               "returnValue": {
-                "type": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Roles.RoleDto>",
-                "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Roles.RoleDto>"
+                "type": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.System.Roles.RoleDto>",
+                "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.System.Roles.RoleDto>"
               },
               "allowAnonymous": false,
-              "implementFrom": "Volo.Abp.Application.Services.IReadOnlyAppService<TeduEcommerce.Admin.Roles.RoleDto,TeduEcommerce.Admin.Roles.RoleDto,System.Guid,Volo.Abp.Application.Dtos.PagedResultRequestDto>"
+              "implementFrom": "Volo.Abp.Application.Services.IReadOnlyAppService<TeduEcommerce.Admin.System.Roles.RoleDto,TeduEcommerce.Admin.System.Roles.RoleDto,System.Guid,Volo.Abp.Application.Dtos.PagedResultRequestDto>"
+            }
+          }
+        },
+        "TeduEcommerce.Admin.System.Users.UsersAppService": {
+          "controllerName": "Users",
+          "controllerGroupName": "Users",
+          "isRemoteService": true,
+          "isIntegrationService": false,
+          "apiVersion": null,
+          "type": "TeduEcommerce.Admin.System.Users.UsersAppService",
+          "interfaces": [
+            {
+              "type": "TeduEcommerce.Admin.System.Users.IUsersAppService",
+              "name": "IUsersAppService",
+              "methods": [
+                {
+                  "name": "DeleteMultipleAsync",
+                  "parametersOnMethod": [
+                    {
+                      "name": "ids",
+                      "typeAsString": "System.Collections.Generic.IEnumerable`1[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib",
+                      "type": "System.Collections.Generic.IEnumerable<System.Guid>",
+                      "typeSimple": "[string]",
+                      "isOptional": false,
+                      "defaultValue": null
+                    }
+                  ],
+                  "returnValue": {
+                    "type": "System.Void",
+                    "typeSimple": "System.Void"
+                  }
+                },
+                {
+                  "name": "GetListWithFilterAsync",
+                  "parametersOnMethod": [
+                    {
+                      "name": "input",
+                      "typeAsString": "TeduEcommerce.Admin.BaseListFilterDto, TeduEcommerce.Admin.Application.Contracts",
+                      "type": "TeduEcommerce.Admin.BaseListFilterDto",
+                      "typeSimple": "TeduEcommerce.Admin.BaseListFilterDto",
+                      "isOptional": false,
+                      "defaultValue": null
+                    }
+                  ],
+                  "returnValue": {
+                    "type": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.System.Users.UserInListDto>",
+                    "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.System.Users.UserInListDto>"
+                  }
+                },
+                {
+                  "name": "GetListAllAsync",
+                  "parametersOnMethod": [
+                    {
+                      "name": "filterKeyword",
+                      "typeAsString": "System.String, System.Private.CoreLib",
+                      "type": "System.String",
+                      "typeSimple": "string",
+                      "isOptional": false,
+                      "defaultValue": null
+                    }
+                  ],
+                  "returnValue": {
+                    "type": "System.Collections.Generic.List<TeduEcommerce.Admin.System.Users.UserInListDto>",
+                    "typeSimple": "[TeduEcommerce.Admin.System.Users.UserInListDto]"
+                  }
+                },
+                {
+                  "name": "GetAsync",
+                  "parametersOnMethod": [
+                    {
+                      "name": "id",
+                      "typeAsString": "System.Guid, System.Private.CoreLib",
+                      "type": "System.Guid",
+                      "typeSimple": "string",
+                      "isOptional": false,
+                      "defaultValue": null
+                    }
+                  ],
+                  "returnValue": {
+                    "type": "TeduEcommerce.Admin.System.Users.UserDto",
+                    "typeSimple": "TeduEcommerce.Admin.System.Users.UserDto"
+                  }
+                },
+                {
+                  "name": "GetListAsync",
+                  "parametersOnMethod": [
+                    {
+                      "name": "input",
+                      "typeAsString": "Volo.Abp.Application.Dtos.PagedResultRequestDto, Volo.Abp.Ddd.Application.Contracts",
+                      "type": "Volo.Abp.Application.Dtos.PagedResultRequestDto",
+                      "typeSimple": "Volo.Abp.Application.Dtos.PagedResultRequestDto",
+                      "isOptional": false,
+                      "defaultValue": null
+                    }
+                  ],
+                  "returnValue": {
+                    "type": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.System.Users.UserDto>",
+                    "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.System.Users.UserDto>"
+                  }
+                },
+                {
+                  "name": "CreateAsync",
+                  "parametersOnMethod": [
+                    {
+                      "name": "input",
+                      "typeAsString": "TeduEcommerce.Admin.System.Users.CreateUserDto, TeduEcommerce.Admin.Application.Contracts",
+                      "type": "TeduEcommerce.Admin.System.Users.CreateUserDto",
+                      "typeSimple": "TeduEcommerce.Admin.System.Users.CreateUserDto",
+                      "isOptional": false,
+                      "defaultValue": null
+                    }
+                  ],
+                  "returnValue": {
+                    "type": "TeduEcommerce.Admin.System.Users.UserDto",
+                    "typeSimple": "TeduEcommerce.Admin.System.Users.UserDto"
+                  }
+                },
+                {
+                  "name": "UpdateAsync",
+                  "parametersOnMethod": [
+                    {
+                      "name": "id",
+                      "typeAsString": "System.Guid, System.Private.CoreLib",
+                      "type": "System.Guid",
+                      "typeSimple": "string",
+                      "isOptional": false,
+                      "defaultValue": null
+                    },
+                    {
+                      "name": "input",
+                      "typeAsString": "TeduEcommerce.Admin.System.Users.UpdateUserDto, TeduEcommerce.Admin.Application.Contracts",
+                      "type": "TeduEcommerce.Admin.System.Users.UpdateUserDto",
+                      "typeSimple": "TeduEcommerce.Admin.System.Users.UpdateUserDto",
+                      "isOptional": false,
+                      "defaultValue": null
+                    }
+                  ],
+                  "returnValue": {
+                    "type": "TeduEcommerce.Admin.System.Users.UserDto",
+                    "typeSimple": "TeduEcommerce.Admin.System.Users.UserDto"
+                  }
+                },
+                {
+                  "name": "DeleteAsync",
+                  "parametersOnMethod": [
+                    {
+                      "name": "id",
+                      "typeAsString": "System.Guid, System.Private.CoreLib",
+                      "type": "System.Guid",
+                      "typeSimple": "string",
+                      "isOptional": false,
+                      "defaultValue": null
+                    }
+                  ],
+                  "returnValue": {
+                    "type": "System.Void",
+                    "typeSimple": "System.Void"
+                  }
+                }
+              ]
+            }
+          ],
+          "actions": {
+            "DeleteMultipleAsyncByIds": {
+              "uniqueName": "DeleteMultipleAsyncByIds",
+              "name": "DeleteMultipleAsync",
+              "httpMethod": "DELETE",
+              "url": "api/app/users/multiple",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "ids",
+                  "typeAsString": "System.Collections.Generic.IEnumerable`1[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib",
+                  "type": "System.Collections.Generic.IEnumerable<System.Guid>",
+                  "typeSimple": "[string]",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "ids",
+                  "name": "ids",
+                  "jsonName": null,
+                  "type": "System.Collections.Generic.IEnumerable<System.Guid>",
+                  "typeSimple": "[string]",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "System.Void",
+                "typeSimple": "System.Void"
+              },
+              "allowAnonymous": null,
+              "implementFrom": "TeduEcommerce.Admin.System.Users.IUsersAppService"
+            },
+            "GetListAllAsyncByFilterKeyword": {
+              "uniqueName": "GetListAllAsyncByFilterKeyword",
+              "name": "GetListAllAsync",
+              "httpMethod": "GET",
+              "url": "api/app/users/all",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "filterKeyword",
+                  "typeAsString": "System.String, System.Private.CoreLib",
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "filterKeyword",
+                  "name": "filterKeyword",
+                  "jsonName": null,
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "System.Collections.Generic.List<TeduEcommerce.Admin.System.Users.UserInListDto>",
+                "typeSimple": "[TeduEcommerce.Admin.System.Users.UserInListDto]"
+              },
+              "allowAnonymous": null,
+              "implementFrom": "TeduEcommerce.Admin.System.Users.IUsersAppService"
+            },
+            "GetListWithFilterAsyncByInput": {
+              "uniqueName": "GetListWithFilterAsyncByInput",
+              "name": "GetListWithFilterAsync",
+              "httpMethod": "GET",
+              "url": "api/app/users/with-filter",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "input",
+                  "typeAsString": "TeduEcommerce.Admin.BaseListFilterDto, TeduEcommerce.Admin.Application.Contracts",
+                  "type": "TeduEcommerce.Admin.BaseListFilterDto",
+                  "typeSimple": "TeduEcommerce.Admin.BaseListFilterDto",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "input",
+                  "name": "Keyword",
+                  "jsonName": null,
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": "input"
+                },
+                {
+                  "nameOnMethod": "input",
+                  "name": "SkipCount",
+                  "jsonName": null,
+                  "type": "System.Int32",
+                  "typeSimple": "number",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": "input"
+                },
+                {
+                  "nameOnMethod": "input",
+                  "name": "MaxResultCount",
+                  "jsonName": null,
+                  "type": "System.Int32",
+                  "typeSimple": "number",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": "input"
+                }
+              ],
+              "returnValue": {
+                "type": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.System.Users.UserInListDto>",
+                "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.System.Users.UserInListDto>"
+              },
+              "allowAnonymous": null,
+              "implementFrom": "TeduEcommerce.Admin.System.Users.IUsersAppService"
+            },
+            "CreateAsyncByInput": {
+              "uniqueName": "CreateAsyncByInput",
+              "name": "CreateAsync",
+              "httpMethod": "POST",
+              "url": "api/app/users",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "input",
+                  "typeAsString": "TeduEcommerce.Admin.System.Users.CreateUserDto, TeduEcommerce.Admin.Application.Contracts",
+                  "type": "TeduEcommerce.Admin.System.Users.CreateUserDto",
+                  "typeSimple": "TeduEcommerce.Admin.System.Users.CreateUserDto",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "input",
+                  "name": "input",
+                  "jsonName": null,
+                  "type": "TeduEcommerce.Admin.System.Users.CreateUserDto",
+                  "typeSimple": "TeduEcommerce.Admin.System.Users.CreateUserDto",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "Body",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "TeduEcommerce.Admin.System.Users.UserDto",
+                "typeSimple": "TeduEcommerce.Admin.System.Users.UserDto"
+              },
+              "allowAnonymous": null,
+              "implementFrom": "Volo.Abp.Application.Services.ICreateAppService<TeduEcommerce.Admin.System.Users.UserDto,TeduEcommerce.Admin.System.Users.CreateUserDto>"
+            },
+            "UpdateAsyncByIdAndInput": {
+              "uniqueName": "UpdateAsyncByIdAndInput",
+              "name": "UpdateAsync",
+              "httpMethod": "PUT",
+              "url": "api/app/users/{id}",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "id",
+                  "typeAsString": "System.Guid, System.Private.CoreLib",
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null
+                },
+                {
+                  "name": "input",
+                  "typeAsString": "TeduEcommerce.Admin.System.Users.UpdateUserDto, TeduEcommerce.Admin.Application.Contracts",
+                  "type": "TeduEcommerce.Admin.System.Users.UpdateUserDto",
+                  "typeSimple": "TeduEcommerce.Admin.System.Users.UpdateUserDto",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "id",
+                  "name": "id",
+                  "jsonName": null,
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": [],
+                  "bindingSourceId": "Path",
+                  "descriptorName": ""
+                },
+                {
+                  "nameOnMethod": "input",
+                  "name": "input",
+                  "jsonName": null,
+                  "type": "TeduEcommerce.Admin.System.Users.UpdateUserDto",
+                  "typeSimple": "TeduEcommerce.Admin.System.Users.UpdateUserDto",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "Body",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "TeduEcommerce.Admin.System.Users.UserDto",
+                "typeSimple": "TeduEcommerce.Admin.System.Users.UserDto"
+              },
+              "allowAnonymous": null,
+              "implementFrom": "Volo.Abp.Application.Services.IUpdateAppService<TeduEcommerce.Admin.System.Users.UserDto,System.Guid,TeduEcommerce.Admin.System.Users.UpdateUserDto>"
+            },
+            "GetAsyncById": {
+              "uniqueName": "GetAsyncById",
+              "name": "GetAsync",
+              "httpMethod": "GET",
+              "url": "api/app/users/{id}",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "id",
+                  "typeAsString": "System.Guid, System.Private.CoreLib",
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "id",
+                  "name": "id",
+                  "jsonName": null,
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": [],
+                  "bindingSourceId": "Path",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "TeduEcommerce.Admin.System.Users.UserDto",
+                "typeSimple": "TeduEcommerce.Admin.System.Users.UserDto"
+              },
+              "allowAnonymous": null,
+              "implementFrom": "Volo.Abp.Application.Services.IReadOnlyAppService<TeduEcommerce.Admin.System.Users.UserDto,TeduEcommerce.Admin.System.Users.UserDto,System.Guid,Volo.Abp.Application.Dtos.PagedResultRequestDto>"
+            },
+            "DeleteAsyncById": {
+              "uniqueName": "DeleteAsyncById",
+              "name": "DeleteAsync",
+              "httpMethod": "DELETE",
+              "url": "api/app/users/{id}",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "id",
+                  "typeAsString": "System.Guid, System.Private.CoreLib",
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "id",
+                  "name": "id",
+                  "jsonName": null,
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": [],
+                  "bindingSourceId": "Path",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "System.Void",
+                "typeSimple": "System.Void"
+              },
+              "allowAnonymous": null,
+              "implementFrom": "Volo.Abp.Application.Services.IDeleteAppService<System.Guid>"
+            },
+            "GetListAsyncByInput": {
+              "uniqueName": "GetListAsyncByInput",
+              "name": "GetListAsync",
+              "httpMethod": "GET",
+              "url": "api/app/users",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "input",
+                  "typeAsString": "Volo.Abp.Application.Dtos.PagedResultRequestDto, Volo.Abp.Ddd.Application.Contracts",
+                  "type": "Volo.Abp.Application.Dtos.PagedResultRequestDto",
+                  "typeSimple": "Volo.Abp.Application.Dtos.PagedResultRequestDto",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "input",
+                  "name": "SkipCount",
+                  "jsonName": null,
+                  "type": "System.Int32",
+                  "typeSimple": "number",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": "input"
+                },
+                {
+                  "nameOnMethod": "input",
+                  "name": "MaxResultCount",
+                  "jsonName": null,
+                  "type": "System.Int32",
+                  "typeSimple": "number",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": "input"
+                }
+              ],
+              "returnValue": {
+                "type": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.System.Users.UserDto>",
+                "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.System.Users.UserDto>"
+              },
+              "allowAnonymous": null,
+              "implementFrom": "Volo.Abp.Application.Services.IReadOnlyAppService<TeduEcommerce.Admin.System.Users.UserDto,TeduEcommerce.Admin.System.Users.UserDto,System.Guid,Volo.Abp.Application.Dtos.PagedResultRequestDto>"
             }
           }
         }
@@ -6461,7 +6975,7 @@
         }
       ]
     },
-    "TeduEcommerce.Admin.Manufacturers.CreateUpdateManufacturerDto": {
+    "TeduEcommerce.Admin.Catalog.Manufacturers.CreateUpdateManufacturerDto": {
       "baseType": null,
       "isEnum": false,
       "enumNames": null,
@@ -6554,7 +7068,7 @@
         }
       ]
     },
-    "TeduEcommerce.Admin.Manufacturers.ManufacturerDto": {
+    "TeduEcommerce.Admin.Catalog.Manufacturers.ManufacturerDto": {
       "baseType": null,
       "isEnum": false,
       "enumNames": null,
@@ -6659,7 +7173,7 @@
         }
       ]
     },
-    "TeduEcommerce.Admin.Manufacturers.ManufacturerInListDto": {
+    "TeduEcommerce.Admin.Catalog.Manufacturers.ManufacturerInListDto": {
       "baseType": "Volo.Abp.Application.Dtos.EntityDto<System.Guid>",
       "isEnum": false,
       "enumNames": null,
@@ -6752,7 +7266,7 @@
         }
       ]
     },
-    "TeduEcommerce.Admin.ProductAttributes.CreateUpdateProductAttributeDto": {
+    "TeduEcommerce.Admin.Catalog.ProductAttributes.CreateUpdateProductAttributeDto": {
       "baseType": null,
       "isEnum": false,
       "enumNames": null,
@@ -6869,7 +7383,7 @@
         }
       ]
     },
-    "TeduEcommerce.Admin.ProductAttributes.ProductAttributeDto": {
+    "TeduEcommerce.Admin.Catalog.ProductAttributes.ProductAttributeDto": {
       "baseType": null,
       "isEnum": false,
       "enumNames": null,
@@ -6998,7 +7512,7 @@
         }
       ]
     },
-    "TeduEcommerce.Admin.ProductAttributes.ProductAttributeInListDto": {
+    "TeduEcommerce.Admin.Catalog.ProductAttributes.ProductAttributeInListDto": {
       "baseType": "Volo.Abp.Application.Dtos.EntityDto<System.Guid>",
       "isEnum": false,
       "enumNames": null,
@@ -7115,7 +7629,7 @@
         }
       ]
     },
-    "TeduEcommerce.Admin.ProductCategories.CreateUpdateProductCategoryDto": {
+    "TeduEcommerce.Admin.Catalog.ProductCategories.CreateUpdateProductCategoryDto": {
       "baseType": null,
       "isEnum": false,
       "enumNames": null,
@@ -7232,7 +7746,7 @@
         }
       ]
     },
-    "TeduEcommerce.Admin.ProductCategories.ProductCategoryDto": {
+    "TeduEcommerce.Admin.Catalog.ProductCategories.ProductCategoryDto": {
       "baseType": null,
       "isEnum": false,
       "enumNames": null,
@@ -7361,7 +7875,7 @@
         }
       ]
     },
-    "TeduEcommerce.Admin.ProductCategories.ProductCategoryInListDto": {
+    "TeduEcommerce.Admin.Catalog.ProductCategories.ProductCategoryInListDto": {
       "baseType": "Volo.Abp.Application.Dtos.EntityDto<System.Guid>",
       "isEnum": false,
       "enumNames": null,
@@ -7442,7 +7956,7 @@
         }
       ]
     },
-    "TeduEcommerce.Admin.Products.Attributes.AddUpdateProductAttributeDto": {
+    "TeduEcommerce.Admin.Catalog.Products.Attributes.AddUpdateProductAttributeDto": {
       "baseType": null,
       "isEnum": false,
       "enumNames": null,
@@ -7535,7 +8049,7 @@
         }
       ]
     },
-    "TeduEcommerce.Admin.Products.Attributes.ProductAttributeListFilterDto": {
+    "TeduEcommerce.Admin.Catalog.Products.Attributes.ProductAttributeListFilterDto": {
       "baseType": "TeduEcommerce.Admin.BaseListFilterDto",
       "isEnum": false,
       "enumNames": null,
@@ -7556,7 +8070,7 @@
         }
       ]
     },
-    "TeduEcommerce.Admin.Products.Attributes.ProductAttributeValueDto": {
+    "TeduEcommerce.Admin.Catalog.Products.Attributes.ProductAttributeValueDto": {
       "baseType": null,
       "isEnum": false,
       "enumNames": null,
@@ -7757,7 +8271,7 @@
         }
       ]
     },
-    "TeduEcommerce.Admin.Products.CreateUpdateProductDto": {
+    "TeduEcommerce.Admin.Catalog.Products.CreateUpdateProductDto": {
       "baseType": null,
       "isEnum": false,
       "enumNames": null,
@@ -7946,7 +8460,7 @@
         }
       ]
     },
-    "TeduEcommerce.Admin.Products.ProductDto": {
+    "TeduEcommerce.Admin.Catalog.Products.ProductDto": {
       "baseType": null,
       "isEnum": false,
       "enumNames": null,
@@ -8159,7 +8673,7 @@
         }
       ]
     },
-    "TeduEcommerce.Admin.Products.ProductInListDto": {
+    "TeduEcommerce.Admin.Catalog.Products.ProductInListDto": {
       "baseType": "Volo.Abp.Application.Dtos.EntityDto<System.Guid>",
       "isEnum": false,
       "enumNames": null,
@@ -8336,7 +8850,7 @@
         }
       ]
     },
-    "TeduEcommerce.Admin.Products.ProductListFilterDto": {
+    "TeduEcommerce.Admin.Catalog.Products.ProductListFilterDto": {
       "baseType": "TeduEcommerce.Admin.BaseListFilterDto",
       "isEnum": false,
       "enumNames": null,
@@ -8357,7 +8871,7 @@
         }
       ]
     },
-    "TeduEcommerce.Admin.Roles.CreateUpdateRoleDto": {
+    "TeduEcommerce.Admin.System.Roles.CreateUpdateRoleDto": {
       "baseType": null,
       "isEnum": false,
       "enumNames": null,
@@ -8390,7 +8904,7 @@
         }
       ]
     },
-    "TeduEcommerce.Admin.Roles.RoleDto": {
+    "TeduEcommerce.Admin.System.Roles.RoleDto": {
       "baseType": "Volo.Abp.Application.Dtos.EntityDto<System.Guid>",
       "isEnum": false,
       "enumNames": null,
@@ -8423,7 +8937,7 @@
         }
       ]
     },
-    "TeduEcommerce.Admin.Roles.RoleInListDto": {
+    "TeduEcommerce.Admin.System.Roles.RoleInListDto": {
       "baseType": "Volo.Abp.Application.Dtos.EntityDto<System.Guid>",
       "isEnum": false,
       "enumNames": null,
@@ -8444,6 +8958,306 @@
         },
         {
           "name": "Description",
+          "jsonName": null,
+          "type": "System.String",
+          "typeSimple": "string",
+          "isRequired": false,
+          "minLength": null,
+          "maxLength": null,
+          "minimum": null,
+          "maximum": null,
+          "regex": null
+        }
+      ]
+    },
+    "TeduEcommerce.Admin.System.Users.CreateUserDto": {
+      "baseType": null,
+      "isEnum": false,
+      "enumNames": null,
+      "enumValues": null,
+      "genericArguments": null,
+      "properties": [
+        {
+          "name": "Name",
+          "jsonName": null,
+          "type": "System.String",
+          "typeSimple": "string",
+          "isRequired": false,
+          "minLength": null,
+          "maxLength": null,
+          "minimum": null,
+          "maximum": null,
+          "regex": null
+        },
+        {
+          "name": "Surname",
+          "jsonName": null,
+          "type": "System.String",
+          "typeSimple": "string",
+          "isRequired": false,
+          "minLength": null,
+          "maxLength": null,
+          "minimum": null,
+          "maximum": null,
+          "regex": null
+        },
+        {
+          "name": "Email",
+          "jsonName": null,
+          "type": "System.String",
+          "typeSimple": "string",
+          "isRequired": false,
+          "minLength": null,
+          "maxLength": null,
+          "minimum": null,
+          "maximum": null,
+          "regex": null
+        },
+        {
+          "name": "UserName",
+          "jsonName": null,
+          "type": "System.String",
+          "typeSimple": "string",
+          "isRequired": false,
+          "minLength": null,
+          "maxLength": null,
+          "minimum": null,
+          "maximum": null,
+          "regex": null
+        },
+        {
+          "name": "Password",
+          "jsonName": null,
+          "type": "System.String",
+          "typeSimple": "string",
+          "isRequired": false,
+          "minLength": null,
+          "maxLength": null,
+          "minimum": null,
+          "maximum": null,
+          "regex": null
+        },
+        {
+          "name": "PhoneNumber",
+          "jsonName": null,
+          "type": "System.String",
+          "typeSimple": "string",
+          "isRequired": false,
+          "minLength": null,
+          "maxLength": null,
+          "minimum": null,
+          "maximum": null,
+          "regex": null
+        }
+      ]
+    },
+    "TeduEcommerce.Admin.System.Users.UpdateUserDto": {
+      "baseType": null,
+      "isEnum": false,
+      "enumNames": null,
+      "enumValues": null,
+      "genericArguments": null,
+      "properties": [
+        {
+          "name": "Name",
+          "jsonName": null,
+          "type": "System.String",
+          "typeSimple": "string",
+          "isRequired": false,
+          "minLength": null,
+          "maxLength": null,
+          "minimum": null,
+          "maximum": null,
+          "regex": null
+        },
+        {
+          "name": "Surname",
+          "jsonName": null,
+          "type": "System.String",
+          "typeSimple": "string",
+          "isRequired": false,
+          "minLength": null,
+          "maxLength": null,
+          "minimum": null,
+          "maximum": null,
+          "regex": null
+        },
+        {
+          "name": "Email",
+          "jsonName": null,
+          "type": "System.String",
+          "typeSimple": "string",
+          "isRequired": false,
+          "minLength": null,
+          "maxLength": null,
+          "minimum": null,
+          "maximum": null,
+          "regex": null
+        },
+        {
+          "name": "PhoneNumber",
+          "jsonName": null,
+          "type": "System.String",
+          "typeSimple": "string",
+          "isRequired": false,
+          "minLength": null,
+          "maxLength": null,
+          "minimum": null,
+          "maximum": null,
+          "regex": null
+        }
+      ]
+    },
+    "TeduEcommerce.Admin.System.Users.UserDto": {
+      "baseType": "Volo.Abp.Application.Dtos.AuditedEntityDto<System.Guid>",
+      "isEnum": false,
+      "enumNames": null,
+      "enumValues": null,
+      "genericArguments": null,
+      "properties": [
+        {
+          "name": "Name",
+          "jsonName": null,
+          "type": "System.String",
+          "typeSimple": "string",
+          "isRequired": false,
+          "minLength": null,
+          "maxLength": null,
+          "minimum": null,
+          "maximum": null,
+          "regex": null
+        },
+        {
+          "name": "UserName",
+          "jsonName": null,
+          "type": "System.String",
+          "typeSimple": "string",
+          "isRequired": false,
+          "minLength": null,
+          "maxLength": null,
+          "minimum": null,
+          "maximum": null,
+          "regex": null
+        },
+        {
+          "name": "Email",
+          "jsonName": null,
+          "type": "System.String",
+          "typeSimple": "string",
+          "isRequired": false,
+          "minLength": null,
+          "maxLength": null,
+          "minimum": null,
+          "maximum": null,
+          "regex": null
+        },
+        {
+          "name": "Surname",
+          "jsonName": null,
+          "type": "System.String",
+          "typeSimple": "string",
+          "isRequired": false,
+          "minLength": null,
+          "maxLength": null,
+          "minimum": null,
+          "maximum": null,
+          "regex": null
+        },
+        {
+          "name": "PhoneNumber",
+          "jsonName": null,
+          "type": "System.String",
+          "typeSimple": "string",
+          "isRequired": false,
+          "minLength": null,
+          "maxLength": null,
+          "minimum": null,
+          "maximum": null,
+          "regex": null
+        },
+        {
+          "name": "Roles",
+          "jsonName": null,
+          "type": "[System.String]",
+          "typeSimple": "[string]",
+          "isRequired": false,
+          "minLength": null,
+          "maxLength": null,
+          "minimum": null,
+          "maximum": null,
+          "regex": null
+        },
+        {
+          "name": "IsActive",
+          "jsonName": null,
+          "type": "System.Boolean",
+          "typeSimple": "boolean",
+          "isRequired": false,
+          "minLength": null,
+          "maxLength": null,
+          "minimum": null,
+          "maximum": null,
+          "regex": null
+        }
+      ]
+    },
+    "TeduEcommerce.Admin.System.Users.UserInListDto": {
+      "baseType": "Volo.Abp.Application.Dtos.AuditedEntityDto<System.Guid>",
+      "isEnum": false,
+      "enumNames": null,
+      "enumValues": null,
+      "genericArguments": null,
+      "properties": [
+        {
+          "name": "Name",
+          "jsonName": null,
+          "type": "System.String",
+          "typeSimple": "string",
+          "isRequired": false,
+          "minLength": null,
+          "maxLength": null,
+          "minimum": null,
+          "maximum": null,
+          "regex": null
+        },
+        {
+          "name": "Surname",
+          "jsonName": null,
+          "type": "System.String",
+          "typeSimple": "string",
+          "isRequired": false,
+          "minLength": null,
+          "maxLength": null,
+          "minimum": null,
+          "maximum": null,
+          "regex": null
+        },
+        {
+          "name": "Email",
+          "jsonName": null,
+          "type": "System.String",
+          "typeSimple": "string",
+          "isRequired": false,
+          "minLength": null,
+          "maxLength": null,
+          "minimum": null,
+          "maximum": null,
+          "regex": null
+        },
+        {
+          "name": "Username",
+          "jsonName": null,
+          "type": "System.String",
+          "typeSimple": "string",
+          "isRequired": false,
+          "minLength": null,
+          "maxLength": null,
+          "minimum": null,
+          "maximum": null,
+          "regex": null
+        },
+        {
+          "name": "PhoneNumber",
           "jsonName": null,
           "type": "System.String",
           "typeSimple": "string",
@@ -8901,6 +9715,76 @@
           "type": "System.String",
           "typeSimple": "string",
           "isRequired": true,
+          "minLength": null,
+          "maxLength": null,
+          "minimum": null,
+          "maximum": null,
+          "regex": null
+        }
+      ]
+    },
+    "Volo.Abp.Application.Dtos.AuditedEntityDto<T0>": {
+      "baseType": "Volo.Abp.Application.Dtos.CreationAuditedEntityDto<TPrimaryKey>",
+      "isEnum": false,
+      "enumNames": null,
+      "enumValues": null,
+      "genericArguments": [
+        "TPrimaryKey"
+      ],
+      "properties": [
+        {
+          "name": "LastModificationTime",
+          "jsonName": null,
+          "type": "System.DateTime?",
+          "typeSimple": "string?",
+          "isRequired": false,
+          "minLength": null,
+          "maxLength": null,
+          "minimum": null,
+          "maximum": null,
+          "regex": null
+        },
+        {
+          "name": "LastModifierId",
+          "jsonName": null,
+          "type": "System.Guid?",
+          "typeSimple": "string?",
+          "isRequired": false,
+          "minLength": null,
+          "maxLength": null,
+          "minimum": null,
+          "maximum": null,
+          "regex": null
+        }
+      ]
+    },
+    "Volo.Abp.Application.Dtos.CreationAuditedEntityDto<T0>": {
+      "baseType": "Volo.Abp.Application.Dtos.EntityDto<TPrimaryKey>",
+      "isEnum": false,
+      "enumNames": null,
+      "enumValues": null,
+      "genericArguments": [
+        "TPrimaryKey"
+      ],
+      "properties": [
+        {
+          "name": "CreationTime",
+          "jsonName": null,
+          "type": "System.DateTime",
+          "typeSimple": "string",
+          "isRequired": false,
+          "minLength": null,
+          "maxLength": null,
+          "minimum": null,
+          "maximum": null,
+          "regex": null
+        },
+        {
+          "name": "CreatorId",
+          "jsonName": null,
+          "type": "System.Guid?",
+          "typeSimple": "string?",
+          "isRequired": false,
           "minLength": null,
           "maxLength": null,
           "minimum": null,
