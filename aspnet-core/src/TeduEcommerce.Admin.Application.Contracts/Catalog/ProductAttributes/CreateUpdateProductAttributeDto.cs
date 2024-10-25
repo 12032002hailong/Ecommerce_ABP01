@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿
 using TeduEcommerce.ProductAttributes;
 
 namespace TeduEcommerce.Admin.Catalog.ProductAttributes

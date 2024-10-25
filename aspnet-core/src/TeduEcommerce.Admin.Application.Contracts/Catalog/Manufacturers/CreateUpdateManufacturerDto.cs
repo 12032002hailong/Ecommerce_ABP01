@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿
 namespace TeduEcommerce.Admin.Catalog.Manufacturers
 {
     public class CreateUpdateManufacturerDto
