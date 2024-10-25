@@ -1,7 +1,6 @@
 import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { DomSanitizer } from '@angular/platform-browser';
-import { ManufacturerInListDto, ManufacturersService } from '@proxy/catalog/manufacturers';
 import {
   ProductCategoriesService,
   ProductCategoryInListDto,
@@ -12,6 +11,8 @@ import { DynamicDialogConfig, DynamicDialogRef } from 'primeng/dynamicdialog';
 import { forkJoin, Subject, takeUntil } from 'rxjs';
 import { NotificationService } from 'src/app/shared/services/notification.service';
 import { UtilityService } from 'src/app/shared/services/utility.service';
+import { ManufacturersService } from '../../proxy/catalog/manufacturers/manufacturers.service';
+import { ManufacturerInListDto } from '@proxy/catalog/manufacturers';
 
 @Component({
   selector: 'app-product-detail',
