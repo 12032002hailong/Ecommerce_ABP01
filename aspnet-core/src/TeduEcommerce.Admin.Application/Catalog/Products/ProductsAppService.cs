@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using TeduEcommerce.Admin.Catalog.Products.Attributes;
@@ -14,9 +13,6 @@ using Volo.Abp.Application.Dtos;
 using Volo.Abp.Application.Services;
 using Volo.Abp.BlobStoring;
 using Volo.Abp.Domain.Repositories;
-using Volo.Abp.ObjectMapping;
-using Volo.Abp.Uow;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace TeduEcommerce.Admin.Catalog.Products
 {
