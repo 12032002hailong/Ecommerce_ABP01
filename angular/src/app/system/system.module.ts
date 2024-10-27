@@ -26,6 +26,9 @@ import { UserComponent } from './user/user.component';
 import { UserDetailComponent } from './user/user-detail.component';
 import { PickListModule } from 'primeng/picklist';
 import { RoleAssignComponent } from './user/role-assign.component';
+import { KeyFilterModule } from 'primeng/keyfilter';
+import { SetPasswordComponent } from './user/set-password.component';
+
 @NgModule({
   declarations: [
     RoleComponent,
@@ -34,6 +37,7 @@ import { RoleAssignComponent } from './user/role-assign.component';
     UserComponent,
     UserDetailComponent,
     RoleAssignComponent,
+    SetPasswordComponent,
   ],
   imports: [
     SharedModule,
@@ -57,6 +61,7 @@ import { RoleAssignComponent } from './user/role-assign.component';
     CalendarModule,
     SystemRoutingModule,
     PickListModule,
+    KeyFilterModule,
   ],
 })
 export class SystemModule {}
