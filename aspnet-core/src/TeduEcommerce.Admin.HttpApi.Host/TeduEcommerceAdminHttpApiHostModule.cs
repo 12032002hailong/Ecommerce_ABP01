@@ -33,6 +33,7 @@ using Volo.Abp.VirtualFileSystem;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.AspNetCore.Localization;
 using System.Globalization;
+using Microsoft.AspNetCore.Identity;
 
 namespace TeduEcommerce.Admin;
 
@@ -49,6 +50,15 @@ namespace TeduEcommerce.Admin;
 )]
 public class TeduEcommerceAdminHttpApiHostModule : AbpModule
 {
+
+    public override void PreConfigureServices(ServiceConfigurationContext context)
+    {
+        PreConfigure<IdentityBuilder>(builder =>
+        {
+            builder.AddDefaultTokenProviders();
+        });
+    }
+
     public override void ConfigureServices(ServiceConfigurationContext context)
     {
         var configuration = context.Services.GetConfiguration();
