@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using TeduEcommerce.Admin.Catalog.Products.Attributes;
+using TeduEcommerce.Admin.Permissions;
 using TeduEcommerce.ProductAttributes;
 using TeduEcommerce.ProductCategories;
 using TeduEcommerce.Products;
@@ -16,7 +17,7 @@ using Volo.Abp.Domain.Repositories;
 
 namespace TeduEcommerce.Admin.Catalog.Products
 {
-    [Authorize]
+    [Authorize(TeduEcommercePermissions.Product.Default, Policy = "AdminOnly")]
     public class ProductsAppService : CrudAppService<
         Product,
         ProductDto,
@@ -59,8 +60,15 @@ namespace TeduEcommerce.Admin.Catalog.Products
             _productAttributeDecimalRepository = productAttributeDecimalRepository;
             _productAttributeVarcharRepository = productAttributeVarcharRepository;
             _productAttributeTextRepository = productAttributeTextRepository;
+
+            GetPolicyName = TeduEcommercePermissions.Product.Default;
+            GetListPolicyName = TeduEcommercePermissions.Product.Default;
+            CreatePolicyName = TeduEcommercePermissions.Product.Create;
+            UpdatePolicyName = TeduEcommercePermissions.Product.Update;
+            DeletePolicyName = TeduEcommercePermissions.Product.Delete;
         }
 
+        [Authorize(TeduEcommercePermissions.Product.Update)]
         public override async Task<ProductDto> CreateAsync(CreateUpdateProductDto input)
         {
             var product = await _productManager.CreateAsync(
@@ -80,6 +88,7 @@ namespace TeduEcommerce.Admin.Catalog.Products
             return ObjectMapper.Map<Product, ProductDto>(result);
         }
 
+        [Authorize(TeduEcommercePermissions.Product.Update)]
         public override async Task<ProductDto> UpdateAsync(Guid id, CreateUpdateProductDto input)
         {
             var product = await Repository.GetAsync(id);
@@ -115,12 +124,14 @@ namespace TeduEcommerce.Admin.Catalog.Products
             return ObjectMapper.Map<Product, ProductDto>(product);
         }
 
+        [Authorize(TeduEcommercePermissions.Product.Delete)]
         public async Task DeleteMultipleAsync(IEnumerable<Guid> ids)
         {
             await Repository.DeleteManyAsync(ids);
             await UnitOfWorkManager.Current.SaveChangesAsync();
         }
 
+        [Authorize(TeduEcommercePermissions.Product.Default)]
         public async Task<List<ProductInListDto>> GetListAllAsync()
         {
             var query = await Repository.GetQueryableAsync();
@@ -130,6 +141,7 @@ namespace TeduEcommerce.Admin.Catalog.Products
             return ObjectMapper.Map<List<Product>, List<ProductInListDto>>(data);
         }
 
+        [Authorize(TeduEcommercePermissions.Product.Default)]
         public async Task<PagedResultDto<ProductInListDto>> GetListFilterAsync(ProductListFilterDto input)
         {
             var query = await Repository.GetQueryableAsync();
@@ -146,6 +158,7 @@ namespace TeduEcommerce.Admin.Catalog.Products
             return new PagedResultDto<ProductInListDto>(totalCount, ObjectMapper.Map<List<Product>, List<ProductInListDto>>(data));
         }
 
+        [Authorize(TeduEcommercePermissions.Product.Update)]
         private async Task SaveThumbnailImageAsync(string fileName, string base64)
         {
             Regex regex = new Regex(@"^[\w/\:.-]+;base64,");
@@ -154,6 +167,7 @@ namespace TeduEcommerce.Admin.Catalog.Products
             await _fileContainer.SaveAsync(fileName, bytes, overrideExisting: true);
         }
 
+        [Authorize(TeduEcommercePermissions.Product.Default)]
         public async Task<string> GetThumbnailImageAsync(string fileName)
         {
             if (string.IsNullOrEmpty(fileName))
@@ -175,8 +189,7 @@ namespace TeduEcommerce.Admin.Catalog.Products
             return await _productCodeGenerator.GenerateAsync();
         }
 
-
-
+        [Authorize(TeduEcommercePermissions.Product.Update)]
         public async Task<ProductAttributeValueDto> AddProductAttributeAsync(AddUpdateProductAttributeDto input)
         {
             var product = await Repository.GetAsync(input.ProductId);
@@ -247,6 +260,7 @@ namespace TeduEcommerce.Admin.Catalog.Products
             };
         }
 
+        [Authorize(TeduEcommercePermissions.Product.Update)]
         public async Task RemoveProductAttributeAsync(Guid attributeId, Guid id)
         {
             var attribute = await _productAttributeRepository.GetAsync(x => x.Id == attributeId);
@@ -299,6 +313,7 @@ namespace TeduEcommerce.Admin.Catalog.Products
             await UnitOfWorkManager.Current.SaveChangesAsync();
         }
 
+        [Authorize(TeduEcommercePermissions.Product.Default)]
         public async Task<List<ProductAttributeValueDto>> GetListProductAttributeAllAsync(Guid productId)
         {
             var attributeQuery = await _productAttributeRepository.GetQueryableAsync();
@@ -351,6 +366,7 @@ namespace TeduEcommerce.Admin.Catalog.Products
             return await AsyncExecuter.ToListAsync(query);
         }
 
+        [Authorize(TeduEcommercePermissions.Product.Default)]
         public async Task<PagedResultDto<ProductAttributeValueDto>> GetListProductAttributesAsync(ProductAttributeListFilterDto input)
         {
             var attributeQuery = await _productAttributeRepository.GetQueryableAsync();
@@ -409,6 +425,7 @@ namespace TeduEcommerce.Admin.Catalog.Products
             return new PagedResultDto<ProductAttributeValueDto>(totalCount, data);
         }
 
+        [Authorize(TeduEcommercePermissions.Product.Update)]
         public async Task<ProductAttributeValueDto> UpdateProductAttributeAsync(Guid id, AddUpdateProductAttributeDto input)
         {
             var product = await Repository.GetAsync(input.ProductId);
