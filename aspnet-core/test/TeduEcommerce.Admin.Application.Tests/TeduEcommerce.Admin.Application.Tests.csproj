@@ -10,7 +10,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\TeduEcommerce.Admin.Application\TeduEcommerce.Admin.Application.csproj" />
-    <ProjectReference Include="..\TeduEcommerce.Domain.Tests\TeduEcommerce.Domain.Tests.csproj" />
   </ItemGroup>
 
   <ItemGroup>

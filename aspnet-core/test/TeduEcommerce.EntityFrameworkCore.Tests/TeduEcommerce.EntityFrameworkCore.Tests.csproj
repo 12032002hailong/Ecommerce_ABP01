@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <Import Project="..\..\common.props" />
 
@@ -10,8 +10,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\TeduEcommerce.EntityFrameworkCore\TeduEcommerce.EntityFrameworkCore.csproj" />
-    <ProjectReference Include="..\TeduEcommerce.Application.Tests\TeduEcommerce.Application.Tests.csproj" />
-    <PackageReference Include="Volo.Abp.Caching.StackExchangeRedis" Version="8.0.4" />
+    <ProjectReference Include="..\TeduEcommerce.Admin.Application.Tests\TeduEcommerce.Admin.Application.Tests.csproj" />
+	  <ProjectReference Include="..\TeduEcommerce.TestBase\TeduEcommerce.TestBase.csproj" />
+	  <PackageReference Include="Volo.Abp.Caching.StackExchangeRedis" Version="8.0.4" />
     <PackageReference Include="Volo.Abp.EntityFrameworkCore.Sqlite" Version="8.2.0" />
   </ItemGroup>
 

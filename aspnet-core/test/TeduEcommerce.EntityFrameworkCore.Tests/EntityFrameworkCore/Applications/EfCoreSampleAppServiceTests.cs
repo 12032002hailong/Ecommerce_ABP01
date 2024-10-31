@@ -1,3 +1,4 @@
+using TeduEcommerce.Public.Samples;
 using TeduEcommerce.Samples;
 using Xunit;
 
