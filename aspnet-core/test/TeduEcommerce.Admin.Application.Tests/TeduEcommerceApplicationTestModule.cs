@@ -1,4 +1,5 @@
-﻿using Volo.Abp.Modularity;
+﻿using TeduEcommerce.Public;
+using Volo.Abp.Modularity;
 
 namespace TeduEcommerce.Admin;
 

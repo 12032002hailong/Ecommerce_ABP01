@@ -4,7 +4,7 @@ using Volo.Abp.Localization;
 
 namespace TeduEcommerce.Public.Permissions;
 
-public class TeduEcommercePermissionDefinitionProvider : PermissionDefinitionProvider
+public class TeduEcommercePublicPermissionDefinitionProvider : PermissionDefinitionProvider
 {
     public override void Define(IPermissionDefinitionContext context)
     {

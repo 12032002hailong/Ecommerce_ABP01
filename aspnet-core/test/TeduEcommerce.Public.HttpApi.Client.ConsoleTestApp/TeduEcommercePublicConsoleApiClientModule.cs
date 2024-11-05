@@ -13,7 +13,7 @@ namespace TeduEcommerce.Public.HttpApi.Client.ConsoleTestApp;
     typeof(TeduEcommercePublicHttpApiClientModule),
     typeof(AbpHttpClientIdentityModelModule)
     )]
-public class PublicConsoleApiClientModule : AbpModule
+public class TeduEcommercePublicConsoleApiClientModule : AbpModule
 {
     public override void PreConfigureServices(ServiceConfigurationContext context)
     {

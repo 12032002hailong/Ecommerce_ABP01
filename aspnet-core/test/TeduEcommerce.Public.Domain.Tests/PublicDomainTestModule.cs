@@ -6,7 +6,7 @@ namespace TeduEcommerce.Public;
     typeof(TeduEcommerceDomainModule),
     typeof(TeduEcommerceTestBaseModule)
 )]
-public class TeduEcommerceDomainTestModule : AbpModule
+public class TeduEcommercePublicDomainTestModule : AbpModule
 {
 
 }

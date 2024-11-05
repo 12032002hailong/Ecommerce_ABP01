@@ -1,5 +1,5 @@
+using TeduEcommerce.Admin.Samples;
 using TeduEcommerce.Public.Samples;
-using TeduEcommerce.Samples;
 using Xunit;
 
 namespace TeduEcommerce.EntityFrameworkCore.Applications;

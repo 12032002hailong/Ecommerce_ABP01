@@ -5,9 +5,6 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using TeduEcommerce.EntityFrameworkCore;
-using TeduEcommerce.Localization;
-using TeduEcommerce.MultiTenancy;
 using TeduEcommerce.Public.Web.Menus;
 using Microsoft.OpenApi.Models;
 using OpenIddict.Validation.AspNetCore;
@@ -39,6 +36,9 @@ using Volo.Abp.UI.Navigation.Urls;
 using Volo.Abp.UI;
 using Volo.Abp.UI.Navigation;
 using Volo.Abp.VirtualFileSystem;
+using TeduEcommerce.EntityFrameworkCore;
+using TeduEcommerce.Localization;
+using TeduEcommerce.MultiTenancy;
 
 namespace TeduEcommerce.Public.Web;
 
@@ -93,7 +93,7 @@ public class TeduEcommercePublicWebModule : AbpModule
 
             PreConfigure<OpenIddictServerBuilder>(serverBuilder =>
             {
-                serverBuilder.AddProductionEncryptionAndSigningCertificate("openiddict.pfx", "b1275752-84df-4e63-82f2-cf0833a966b0");
+                serverBuilder.AddProductionEncryptionAndSigningCertificate("openiddict.pfx", "f1b0720c-3703-49e4-84de-038fe7f7b254");
             });
         }
     }

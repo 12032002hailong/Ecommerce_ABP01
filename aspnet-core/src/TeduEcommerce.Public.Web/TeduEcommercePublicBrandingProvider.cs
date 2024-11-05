@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Localization;
-using TeduEcommerce.Localization;
 using Volo.Abp.Ui.Branding;
 using Volo.Abp.DependencyInjection;
+using TeduEcommerce.Localization;
 
 namespace TeduEcommerce.Public.Web;
 

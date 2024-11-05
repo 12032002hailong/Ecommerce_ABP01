@@ -1,4 +1,4 @@
-using TeduEcommerce.Samples;
+using TeduEcommerce.Public.Samples;
 using Xunit;
 
 namespace TeduEcommerce.EntityFrameworkCore.Domains;
