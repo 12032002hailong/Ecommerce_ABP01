@@ -139,6 +139,7 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.ngUnsubscribe))
       .subscribe({
         next: (response: ProductDto) => {
+          console.log(response);
           this.selectedEntity = response;
           this.loadThumbnail(this.selectedEntity.thumbnailPicture);
           this.buildForm();

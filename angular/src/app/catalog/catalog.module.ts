@@ -24,6 +24,7 @@ import { AttributeComponent } from './attribute/attribute.component';
 import { AttributeDetailComponent } from './attribute/attribute-detail.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { InputNumberModule } from 'primeng/inputnumber';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { CommonModule } from '@angular/common';
     ConfirmDialogModule,
     ReactiveFormsModule,
     CommonModule,
+    InputNumberModule,
   ],
 })
 export class CatalogModule {}
