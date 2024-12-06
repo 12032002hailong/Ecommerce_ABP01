@@ -28,6 +28,7 @@ import { ToastModule } from 'primeng/toast';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from './shared/interceptors/token.interceptor';
 import { GlobalHttpInterceptorService } from './shared/interceptors/error-handler.interceptor';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   imports: [
@@ -54,6 +55,8 @@ import { GlobalHttpInterceptorService } from './shared/interceptors/error-handle
     AccountLayoutModule.forRoot(),
     ConfirmDialogModule,
     ToastModule,
+
+    FontAwesomeModule,
   ],
   declarations: [AppComponent],
   providers: [

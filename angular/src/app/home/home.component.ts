@@ -16,4 +16,6 @@ export class HomeComponent {
   login() {
     this.authService.navigateToLogin();
   }
+
+  changeImage(event: any) {}
 }
