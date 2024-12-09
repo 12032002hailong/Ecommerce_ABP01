@@ -376,3 +376,11 @@
     </div>
   </div>
 </section>
+
+<section class="partners">
+  <owl-carousel-o [options]="customOptions">
+    <ng-template carouselSlide *ngFor="let partnersArrays of partnerArray">
+      <img src="{{ partnersArrays.imgName }}" alt="Partner" />
+    </ng-template>
+  </owl-carousel-o>
+</section>

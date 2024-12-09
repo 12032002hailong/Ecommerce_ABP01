@@ -3464,14 +3464,9 @@ bootstrap-icons@~1.8.0:
   resolved "https://registry.npmjs.org/bootstrap-icons/-/bootstrap-icons-1.8.3.tgz"
   integrity sha512-s5kmttnbq4BXbx3Bwnj39y+t7Vc3blTtyD77W3aYQ1LlNoS3lNbbGvSYhIbg26Im8KmjScyFpHEevlPOBcIDdA==
 
-bootstrap@^5.2.0:
+bootstrap@^5.2.0, bootstrap@^5.3.3:
   version "5.3.3"
   resolved "https://registry.npmjs.org/bootstrap/-/bootstrap-5.3.3.tgz"
-  integrity sha512-8HLCdWgyoMguSO9o+aH+iuZ+aht+mzW0u3HIMzVu7Srrpv7EBBxTnrFlSCskwdY1+EOFQSm7uMJhNQHkdPcmjg==
-
-bootstrap@^5.3.3:
-  version "5.3.3"
-  resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-5.3.3.tgz#de35e1a765c897ac940021900fcbb831602bac38"
   integrity sha512-8HLCdWgyoMguSO9o+aH+iuZ+aht+mzW0u3HIMzVu7Srrpv7EBBxTnrFlSCskwdY1+EOFQSm7uMJhNQHkdPcmjg==
 
 brace-expansion@^1.1.7:
@@ -6428,6 +6423,13 @@ ng-zorro-antd@^17.0.0:
     "@angular/cdk" "^17.0.0"
     "@ant-design/icons-angular" "^17.0.0"
     date-fns "^2.16.1"
+    tslib "^2.3.0"
+
+ngx-owl-carousel-o@^18.0.0:
+  version "18.0.0"
+  resolved "https://registry.yarnpkg.com/ngx-owl-carousel-o/-/ngx-owl-carousel-o-18.0.0.tgz#2b7fc350475434f17f5e554261d374af49d2366e"
+  integrity sha512-3ukc6mDGseUXvYrpfV+Hm2O6cBOgV0p1bT51fykQQxAMZptbnzIQJ+U6ADbeds4tkZiwAHLK2a3qItlHz5YVOg==
+  dependencies:
     tslib "^2.3.0"
 
 nice-napi@^1.0.2:
