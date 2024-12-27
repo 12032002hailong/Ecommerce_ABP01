@@ -6,6 +6,47 @@ body {
   background: #eee;
 }
 
+.banner img {
+  max-height: 390px;
+}
+.banner .owl-prev,
+.banner .owl-next {
+  position: absolute !important ;
+  background: #ffffff24 !important;
+  width: 64px !important;
+  height: 64px !important;
+  border-radius: 50% !important;
+  z-index: 2 !important;
+  font-size: 24px !important;
+  color: #111 !important;
+  transition: all 0.3s ease !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important;
+}
+
+.banner .owl-prev {
+  left: 114px !important;
+}
+
+.banner .owl-next {
+  right: 48px !important;
+}
+
+.banner .owl-prev i,
+.banner .owl-next i {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+}
+
+.banner .owl-prev:hover,
+.banner .owl-next:hover {
+  background: #ff4000 !important;
+  color: #fff !important;
+}
+
+/////////////////////////////////////////////
 .testimonial .owl-prev,
 .testimonial .owl-next {
   position: absolute !important ;
