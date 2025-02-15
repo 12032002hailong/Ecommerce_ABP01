@@ -13,7 +13,7 @@ namespace TeduEcommerce.Admin.Catalog.ProductAttributes
         CreateUpdateProductAttributeDto,
         CreateUpdateProductAttributeDto>
     {
-        Task<PagedResultDto<ProductAttributeInListDto>> GetListFilterAsync(BaseListFilterDto input);
+        Task<PagedResult<ProductAttributeInListDto>> GetListFilterAsync(BaseListFilterDto input);
         Task<List<ProductAttributeInListDto>> GetListAllAsync();
         Task DeleteMultipleAsync(IEnumerable<Guid> ids);
     }

@@ -4,12 +4,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TeduEcommerce.Admin.System.Roles;
 using Volo.Abp;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Application.Services;
 using Volo.Abp.Domain.Entities;
 using Volo.Abp.Domain.Repositories;
 using Volo.Abp.Identity;
+using Volo.Abp.ObjectMapping;
 using Volo.Abp.Threading;
 
 namespace TeduEcommerce.Admin.System.Users
@@ -55,7 +57,7 @@ namespace TeduEcommerce.Admin.System.Users
         }
 
         [Authorize(IdentityPermissions.Users.Default)]
-        public async Task<PagedResultDto<UserInListDto>> GetListWithFilterAsync(BaseListFilterDto input)
+        public async Task<PagedResult<UserInListDto>> GetListWithFilterAsync(BaseListFilterDto input)
         {
             var query = await Repository.GetQueryableAsync();
 
@@ -70,10 +72,16 @@ namespace TeduEcommerce.Admin.System.Users
 
             var totalCount = await AsyncExecuter.CountAsync(query);
 
-            query = query.Skip(input.SkipCount).Take(input.MaxResultCount);
-            var data = await AsyncExecuter.ToListAsync(query);
-            var users = ObjectMapper.Map<List<IdentityUser>, List<UserInListDto>>(data);
-            return new PagedResultDto<UserInListDto>(totalCount, users);
+            var data = await AsyncExecuter
+                 .ToListAsync(
+                 query.Skip((input.CurrentPage - 1) * input.PageSize)
+                 .Take(input.PageSize));
+            return new PagedResult<UserInListDto>(
+               ObjectMapper.Map<List<IdentityUser>, List<UserInListDto>>(data),
+               totalCount,
+               input.CurrentPage,
+               input.PageSize
+               );
         }
 
         [Authorize(IdentityPermissions.Users.Create)]

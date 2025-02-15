@@ -14,7 +14,7 @@ namespace TeduEcommerce.Admin.Catalog.Products
        CreateUpdateProductDto,
        CreateUpdateProductDto>
     {
-        Task<PagedResultDto<ProductInListDto>> GetListFilterAsync(ProductListFilterDto input);
+        Task<PagedResult<ProductInListDto>> GetListFilterAsync(ProductListFilterDto input);
         Task<List<ProductInListDto>> GetListAllAsync();
         Task DeleteMultipleAsync(IEnumerable<Guid> ids);
 
@@ -27,6 +27,6 @@ namespace TeduEcommerce.Admin.Catalog.Products
         Task RemoveProductAttributeAsync(Guid attributeId, Guid id);
 
         Task<List<ProductAttributeValueDto>> GetListProductAttributeAllAsync(Guid productId);
-        Task<PagedResultDto<ProductAttributeValueDto>> GetListProductAttributesAsync(ProductAttributeListFilterDto input);
+        Task<PagedResult<ProductAttributeValueDto>> GetListProductAttributesAsync(ProductAttributeListFilterDto input);
     }
 }

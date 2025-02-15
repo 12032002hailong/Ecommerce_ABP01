@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using TeduEcommerce.Admin.Catalog.ProductCategories;
 using TeduEcommerce.Admin.Catalog.Products.Attributes;
 using TeduEcommerce.Admin.Permissions;
 using TeduEcommerce.ProductAttributes;
@@ -14,6 +15,7 @@ using Volo.Abp.Application.Dtos;
 using Volo.Abp.Application.Services;
 using Volo.Abp.BlobStoring;
 using Volo.Abp.Domain.Repositories;
+using Volo.Abp.ObjectMapping;
 
 namespace TeduEcommerce.Admin.Catalog.Products
 {
@@ -142,7 +144,7 @@ namespace TeduEcommerce.Admin.Catalog.Products
         }
 
         [Authorize(TeduEcommercePermissions.Product.Default)]
-        public async Task<PagedResultDto<ProductInListDto>> GetListFilterAsync(ProductListFilterDto input)
+        public async Task<PagedResult<ProductInListDto>> GetListFilterAsync(ProductListFilterDto input)
         {
             var query = await Repository.GetQueryableAsync();
             string keyword = input.Keyword;
@@ -150,12 +152,17 @@ namespace TeduEcommerce.Admin.Catalog.Products
             query = query.WhereIf(input.CategoryId.HasValue, x => x.CategoryId == input.CategoryId);
 
             var totalCount = await AsyncExecuter.LongCountAsync(query);
-            var data = await AsyncExecuter.ToListAsync(query.OrderByDescending(x => x.CreationTime)
-                .Skip(input.SkipCount)
-                .Take(input.MaxResultCount)
-                );
+            var data = await AsyncExecuter
+                            .ToListAsync(
+                            query.Skip((input.CurrentPage - 1) * input.PageSize)
+                            .Take(input.PageSize));
 
-            return new PagedResultDto<ProductInListDto>(totalCount, ObjectMapper.Map<List<Product>, List<ProductInListDto>>(data));
+            return new PagedResult<ProductInListDto>(
+                ObjectMapper.Map<List<Product>, List<ProductInListDto>>(data),
+                totalCount,
+                input.CurrentPage,
+                input.PageSize
+                );
         }
 
         [Authorize(TeduEcommercePermissions.Product.Update)]
@@ -367,7 +374,7 @@ namespace TeduEcommerce.Admin.Catalog.Products
         }
 
         [Authorize(TeduEcommercePermissions.Product.Default)]
-        public async Task<PagedResultDto<ProductAttributeValueDto>> GetListProductAttributesAsync(ProductAttributeListFilterDto input)
+        public async Task<PagedResult<ProductAttributeValueDto>> GetListProductAttributesAsync(ProductAttributeListFilterDto input)
         {
             var attributeQuery = await _productAttributeRepository.GetQueryableAsync();
 
@@ -417,12 +424,19 @@ namespace TeduEcommerce.Admin.Catalog.Products
             || x.TextId != null
             || x.VarcharId != null);
             var totalCount = await AsyncExecuter.LongCountAsync(query);
-            var data = await AsyncExecuter.ToListAsync(
-                query.OrderByDescending(x => x.Label)
-                .Skip(input.SkipCount)
-                .Take(input.MaxResultCount)
-                );
-            return new PagedResultDto<ProductAttributeValueDto>(totalCount, data);
+
+            var data = await AsyncExecuter
+                .ToListAsync(
+                query.Skip((input.CurrentPage - 1) * input.PageSize)
+                .Take(input.PageSize));
+            return new PagedResult<ProductAttributeValueDto>
+            (
+                data,
+                totalCount, 
+                input.CurrentPage, 
+                input.PageSize
+            );
+
         }
 
         [Authorize(TeduEcommercePermissions.Product.Update)]

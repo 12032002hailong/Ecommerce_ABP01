@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TeduEcommerce.Admin.Catalog.Manufacturers;
 using TeduEcommerce.Roles;
 using Volo.Abp;
 using Volo.Abp.Application.Dtos;
@@ -15,6 +16,7 @@ using Volo.Abp.Domain.Entities;
 using Volo.Abp.Domain.Repositories;
 using Volo.Abp.Identity;
 using Volo.Abp.MultiTenancy;
+using Volo.Abp.ObjectMapping;
 using Volo.Abp.PermissionManagement;
 using Volo.Abp.SimpleStateChecking;
 using Volo.Abp.Threading;
@@ -75,15 +77,22 @@ namespace TeduEcommerce.Admin.System.Roles
         }
 
         [Authorize(IdentityPermissions.Roles.Default)]
-        public async Task<PagedResultDto<RoleInListDto>> GetListFilterAsync(BaseListFilterDto input)
+        public async Task<PagedResult<RoleInListDto>> GetListFilterAsync(BaseListFilterDto input)
         {
             var query = await Repository.GetQueryableAsync();
             query = query.WhereIf(!string.IsNullOrWhiteSpace(input.Keyword), x => x.Name.Contains(input.Keyword));
 
             var totalCount = await AsyncExecuter.LongCountAsync(query);
-            var data = await AsyncExecuter.ToListAsync(query.Skip(input.SkipCount).Take(input.MaxResultCount));
-
-            return new PagedResultDto<RoleInListDto>(totalCount, ObjectMapper.Map<List<IdentityRole>, List<RoleInListDto>>(data));
+            var data = await AsyncExecuter
+                .ToListAsync(
+                query.Skip((input.CurrentPage - 1) * input.PageSize)
+                .Take(input.PageSize));
+            return new PagedResult<RoleInListDto>(
+                ObjectMapper.Map<List<IdentityRole>, List<RoleInListDto>>(data),
+                totalCount,
+                input.CurrentPage,
+                input.PageSize
+                );
         }
 
         [Authorize(IdentityPermissions.Roles.Create)]

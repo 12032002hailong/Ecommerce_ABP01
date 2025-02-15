@@ -5,7 +5,7 @@ namespace TeduEcommerce.Admin;
 
 [DependsOn(
     typeof(TeduEcommerceAdminApplicationModule),
-    typeof(TeduEcommerceDomainTestModule)
+    typeof(TeduEcommercePublicDomainTestModule)
 )]
 public class TeduEcommerceApplicationTestModule : AbpModule
 {

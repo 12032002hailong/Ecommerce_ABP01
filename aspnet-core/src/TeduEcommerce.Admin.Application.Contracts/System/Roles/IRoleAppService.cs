@@ -16,7 +16,7 @@ namespace TeduEcommerce.Admin.System.Roles
        CreateUpdateRoleDto,
        CreateUpdateRoleDto>
     {
-        Task<PagedResultDto<RoleInListDto>> GetListFilterAsync(BaseListFilterDto input);
+        Task<PagedResult<RoleInListDto>> GetListFilterAsync(BaseListFilterDto input);
         Task<List<RoleInListDto>> GetListAllAsync();
         Task DeleteMultipleAsync(IEnumerable<Guid> ids);
 

@@ -13,7 +13,7 @@ namespace TeduEcommerce.Admin.Catalog.Manufacturers
         CreateUpdateManufacturerDto,
         CreateUpdateManufacturerDto>
     {
-        Task<PagedResultDto<ManufacturerInListDto>> GetListFilterAsync(BaseListFilterDto input);
+        Task<PagedResult<ManufacturerInListDto>> GetListFilterAsync(BaseListFilterDto input);
         Task<List<ManufacturerInListDto>> GetListAllAsync();
         Task DeleteMultipleAsync(IEnumerable<Guid> ids);
     }
