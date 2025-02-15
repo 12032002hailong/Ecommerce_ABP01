@@ -25,8 +25,8 @@ export class ProductComponent implements OnInit, OnDestroy {
   public selectedItems: ProductInListDto[] = [];
 
   //Paging variables
-  public skipCount: number = 0;
-  public maxResultCount: number = 10;
+  public currentPage: number = 1;
+  public pageSize: number = 10;
   public totalCount: number;
 
   //Filter
@@ -55,15 +55,16 @@ export class ProductComponent implements OnInit, OnDestroy {
       .getListFilter({
         keyword: this?.keyword,
         categoryId: this?.categoryId,
-        maxResultCount: this?.maxResultCount,
-        skipCount: this?.skipCount,
+        currentPage: this?.currentPage,
+        pageSize: this?.pageSize,
       })
       .pipe(takeUntil(this.ngUnsubscribe))
       .subscribe({
-        next: (response: PagedResultDto<ProductInListDto>) => {
-          this.items = response.items;
+        next: (response: any) => {
+          this.items = response.results;
           this.totalCount = response.totalCount;
           this.toggleBlockUI(false);
+          console.log(response.results);
         },
         error: () => {
           this.toggleBlockUI(false);
@@ -83,8 +84,8 @@ export class ProductComponent implements OnInit, OnDestroy {
   }
 
   pageChanged(event: any) {
-    this.skipCount = (event.page - 1) * this.maxResultCount;
-    this.maxResultCount = event.rows;
+    // this.skipCount = (event.page - 1) * this.maxResultCount;
+    // this.maxResultCount = event.rows;
     this.loadData();
   }
 

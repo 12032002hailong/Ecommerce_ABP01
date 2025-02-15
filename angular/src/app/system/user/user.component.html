@@ -124,7 +124,7 @@
     </p-table>
 
     <p-paginator
-      [rows]="maxResultCount"
+      [rows]="pageSize"
       [totalRecords]="totalCount"
       (onPageChange)="pageChanged($event)"
       [rowsPerPageOptions]="[10, 20, 50, 100]"

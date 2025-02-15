@@ -33,14 +33,6 @@ export class RoleDetailComponent implements OnInit, OnDestroy {
     private fb: FormBuilder
   ) {}
 
-  ngOnDestroy(): void {
-    if (this.ref) {
-      this.ref.close();
-    }
-    this.ngUnsubscribe.next();
-    this.ngUnsubscribe.complete();
-  }
-
   public generateSlug() {
     var slug = this.utilService.MakeSeoTitle(this.form.get('name').value);
     this.form.controls['slug'].setValue(slug);
@@ -134,5 +126,13 @@ export class RoleDetailComponent implements OnInit, OnDestroy {
         this.blockedPanelDetail = false;
       }, 1000);
     }
+  }
+
+  ngOnDestroy(): void {
+    if (this.ref) {
+      this.ref.close();
+    }
+    this.ngUnsubscribe.next();
+    this.ngUnsubscribe.complete();
   }
 }

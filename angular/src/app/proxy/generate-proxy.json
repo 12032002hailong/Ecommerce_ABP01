@@ -798,8 +798,8 @@
                     }
                   ],
                   "returnValue": {
-                    "type": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Catalog.Manufacturers.ManufacturerInListDto>",
-                    "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Catalog.Manufacturers.ManufacturerInListDto>"
+                    "type": "TeduEcommerce.Admin.PagedResult<TeduEcommerce.Admin.Catalog.Manufacturers.ManufacturerInListDto>",
+                    "typeSimple": "TeduEcommerce.Admin.PagedResult<TeduEcommerce.Admin.Catalog.Manufacturers.ManufacturerInListDto>"
                   }
                 },
                 {
@@ -1007,7 +1007,7 @@
                 },
                 {
                   "nameOnMethod": "input",
-                  "name": "SkipCount",
+                  "name": "CurrentPage",
                   "jsonName": null,
                   "type": "System.Int32",
                   "typeSimple": "number",
@@ -1019,7 +1019,7 @@
                 },
                 {
                   "nameOnMethod": "input",
-                  "name": "MaxResultCount",
+                  "name": "PageSize",
                   "jsonName": null,
                   "type": "System.Int32",
                   "typeSimple": "number",
@@ -1031,8 +1031,8 @@
                 }
               ],
               "returnValue": {
-                "type": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Catalog.Manufacturers.ManufacturerInListDto>",
-                "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Catalog.Manufacturers.ManufacturerInListDto>"
+                "type": "TeduEcommerce.Admin.PagedResult<TeduEcommerce.Admin.Catalog.Manufacturers.ManufacturerInListDto>",
+                "typeSimple": "TeduEcommerce.Admin.PagedResult<TeduEcommerce.Admin.Catalog.Manufacturers.ManufacturerInListDto>"
               },
               "allowAnonymous": false,
               "implementFrom": "TeduEcommerce.Admin.Catalog.Manufacturers.IManufacturersAppService"
@@ -1281,8 +1281,8 @@
                     }
                   ],
                   "returnValue": {
-                    "type": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Catalog.ProductAttributes.ProductAttributeInListDto>",
-                    "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Catalog.ProductAttributes.ProductAttributeInListDto>"
+                    "type": "TeduEcommerce.Admin.PagedResult<TeduEcommerce.Admin.Catalog.ProductAttributes.ProductAttributeInListDto>",
+                    "typeSimple": "TeduEcommerce.Admin.PagedResult<TeduEcommerce.Admin.Catalog.ProductAttributes.ProductAttributeInListDto>"
                   }
                 },
                 {
@@ -1490,7 +1490,7 @@
                 },
                 {
                   "nameOnMethod": "input",
-                  "name": "SkipCount",
+                  "name": "CurrentPage",
                   "jsonName": null,
                   "type": "System.Int32",
                   "typeSimple": "number",
@@ -1502,7 +1502,7 @@
                 },
                 {
                   "nameOnMethod": "input",
-                  "name": "MaxResultCount",
+                  "name": "PageSize",
                   "jsonName": null,
                   "type": "System.Int32",
                   "typeSimple": "number",
@@ -1514,8 +1514,8 @@
                 }
               ],
               "returnValue": {
-                "type": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Catalog.ProductAttributes.ProductAttributeInListDto>",
-                "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Catalog.ProductAttributes.ProductAttributeInListDto>"
+                "type": "TeduEcommerce.Admin.PagedResult<TeduEcommerce.Admin.Catalog.ProductAttributes.ProductAttributeInListDto>",
+                "typeSimple": "TeduEcommerce.Admin.PagedResult<TeduEcommerce.Admin.Catalog.ProductAttributes.ProductAttributeInListDto>"
               },
               "allowAnonymous": false,
               "implementFrom": "TeduEcommerce.Admin.Catalog.ProductAttributes.IProductAttributesAppService"
@@ -1764,8 +1764,8 @@
                     }
                   ],
                   "returnValue": {
-                    "type": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Catalog.ProductCategories.ProductCategoryInListDto>",
-                    "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Catalog.ProductCategories.ProductCategoryInListDto>"
+                    "type": "TeduEcommerce.Admin.PagedResult<TeduEcommerce.Admin.Catalog.ProductCategories.ProductCategoryInListDto>",
+                    "typeSimple": "TeduEcommerce.Admin.PagedResult<TeduEcommerce.Admin.Catalog.ProductCategories.ProductCategoryInListDto>"
                   }
                 },
                 {
@@ -1973,7 +1973,7 @@
                 },
                 {
                   "nameOnMethod": "input",
-                  "name": "SkipCount",
+                  "name": "CurrentPage",
                   "jsonName": null,
                   "type": "System.Int32",
                   "typeSimple": "number",
@@ -1985,7 +1985,7 @@
                 },
                 {
                   "nameOnMethod": "input",
-                  "name": "MaxResultCount",
+                  "name": "PageSize",
                   "jsonName": null,
                   "type": "System.Int32",
                   "typeSimple": "number",
@@ -1997,8 +1997,8 @@
                 }
               ],
               "returnValue": {
-                "type": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Catalog.ProductCategories.ProductCategoryInListDto>",
-                "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Catalog.ProductCategories.ProductCategoryInListDto>"
+                "type": "TeduEcommerce.Admin.PagedResult<TeduEcommerce.Admin.Catalog.ProductCategories.ProductCategoryInListDto>",
+                "typeSimple": "TeduEcommerce.Admin.PagedResult<TeduEcommerce.Admin.Catalog.ProductCategories.ProductCategoryInListDto>"
               },
               "allowAnonymous": false,
               "implementFrom": "TeduEcommerce.Admin.Catalog.ProductCategories.IProductCategoriesAppService"
@@ -2247,8 +2247,8 @@
                     }
                   ],
                   "returnValue": {
-                    "type": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Catalog.Products.ProductInListDto>",
-                    "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Catalog.Products.ProductInListDto>"
+                    "type": "TeduEcommerce.Admin.PagedResult<TeduEcommerce.Admin.Catalog.Products.ProductInListDto>",
+                    "typeSimple": "TeduEcommerce.Admin.PagedResult<TeduEcommerce.Admin.Catalog.Products.ProductInListDto>"
                   }
                 },
                 {
@@ -2398,8 +2398,8 @@
                     }
                   ],
                   "returnValue": {
-                    "type": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Catalog.Products.Attributes.ProductAttributeValueDto>",
-                    "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Catalog.Products.Attributes.ProductAttributeValueDto>"
+                    "type": "TeduEcommerce.Admin.PagedResult<TeduEcommerce.Admin.Catalog.Products.Attributes.ProductAttributeValueDto>",
+                    "typeSimple": "TeduEcommerce.Admin.PagedResult<TeduEcommerce.Admin.Catalog.Products.Attributes.ProductAttributeValueDto>"
                   }
                 },
                 {
@@ -2688,7 +2688,7 @@
                 },
                 {
                   "nameOnMethod": "input",
-                  "name": "SkipCount",
+                  "name": "CurrentPage",
                   "jsonName": null,
                   "type": "System.Int32",
                   "typeSimple": "number",
@@ -2700,7 +2700,7 @@
                 },
                 {
                   "nameOnMethod": "input",
-                  "name": "MaxResultCount",
+                  "name": "PageSize",
                   "jsonName": null,
                   "type": "System.Int32",
                   "typeSimple": "number",
@@ -2712,8 +2712,8 @@
                 }
               ],
               "returnValue": {
-                "type": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Catalog.Products.ProductInListDto>",
-                "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Catalog.Products.ProductInListDto>"
+                "type": "TeduEcommerce.Admin.PagedResult<TeduEcommerce.Admin.Catalog.Products.ProductInListDto>",
+                "typeSimple": "TeduEcommerce.Admin.PagedResult<TeduEcommerce.Admin.Catalog.Products.ProductInListDto>"
               },
               "allowAnonymous": false,
               "implementFrom": "TeduEcommerce.Admin.Catalog.Products.IProductsAppService"
@@ -2944,7 +2944,7 @@
                 },
                 {
                   "nameOnMethod": "input",
-                  "name": "SkipCount",
+                  "name": "CurrentPage",
                   "jsonName": null,
                   "type": "System.Int32",
                   "typeSimple": "number",
@@ -2956,7 +2956,7 @@
                 },
                 {
                   "nameOnMethod": "input",
-                  "name": "MaxResultCount",
+                  "name": "PageSize",
                   "jsonName": null,
                   "type": "System.Int32",
                   "typeSimple": "number",
@@ -2968,8 +2968,8 @@
                 }
               ],
               "returnValue": {
-                "type": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Catalog.Products.Attributes.ProductAttributeValueDto>",
-                "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.Catalog.Products.Attributes.ProductAttributeValueDto>"
+                "type": "TeduEcommerce.Admin.PagedResult<TeduEcommerce.Admin.Catalog.Products.Attributes.ProductAttributeValueDto>",
+                "typeSimple": "TeduEcommerce.Admin.PagedResult<TeduEcommerce.Admin.Catalog.Products.Attributes.ProductAttributeValueDto>"
               },
               "allowAnonymous": false,
               "implementFrom": "TeduEcommerce.Admin.Catalog.Products.IProductsAppService"
@@ -3181,8 +3181,8 @@
                     }
                   ],
                   "returnValue": {
-                    "type": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.System.Roles.RoleInListDto>",
-                    "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.System.Roles.RoleInListDto>"
+                    "type": "TeduEcommerce.Admin.PagedResult<TeduEcommerce.Admin.System.Roles.RoleInListDto>",
+                    "typeSimple": "TeduEcommerce.Admin.PagedResult<TeduEcommerce.Admin.System.Roles.RoleInListDto>"
                   }
                 },
                 {
@@ -3448,7 +3448,7 @@
                 },
                 {
                   "nameOnMethod": "input",
-                  "name": "SkipCount",
+                  "name": "CurrentPage",
                   "jsonName": null,
                   "type": "System.Int32",
                   "typeSimple": "number",
@@ -3460,7 +3460,7 @@
                 },
                 {
                   "nameOnMethod": "input",
-                  "name": "MaxResultCount",
+                  "name": "PageSize",
                   "jsonName": null,
                   "type": "System.Int32",
                   "typeSimple": "number",
@@ -3472,8 +3472,8 @@
                 }
               ],
               "returnValue": {
-                "type": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.System.Roles.RoleInListDto>",
-                "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.System.Roles.RoleInListDto>"
+                "type": "TeduEcommerce.Admin.PagedResult<TeduEcommerce.Admin.System.Roles.RoleInListDto>",
+                "typeSimple": "TeduEcommerce.Admin.PagedResult<TeduEcommerce.Admin.System.Roles.RoleInListDto>"
               },
               "allowAnonymous": false,
               "implementFrom": "TeduEcommerce.Admin.System.Roles.IRolesAppService"
@@ -3873,8 +3873,8 @@
                     }
                   ],
                   "returnValue": {
-                    "type": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.System.Users.UserInListDto>",
-                    "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.System.Users.UserInListDto>"
+                    "type": "TeduEcommerce.Admin.PagedResult<TeduEcommerce.Admin.System.Users.UserInListDto>",
+                    "typeSimple": "TeduEcommerce.Admin.PagedResult<TeduEcommerce.Admin.System.Users.UserInListDto>"
                   }
                 },
                 {
@@ -4075,7 +4075,7 @@
                 "type": "System.Void",
                 "typeSimple": "System.Void"
               },
-              "allowAnonymous": null,
+              "allowAnonymous": false,
               "implementFrom": "TeduEcommerce.Admin.System.Users.IUsersAppService"
             },
             "GetListAllAsyncByFilterKeyword": {
@@ -4112,7 +4112,7 @@
                 "type": "System.Collections.Generic.List<TeduEcommerce.Admin.System.Users.UserInListDto>",
                 "typeSimple": "[TeduEcommerce.Admin.System.Users.UserInListDto]"
               },
-              "allowAnonymous": null,
+              "allowAnonymous": false,
               "implementFrom": "TeduEcommerce.Admin.System.Users.IUsersAppService"
             },
             "GetListWithFilterAsyncByInput": {
@@ -4146,7 +4146,7 @@
                 },
                 {
                   "nameOnMethod": "input",
-                  "name": "SkipCount",
+                  "name": "CurrentPage",
                   "jsonName": null,
                   "type": "System.Int32",
                   "typeSimple": "number",
@@ -4158,7 +4158,7 @@
                 },
                 {
                   "nameOnMethod": "input",
-                  "name": "MaxResultCount",
+                  "name": "PageSize",
                   "jsonName": null,
                   "type": "System.Int32",
                   "typeSimple": "number",
@@ -4170,10 +4170,10 @@
                 }
               ],
               "returnValue": {
-                "type": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.System.Users.UserInListDto>",
-                "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.System.Users.UserInListDto>"
+                "type": "TeduEcommerce.Admin.PagedResult<TeduEcommerce.Admin.System.Users.UserInListDto>",
+                "typeSimple": "TeduEcommerce.Admin.PagedResult<TeduEcommerce.Admin.System.Users.UserInListDto>"
               },
-              "allowAnonymous": null,
+              "allowAnonymous": false,
               "implementFrom": "TeduEcommerce.Admin.System.Users.IUsersAppService"
             },
             "CreateAsyncByInput": {
@@ -4210,7 +4210,7 @@
                 "type": "TeduEcommerce.Admin.System.Users.UserDto",
                 "typeSimple": "TeduEcommerce.Admin.System.Users.UserDto"
               },
-              "allowAnonymous": null,
+              "allowAnonymous": false,
               "implementFrom": "Volo.Abp.Application.Services.ICreateAppService<TeduEcommerce.Admin.System.Users.UserDto,TeduEcommerce.Admin.System.Users.CreateUserDto>"
             },
             "UpdateAsyncByIdAndInput": {
@@ -4267,7 +4267,7 @@
                 "type": "TeduEcommerce.Admin.System.Users.UserDto",
                 "typeSimple": "TeduEcommerce.Admin.System.Users.UserDto"
               },
-              "allowAnonymous": null,
+              "allowAnonymous": false,
               "implementFrom": "Volo.Abp.Application.Services.IUpdateAppService<TeduEcommerce.Admin.System.Users.UserDto,System.Guid,TeduEcommerce.Admin.System.Users.UpdateUserDto>"
             },
             "GetAsyncById": {
@@ -4304,7 +4304,7 @@
                 "type": "TeduEcommerce.Admin.System.Users.UserDto",
                 "typeSimple": "TeduEcommerce.Admin.System.Users.UserDto"
               },
-              "allowAnonymous": null,
+              "allowAnonymous": false,
               "implementFrom": "Volo.Abp.Application.Services.IReadOnlyAppService<TeduEcommerce.Admin.System.Users.UserDto,TeduEcommerce.Admin.System.Users.UserDto,System.Guid,Volo.Abp.Application.Dtos.PagedResultRequestDto>"
             },
             "AssignRolesAsyncByUserIdAndRoleNames": {
@@ -4361,7 +4361,7 @@
                 "type": "System.Void",
                 "typeSimple": "System.Void"
               },
-              "allowAnonymous": null,
+              "allowAnonymous": false,
               "implementFrom": "TeduEcommerce.Admin.System.Users.IUsersAppService"
             },
             "SetPasswordAsyncByUserIdAndInput": {
@@ -4418,7 +4418,7 @@
                 "type": "System.Void",
                 "typeSimple": "System.Void"
               },
-              "allowAnonymous": null,
+              "allowAnonymous": false,
               "implementFrom": "TeduEcommerce.Admin.System.Users.IUsersAppService"
             },
             "DeleteAsyncById": {
@@ -4455,7 +4455,7 @@
                 "type": "System.Void",
                 "typeSimple": "System.Void"
               },
-              "allowAnonymous": null,
+              "allowAnonymous": false,
               "implementFrom": "Volo.Abp.Application.Services.IDeleteAppService<System.Guid>"
             },
             "GetListAsyncByInput": {
@@ -4504,7 +4504,7 @@
                 "type": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.System.Users.UserDto>",
                 "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<TeduEcommerce.Admin.System.Users.UserDto>"
               },
-              "allowAnonymous": null,
+              "allowAnonymous": false,
               "implementFrom": "Volo.Abp.Application.Services.IReadOnlyAppService<TeduEcommerce.Admin.System.Users.UserDto,TeduEcommerce.Admin.System.Users.UserDto,System.Guid,Volo.Abp.Application.Dtos.PagedResultRequestDto>"
             }
           }
@@ -7119,7 +7119,7 @@
   },
   "types": {
     "TeduEcommerce.Admin.BaseListFilterDto": {
-      "baseType": "Volo.Abp.Application.Dtos.PagedResultRequestDto",
+      "baseType": "TeduEcommerce.Admin.PagedResultRequestBase",
       "isEnum": false,
       "enumNames": null,
       "enumValues": null,
@@ -9026,6 +9026,155 @@
           "jsonName": null,
           "type": "System.Guid?",
           "typeSimple": "string?",
+          "isRequired": false,
+          "minLength": null,
+          "maxLength": null,
+          "minimum": null,
+          "maximum": null,
+          "regex": null
+        }
+      ]
+    },
+    "TeduEcommerce.Admin.PagedResult<T0>": {
+      "baseType": "TeduEcommerce.Admin.PageResultBase",
+      "isEnum": false,
+      "enumNames": null,
+      "enumValues": null,
+      "genericArguments": [
+        "T"
+      ],
+      "properties": [
+        {
+          "name": "Results",
+          "jsonName": null,
+          "type": "[T]",
+          "typeSimple": "[T]",
+          "isRequired": false,
+          "minLength": null,
+          "maxLength": null,
+          "minimum": null,
+          "maximum": null,
+          "regex": null
+        }
+      ]
+    },
+    "TeduEcommerce.Admin.PagedResultRequestBase": {
+      "baseType": null,
+      "isEnum": false,
+      "enumNames": null,
+      "enumValues": null,
+      "genericArguments": null,
+      "properties": [
+        {
+          "name": "CurrentPage",
+          "jsonName": null,
+          "type": "System.Int32",
+          "typeSimple": "number",
+          "isRequired": false,
+          "minLength": null,
+          "maxLength": null,
+          "minimum": null,
+          "maximum": null,
+          "regex": null
+        },
+        {
+          "name": "PageSize",
+          "jsonName": null,
+          "type": "System.Int32",
+          "typeSimple": "number",
+          "isRequired": false,
+          "minLength": null,
+          "maxLength": null,
+          "minimum": null,
+          "maximum": null,
+          "regex": null
+        }
+      ]
+    },
+    "TeduEcommerce.Admin.PageResultBase": {
+      "baseType": null,
+      "isEnum": false,
+      "enumNames": null,
+      "enumValues": null,
+      "genericArguments": null,
+      "properties": [
+        {
+          "name": "CurrentPage",
+          "jsonName": null,
+          "type": "System.Int64",
+          "typeSimple": "number",
+          "isRequired": false,
+          "minLength": null,
+          "maxLength": null,
+          "minimum": null,
+          "maximum": null,
+          "regex": null
+        },
+        {
+          "name": "PageSize",
+          "jsonName": null,
+          "type": "System.Int64",
+          "typeSimple": "number",
+          "isRequired": false,
+          "minLength": null,
+          "maxLength": null,
+          "minimum": null,
+          "maximum": null,
+          "regex": null
+        },
+        {
+          "name": "RowCount",
+          "jsonName": null,
+          "type": "System.Int64",
+          "typeSimple": "number",
+          "isRequired": false,
+          "minLength": null,
+          "maxLength": null,
+          "minimum": null,
+          "maximum": null,
+          "regex": null
+        },
+        {
+          "name": "PageCount",
+          "jsonName": null,
+          "type": "System.Int64",
+          "typeSimple": "number",
+          "isRequired": false,
+          "minLength": null,
+          "maxLength": null,
+          "minimum": null,
+          "maximum": null,
+          "regex": null
+        },
+        {
+          "name": "FirstRowOnPage",
+          "jsonName": null,
+          "type": "System.Int64",
+          "typeSimple": "number",
+          "isRequired": false,
+          "minLength": null,
+          "maxLength": null,
+          "minimum": null,
+          "maximum": null,
+          "regex": null
+        },
+        {
+          "name": "LastRowOnPage",
+          "jsonName": null,
+          "type": "System.Int64",
+          "typeSimple": "number",
+          "isRequired": false,
+          "minLength": null,
+          "maxLength": null,
+          "minimum": null,
+          "maximum": null,
+          "regex": null
+        },
+        {
+          "name": "AdditionalData",
+          "jsonName": null,
+          "type": "System.String",
+          "typeSimple": "string",
           "isRequired": false,
           "minLength": null,
           "maxLength": null,

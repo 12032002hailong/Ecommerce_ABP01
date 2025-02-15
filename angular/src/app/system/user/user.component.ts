@@ -21,8 +21,8 @@ export class UserComponent implements OnInit, OnDestroy {
   public blockedPanel: boolean = false;
 
   //Paging variables
-  public skipCount: number = 0;
-  public maxResultCount: number = 10;
+  public currentPage: number = 1;
+  public pageSize: number = 10;
   public totalCount: number;
 
   //Business variables
@@ -50,14 +50,14 @@ export class UserComponent implements OnInit, OnDestroy {
     this.toggleBlockUI(true);
     this.userService
       .getListWithFilter({
-        maxResultCount: this.maxResultCount,
-        skipCount: this.skipCount,
+        currentPage: this.currentPage,
+        pageSize: this.pageSize,
         keyword: this.keyword,
       })
       .pipe(takeUntil(this.ngUnsubscribe))
       .subscribe({
-        next: (response: PagedResultDto<UserInListDto>) => {
-          this.items = response.items;
+        next: (response: any) => {
+          this.items = response.results;
           this.totalCount = response.totalCount;
           if (selectionId != null && this.items.length > 0) {
             this.selectedItems = this.items.filter(x => x.id == selectionId);
@@ -87,8 +87,8 @@ export class UserComponent implements OnInit, OnDestroy {
   }
 
   pageChanged(event: any): void {
-    this.skipCount = (event.page - 1) * this.maxResultCount;
-    this.maxResultCount = event.rows;
+    // this.skipCount = (event.page - 1) * this.maxResultCount;
+    // this.maxResultCount = event.rows;
     this.loadData();
   }
 

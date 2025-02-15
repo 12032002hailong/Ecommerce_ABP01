@@ -3,6 +3,7 @@ import type { CreateUpdateProductDto, ProductDto, ProductInListDto, ProductListF
 import { RestService, Rest } from '@abp/ng.core';
 import type { PagedResultDto, PagedResultRequestDto } from '@abp/ng.core';
 import { Injectable } from '@angular/core';
+import type { PagedResult } from '../../models';
 
 @Injectable({
   providedIn: 'root',
@@ -72,10 +73,10 @@ export class ProductsService {
   
 
   getListFilter = (input: ProductListFilterDto, config?: Partial<Rest.Config>) =>
-    this.restService.request<any, PagedResultDto<ProductInListDto>>({
+    this.restService.request<any, PagedResult<ProductInListDto>>({
       method: 'GET',
       url: '/api/app/products/filter',
-      params: { categoryId: input.categoryId, keyword: input.keyword, skipCount: input.skipCount, maxResultCount: input.maxResultCount },
+      params: { categoryId: input.categoryId, keyword: input.keyword, currentPage: input.currentPage, pageSize: input.pageSize },
     },
     { apiName: this.apiName,...config });
   
@@ -89,10 +90,10 @@ export class ProductsService {
   
 
   getListProductAttributes = (input: ProductAttributeListFilterDto, config?: Partial<Rest.Config>) =>
-    this.restService.request<any, PagedResultDto<ProductAttributeValueDto>>({
+    this.restService.request<any, PagedResult<ProductAttributeValueDto>>({
       method: 'GET',
       url: '/api/app/products/product-attributes',
-      params: { productId: input.productId, keyword: input.keyword, skipCount: input.skipCount, maxResultCount: input.maxResultCount },
+      params: { productId: input.productId, keyword: input.keyword, currentPage: input.currentPage, pageSize: input.pageSize },
     },
     { apiName: this.apiName,...config });
   

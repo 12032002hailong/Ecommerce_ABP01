@@ -23,7 +23,7 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
   blockedPanel: boolean = false;
   btnDisabled = false;
   public form: FormGroup;
-  public thumbnailImage;
+  public thumbnailImage: any;
 
   //Dropdown
   productCategories: any[] = [];
@@ -139,7 +139,6 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.ngUnsubscribe))
       .subscribe({
         next: (response: ProductDto) => {
-          console.log(response);
           this.selectedEntity = response;
           this.loadThumbnail(this.selectedEntity.thumbnailPicture);
           this.buildForm();

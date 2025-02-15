@@ -125,8 +125,8 @@
   color: #fff;
   font-weight: 700;
 }
-
 .input {
+  position: relative;
   border: 0;
   outline: 0;
   color: #ccc;
@@ -138,7 +138,6 @@
   font-size: 14px;
   font-style: italic;
   border-radius: 20px 0 0 20px;
-  position: relative;
 }
 
 .btn {
@@ -148,12 +147,11 @@
   color: #fff;
   background: #111;
   padding: 0 25px;
-  border-radius: 0 20px 20px 0;
+  // border-radius: 0 20px 20px 0;
   height: 45px;
   border: none;
   outline: 0;
 }
-
 .btn:active,
 .btn:focus {
   border: 0 !important;

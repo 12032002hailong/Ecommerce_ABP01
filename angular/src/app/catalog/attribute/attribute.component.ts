@@ -25,8 +25,8 @@ export class AttributeComponent implements OnInit, OnDestroy {
   public selectedItems: ProductAttributeInListDto[] = [];
 
   //Paging variables
-  public skipCount: number = 0;
-  public maxResultCount: number = 10;
+  public currentPage: number = 1;
+  public pageSize: number = 10;
   public totalCount: number;
 
   //Filter
@@ -55,13 +55,13 @@ export class AttributeComponent implements OnInit, OnDestroy {
     this.attributeService
       .getListFilter({
         keyword: this.keyword,
-        maxResultCount: this.maxResultCount,
-        skipCount: this.skipCount,
+        currentPage: this.currentPage,
+        pageSize: this.pageSize,
       })
       .pipe(takeUntil(this.ngUnsubscribe))
       .subscribe({
-        next: (response: PagedResultDto<ProductAttributeInListDto>) => {
-          this.items = response.items;
+        next: (response: any) => {
+          this.items = response.results;
           this.totalCount = response.totalCount;
           this.toggleBlockUI(false);
         },
@@ -72,8 +72,8 @@ export class AttributeComponent implements OnInit, OnDestroy {
   }
 
   pageChanged(event: any): void {
-    this.skipCount = (event.page - 1) * this.maxResultCount;
-    this.maxResultCount = event.rows;
+    // this.skipCount = (event.page - 1) * this.maxResultCount;
+    // this.maxResultCount = event.rows;
     this.loadData();
   }
   showAddModal() {

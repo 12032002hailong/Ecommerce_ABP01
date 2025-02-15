@@ -2,7 +2,7 @@ import type { CreateUserDto, SetPasswordDto, UpdateUserDto, UserDto, UserInListD
 import { RestService, Rest } from '@abp/ng.core';
 import type { PagedResultDto, PagedResultRequestDto } from '@abp/ng.core';
 import { Injectable } from '@angular/core';
-import type { BaseListFilterDto } from '../../models';
+import type { BaseListFilterDto, PagedResult } from '../../models';
 
 @Injectable({
   providedIn: 'root',
@@ -73,10 +73,10 @@ export class UsersService {
   
 
   getListWithFilter = (input: BaseListFilterDto, config?: Partial<Rest.Config>) =>
-    this.restService.request<any, PagedResultDto<UserInListDto>>({
+    this.restService.request<any, PagedResult<UserInListDto>>({
       method: 'GET',
       url: '/api/app/users/with-filter',
-      params: { keyword: input.keyword, skipCount: input.skipCount, maxResultCount: input.maxResultCount },
+      params: { keyword: input.keyword, currentPage: input.currentPage, pageSize: input.pageSize },
     },
     { apiName: this.apiName,...config });
   

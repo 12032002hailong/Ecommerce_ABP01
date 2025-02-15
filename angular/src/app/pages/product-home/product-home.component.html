@@ -1,0 +1,28 @@
+<div class="containers">
+  <div class="header">
+    <h2>Products</h2>
+  </div>
+
+  <div class="products" *ngFor="let product of products">
+    <div class="product">
+      <div class="image">
+        <img src="../../../assets/images/product/Iphone-pruduct.jpg" alt="" />
+      </div>
+      <div class="namePrice">
+        <h3>{{ product.name }}</h3>
+        <span>$ {{ product.sellPrice }}</span>
+      </div>
+      <p>Smartphone X Pro có màn OLED 6.8", chip mạnh, camera 200MP, pin 5500mAh.</p>
+      <div class="stars">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+      </div>
+      <div class="buy">
+        <button>Buy Now</button>
+      </div>
+    </div>
+  </div>
+</div>

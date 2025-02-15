@@ -2,7 +2,7 @@ import type { CreateUpdateRoleDto, RoleDto, RoleInListDto } from './models';
 import { RestService, Rest } from '@abp/ng.core';
 import type { PagedResultDto, PagedResultRequestDto } from '@abp/ng.core';
 import { Injectable } from '@angular/core';
-import type { BaseListFilterDto } from '../../models';
+import type { BaseListFilterDto, PagedResult } from '../../models';
 import type { GetPermissionListResultDto, UpdatePermissionsDto } from '../../volo/abp/permission-management/models';
 
 @Injectable({
@@ -64,10 +64,10 @@ export class RolesService {
   
 
   getListFilter = (input: BaseListFilterDto, config?: Partial<Rest.Config>) =>
-    this.restService.request<any, PagedResultDto<RoleInListDto>>({
+    this.restService.request<any, PagedResult<RoleInListDto>>({
       method: 'GET',
       url: '/api/app/roles/filter',
-      params: { keyword: input.keyword, skipCount: input.skipCount, maxResultCount: input.maxResultCount },
+      params: { keyword: input.keyword, currentPage: input.currentPage, pageSize: input.pageSize },
     },
     { apiName: this.apiName,...config });
   
