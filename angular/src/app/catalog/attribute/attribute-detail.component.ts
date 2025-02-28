@@ -74,6 +74,7 @@ export class AttributeDetailComponent implements OnInit, OnDestroy {
         next: (response: ProductAttributeDto) => {
           this.selectedEntity = response;
           this.buildForm();
+          console.log(this.selectedEntity);
           this.toggleBlockUI(false);
         },
         error: () => {
@@ -92,12 +93,10 @@ export class AttributeDetailComponent implements OnInit, OnDestroy {
         .subscribe({
           next: () => {
             this.toggleBlockUI(false);
-
             this.ref.close(this.form.value);
           },
           error: err => {
             this.notificationSerivce.showError(err.error.error.message);
-
             this.toggleBlockUI(false);
           },
         });
@@ -136,9 +135,9 @@ export class AttributeDetailComponent implements OnInit, OnDestroy {
       code: new FormControl(this.selectedEntity.code || null, Validators.required),
       dataType: new FormControl(this.selectedEntity.dataType || null, Validators.required),
       sortOrder: new FormControl(this.selectedEntity.sortOrder || null, Validators.required),
+      note: new FormControl(this.selectedEntity.note || null),
       visibility: new FormControl(this.selectedEntity.visibility || true),
       isActive: new FormControl(this.selectedEntity.isActive || true),
-      note: new FormControl(this.selectedEntity.note || null),
       isRequired: new FormControl(this.selectedEntity.isRequired || true),
       isUnique: new FormControl(this.selectedEntity.isUnique || false),
     });

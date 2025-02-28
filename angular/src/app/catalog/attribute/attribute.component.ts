@@ -26,8 +26,10 @@ export class AttributeComponent implements OnInit, OnDestroy {
 
   //Paging variables
   public currentPage: number = 1;
-  public pageSize: number = 10;
-  public totalCount: number;
+  public pageSize: number = 5;
+  public firstRowOnPage: number;
+  public lastRowOnPage: number;
+  public rowCount: number;
 
   //Filter
   AttributeCategories: any[] = [];
@@ -62,7 +64,7 @@ export class AttributeComponent implements OnInit, OnDestroy {
       .subscribe({
         next: (response: any) => {
           this.items = response.results;
-          this.totalCount = response.totalCount;
+          this.rowCount = response.rowCount;
           this.toggleBlockUI(false);
         },
         error: () => {
@@ -72,8 +74,8 @@ export class AttributeComponent implements OnInit, OnDestroy {
   }
 
   pageChanged(event: any): void {
-    // this.skipCount = (event.page - 1) * this.maxResultCount;
-    // this.maxResultCount = event.rows;
+    this.currentPage = event.page + 1;
+    this.pageSize = event.rows;
     this.loadData();
   }
   showAddModal() {

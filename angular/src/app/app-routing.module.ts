@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppLayoutComponent } from './layout/app.layout.component';
+import { ProductHomeDetailComponent } from './pages/product-home/product-home-detail.component';
 
 const routes: Routes = [
   {
@@ -13,6 +14,7 @@ const routes: Routes = [
     path: 'auth',
     loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule),
   },
+  { path: 'product/:id', component: ProductHomeDetailComponent },
   {
     path: 'system',
     loadChildren: () => import('./system/system.module').then(m => m.SystemModule),
@@ -23,6 +25,7 @@ const routes: Routes = [
     loadChildren: () => import('./catalog/catalog.module').then(m => m.CatalogModule),
     component: AppLayoutComponent,
   },
+
   // {
   //   path: 'account',
   //   loadChildren: () => import('@abp/ng.account').then(m => m.AccountModule.forLazy()),

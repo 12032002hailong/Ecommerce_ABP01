@@ -74,8 +74,7 @@
           <th>Email</th>
           <th>Số ĐT</th>
           <th>Ngày tham gia</th>
-          <th style="width: 150px">Trạng thái</th>
-          <th></th>
+          <th>Trạng thái</th>
         </tr>
       </ng-template>
       <ng-template pTemplate="body" let-row>
@@ -85,14 +84,10 @@
             <p-tableCheckbox [value]="row"></p-tableCheckbox>
           </td>
           <td>{{ row.name }}</td>
-          <td>{{ row.userName }}</td>
+          <td>{{ row.surname }}</td>
           <td>{{ row.email }}</td>
           <td>{{ row.phoneNumber }}</td>
           <td>{{ row.creationTime | date : 'dd-MM-yyyy hh:mm' }}</td>
-          <td style="width: 150px">
-            <p-badge *ngIf="row.isActive === 1" value="Kích hoạt" severity="success"></p-badge>
-            <p-badge *ngIf="row.isActive === 0" value="Khoá" severity="danger"></p-badge>
-          </td>
           <td>
             <button
               pButton

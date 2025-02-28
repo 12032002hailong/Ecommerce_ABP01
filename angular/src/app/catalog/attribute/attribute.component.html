@@ -67,9 +67,9 @@
         <th>Nhãn</th>
         <th>Thứ tự</th>
         <th>Hiển thị</th>
+        <th>Kích hoạt</th>
         <th>Bắt buộc nhập</th>
         <th>Duy nhất</th>
-        <th>Kích hoạt</th>
       </tr>
     </ng-template>
     <ng-template pTemplate="body" let-row>
@@ -87,16 +87,16 @@
           <p-badge *ngIf="row.visibility === false" severity="danger" value="Ẩn"></p-badge>
         </td>
         <td>
+          <p-badge *ngIf="row.isActive === true" value="Kích hoạt" severity="success"></p-badge>
+          <p-badge *ngIf="row.isActive === false" value="Không" severity="danger"></p-badge>
+        </td>
+        <td>
           <p-badge *ngIf="row.isRequired === true" severity="success" value="Có"></p-badge>
           <p-badge *ngIf="row.isRequired === false" severity="danger" value="Không"></p-badge>
         </td>
         <td>
           <p-badge *ngIf="row.isUnique === true" severity="success" value="Có"></p-badge>
           <p-badge *ngIf="row.isUnique === false" severity="danger" value="Không"></p-badge>
-        </td>
-        <td>
-          <p-badge *ngIf="row.isActive === true" value="Kích hoạt" severity="success"></p-badge>
-          <p-badge *ngIf="row.isActive === false" value="Khoá" severity="danger"></p-badge>
         </td>
       </tr>
     </ng-template>
@@ -106,10 +106,10 @@
   </p-table>
   <!--Paginator-->
   <p-paginator
-    [rows]="pageSize"
-    [totalRecords]="totalCount"
+    [rows]="5"
+    [totalRecords]="rowCount"
     (onPageChange)="pageChanged($event)"
-    [rowsPerPageOptions]="[10, 20, 30, 50, 100]"
+    [rowsPerPageOptions]="[5, 10, 20, 30, 50, 100]"
   ></p-paginator>
   <!--Block UI-->
   <p-blockUI [blocked]="blockedPanel" [target]="pnl">

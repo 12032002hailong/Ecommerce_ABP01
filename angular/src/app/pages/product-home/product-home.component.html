@@ -1,10 +1,10 @@
-<div class="containers">
+<div class="product-home_containers">
   <div class="header">
     <h2>Products</h2>
   </div>
 
-  <div class="products" *ngFor="let product of products">
-    <div class="product">
+  <div class="products">
+    <div class="product" *ngFor="let product of products">
       <div class="image">
         <img src="../../../assets/images/product/Iphone-pruduct.jpg" alt="" />
       </div>
@@ -21,7 +21,7 @@
         <i class="fa fa-star"></i>
       </div>
       <div class="buy">
-        <button>Buy Now</button>
+        <button (click)="onChangeProduct()">Buy Now</button>
       </div>
     </div>
   </div>

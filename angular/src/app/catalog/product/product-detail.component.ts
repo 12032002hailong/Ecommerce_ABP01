@@ -141,6 +141,7 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
         next: (response: ProductDto) => {
           this.selectedEntity = response;
           this.loadThumbnail(this.selectedEntity.thumbnailPicture);
+          console.log(this.selectedEntity);
           this.buildForm();
           this.toggleBlockUI(false);
         },
@@ -160,7 +161,6 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
         .subscribe({
           next: () => {
             this.toggleBlockUI(false);
-
             this.ref.close(this.form.value);
           },
           error: err => {

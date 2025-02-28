@@ -19,13 +19,13 @@ import { TeduSharedModule } from 'src/app/shared/modules/tedu-shared.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { InputNumberModule } from 'primeng/inputnumber';
-import { ProductHomeModule } from './product-home-routing.module';
+import { ProductHomeRoutingModule } from './product-home-routing.module';
 
 @NgModule({
   declarations: [],
   imports: [
     SharedModule,
-    ProductHomeModule,
+    ProductHomeRoutingModule,
     PanelModule,
     TableModule,
     PaginatorModule,
@@ -47,4 +47,4 @@ import { ProductHomeModule } from './product-home-routing.module';
     InputNumberModule,
   ],
 })
-export class CatalogModule {}
+export class ProductHomeModule {}

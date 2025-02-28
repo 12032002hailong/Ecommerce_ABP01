@@ -64,7 +64,6 @@ export class ProductComponent implements OnInit, OnDestroy {
           this.items = response.results;
           this.totalCount = response.totalCount;
           this.toggleBlockUI(false);
-          console.log(response.results);
         },
         error: () => {
           this.toggleBlockUI(false);
@@ -74,12 +73,10 @@ export class ProductComponent implements OnInit, OnDestroy {
 
   loadProductCategories() {
     this.productCategoriesService.getListAll().subscribe((response: ProductCategoryInListDto[]) => {
-      response.forEach(element => {
-        this.productCategories.push({
-          value: element.id,
-          label: element.name,
-        });
-      });
+      this.productCategories = response.map(element => ({
+        value: element.id,
+        label: element.name,
+      }));
     });
   }
 
@@ -125,6 +122,7 @@ export class ProductComponent implements OnInit, OnDestroy {
         this.notificationService.showSuccess('Cập nhật sản phẩm thành công');
       }
     });
+    console.log('this.selectedItems[0]', this.selectedItems[0]);
   }
 
   manageProductAttribute(id: string) {

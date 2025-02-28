@@ -68,6 +68,7 @@ export class RoleDetailComponent implements OnInit, OnDestroy {
       .subscribe({
         next: (response: RoleDto) => {
           this.selectedEntity = response;
+          console.log(this.selectedEntity);
           this.buildForm();
           this.toggleBlockUI(false);
         },
@@ -78,8 +79,8 @@ export class RoleDetailComponent implements OnInit, OnDestroy {
   }
   saveChange() {
     this.toggleBlockUI(true);
-
     this.saveData();
+    console.log('form' + this.form.value);
   }
 
   private saveData() {

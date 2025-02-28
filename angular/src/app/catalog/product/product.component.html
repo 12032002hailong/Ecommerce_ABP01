@@ -35,7 +35,13 @@
       <div class="formgroup-inline">
         <div class="field">
           <label for="txt-keyword" class="p-sr-only">Từ khóa</label>
-          <input id="txt-keyword" pInputText type="text" placeholder="Gõ từ khóa" />
+          <input
+            id="txt-keyword"
+            [(ngModel)]="keyword"
+            pInputText
+            type="text"
+            placeholder="Gõ từ khóa"
+          />
         </div>
         <div class="field">
           <p-dropdown
@@ -95,7 +101,7 @@
         </td>
         <td>
           <p-badge *ngIf="row.isActive === true" severity="success" value="Kích hoạt"></p-badge>
-          <p-badge *ngIf="row.visibility === false" severity="danger" value="Khoá"></p-badge>
+          <p-badge *ngIf="row.isActive === false" severity="danger" value="Không"></p-badge>
         </td>
         <td>
           <button
