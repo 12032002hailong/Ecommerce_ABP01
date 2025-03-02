@@ -1,4 +1,8 @@
+import { query } from '@angular/animations';
 import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ProductInListDto, ProductsService } from '@proxy/catalog/products';
+import { Subject, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-product-detail',
@@ -6,12 +10,37 @@ import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
   styleUrl: './product-home-detail.component.scss',
 })
 export class ProductHomeDetailComponent {
-  days: any = 194;
-  hours: number = 22;
-  mins: number = 14;
-  secs: number = 4;
+  private ngUnsubscribe = new Subject<void>();
 
-  constructor() {}
+  id: string;
+  product: any;
+
+  days: any;
+  hours: number;
+  mins: number;
+  secs: number;
+
+  constructor(private activatedRoute: ActivatedRoute, private productService: ProductsService) {
+    this.activatedRoute.paramMap.subscribe(query => {
+      this.id = query.get('id');
+    });
+
+    this.loadData();
+  }
+
+  loadData() {
+    this.productService
+      .get(this.id)
+      .pipe(takeUntil(this.ngUnsubscribe))
+      .subscribe({
+        next: (response: any) => {
+          this.product = response;
+        },
+        error: e => {
+          console.log(e);
+        },
+      });
+  }
 
   x = setInterval(() => {
     let futureDate = new Date('Jan 4, 2026 15:34:24').getTime();

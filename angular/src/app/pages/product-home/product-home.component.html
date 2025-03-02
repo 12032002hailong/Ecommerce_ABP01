@@ -6,11 +6,17 @@
   <div class="products">
     <div class="product" *ngFor="let product of products">
       <div class="image">
-        <img src="../../../assets/images/product/Iphone-pruduct.jpg" alt="" />
+        <img
+          src="../../../assets/images/product/Iphone-pruduct.jpg"
+          alt=""
+          [routerLink]="['/product', product.id]"
+        />
       </div>
       <div class="namePrice">
-        <h3>{{ product.name }}</h3>
-        <span>$ {{ product.sellPrice }}</span>
+        <h3>
+          {{ product.name }}
+        </h3>
+        <span>{{ product.sellPrice | number : '1.0-3' }} đ</span>
       </div>
       <p>Smartphone X Pro có màn OLED 6.8", chip mạnh, camera 200MP, pin 5500mAh.</p>
       <div class="stars">

@@ -1,16 +1,18 @@
 import { PagedResultDto } from '@abp/ng.core';
 import { NgFor } from '@angular/common';
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { PagedResult } from '@proxy';
 import { ProductInListDto, ProductsService } from '@proxy/catalog/products';
 import { DialogService } from 'primeng/dynamicdialog';
 import { Subject, takeUntil } from 'rxjs';
 import { NotificationService } from 'src/app/shared/services/notification.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-product-home',
   standalone: true,
-  imports: [NgFor],
+  imports: [CommonModule, NgFor, RouterLink],
   templateUrl: './product-home.component.html',
   styleUrl: './product-home.component.scss',
 })
@@ -41,11 +43,11 @@ export class ProductHomeComponent {
         currentPage: this?.currentPage,
         pageSize: this?.pageSize,
       })
-
       .pipe(takeUntil(this.ngUnsubscribe))
       .subscribe({
         next: (response: any) => {
           this.products = response.results;
+          console.log(this.products);
         },
         error: () => {},
       });

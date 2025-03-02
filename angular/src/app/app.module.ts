@@ -30,6 +30,7 @@ import { TokenInterceptor } from './shared/interceptors/token.interceptor';
 import { GlobalHttpInterceptorService } from './shared/interceptors/error-handler.interceptor';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
@@ -37,6 +38,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     BrowserAnimationsModule,
     AppRoutingModule,
     AppLayoutModule,
+    RouterModule,
     CoreModule.forRoot({
       environment,
       registerLocaleFn: registerLocale(),

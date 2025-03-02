@@ -7,6 +7,8 @@ using TeduEcommerce.Admin.Catalog.Products;
 using TeduEcommerce.Admin.System.Roles;
 using TeduEcommerce.Admin.System.Users;
 using TeduEcommerce.Manufacturers;
+using TeduEcommerce.Admin.Orders;
+using TeduEcommerce.Orders;
 using TeduEcommerce.ProductAttributes;
 using TeduEcommerce.ProductCategories;
 using TeduEcommerce.Products;
@@ -54,5 +56,9 @@ public class TeduEcommerceAdminApplicationAutoMapperProfile : Profile
         //User
         CreateMap<IdentityUser, UserDto>();
         CreateMap<IdentityUser, UserInListDto>();
+
+        //Order
+        CreateMap<Order, OrderDto>();
+
     }
 }

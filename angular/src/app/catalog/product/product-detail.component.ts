@@ -79,8 +79,8 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
 
   initFormData() {
     //Load data to form
-    var productCategories = this.productCategoryService.getListAll();
-    var manufacturers = this.manufacturerService.getListAll();
+    let productCategories = this.productCategoryService.getListAll();
+    let manufacturers = this.manufacturerService.getListAll();
     this.toggleBlockUI(true);
     forkJoin({
       productCategories,
@@ -90,8 +90,8 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
       .subscribe({
         next: (response: any) => {
           //Push data to dropdown
-          var productCategories = response.productCategories as ProductCategoryInListDto[];
-          var manufacturers = response.manufacturers as ManufacturerInListDto[];
+          let productCategories = response.productCategories as ProductCategoryInListDto[];
+          let manufacturers = response.manufacturers as ManufacturerInListDto[];
           productCategories.forEach(element => {
             this.productCategories.push({
               value: element.id,
@@ -141,7 +141,6 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
         next: (response: ProductDto) => {
           this.selectedEntity = response;
           this.loadThumbnail(this.selectedEntity.thumbnailPicture);
-          console.log(this.selectedEntity);
           this.buildForm();
           this.toggleBlockUI(false);
         },
@@ -227,7 +226,7 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.ngUnsubscribe))
       .subscribe({
         next: (response: string) => {
-          var fileExt = this.selectedEntity.thumbnailPicture?.split('.').pop();
+          let fileExt = this.selectedEntity.thumbnailPicture?.split('.').pop();
           this.thumbnailImage = this.sanitizer.bypassSecurityTrustResourceUrl(
             `data:image/${fileExt};base64, ${response}`
           );

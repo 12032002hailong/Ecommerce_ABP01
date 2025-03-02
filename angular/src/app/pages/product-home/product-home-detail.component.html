@@ -34,7 +34,7 @@
       </div>
       <div class="selling-col-3">
         <div class="selling-heading">
-          <a href="javascript:void(0)">Enim Pinchana Enim</a>
+          <a href="javascript:void(0)">{{ product.name }}</a>
           <div class="selling-rating">
             <i class="fa fa-star"></i>
             <i class="fa fa-star"></i>
@@ -44,12 +44,10 @@
           </div>
         </div>
         <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-          been the industry's standard dummy text ever since the 1500s, when an unknown printer took
-          a galley of type and scrambled it to make a type specimen book.
+          {{ product.seoMetaDescription }}
         </p>
         <h3>
-          <span class="selling-amount">$230.00</span>
+          <span class="selling-amount">{{ product.sellPrice }}Đ</span>
           <span class="selling-discount">$202</span>
         </h3>
         <div class="selling-button">
