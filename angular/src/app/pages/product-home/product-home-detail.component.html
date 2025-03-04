@@ -27,7 +27,7 @@
       <div class="selling-col-2">
         <div class="selling-img">
           <img
-            src="../../../assets/images/bestSelling/logi-dock-hpb-desktop.jpg"
+            src="https://primefaces.org/cdn/primeng/images/galleria/galleria10.jpg"
             alt="Best Selling"
           />
         </div>
@@ -50,10 +50,30 @@
           <span class="selling-amount">{{ product.sellPrice }}Đ</span>
           <span class="selling-discount">$202</span>
         </h3>
+        <div class="delivery">
+          <h5 class="delivery_left-slide">Vận chuyển :</h5>
+          <span class="delivery_right-slide">Miễn phí vận chuyển</span>
+        </div>
+        <div>
+          <h5>Số lượng:</h5>
+          <p-inputNumber
+            [(ngModel)]="currentQuantity"
+            [style]="{ width: '4rem' }"
+            [showButtons]="true"
+            buttonLayout="vertical"
+            spinnerMode="vertical"
+            inputId="vertical"
+            decrementButtonClass="p-button-secondary"
+            incrementButtonClass="p-button-secondary"
+            incrementButtonIcon="pi pi-plus"
+            decrementButtonIcon="pi pi-minus"
+            [min]="1"
+          />
+        </div>
         <div class="selling-button">
-          <a href="javascript:void(0)" class="cart-btn"
-            ><i class="fa fa-shopping-cart"></i>Add To Cart</a
-          >
+          <button class="cart-btn" (click)="handleAddToCart()">
+            <i class="fa fa-shopping-cart"></i>Add To Cart
+          </button>
           <button type="button" class="main-button">
             <a href="javascript:void(0)"><i class="fa fa-heart"></i></a>
             <a href="javascript:void(0)"><i class="fa fa-search"></i></a>

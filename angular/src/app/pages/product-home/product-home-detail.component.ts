@@ -1,13 +1,18 @@
-import { query } from '@angular/animations';
-import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
+import { query, transition } from '@angular/animations';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ProductInListDto, ProductsService } from '@proxy/catalog/products';
+import { ProductsService } from '@proxy/catalog/products';
 import { Subject, takeUntil } from 'rxjs';
+import { CartItem } from 'src/app/models/cartItem.models';
+import { PrimeNgModuleModule } from 'src/app/PrimeNgModule/prime-ng-module/prime-ng-module.module';
+import { DataService } from 'src/app/shared/services/data.service';
 
 @Component({
   selector: 'app-product-detail',
   templateUrl: './product-home-detail.component.html',
   styleUrl: './product-home-detail.component.scss',
+  standalone: true,
+  imports: [PrimeNgModuleModule],
 })
 export class ProductHomeDetailComponent {
   private ngUnsubscribe = new Subject<void>();
@@ -20,9 +25,19 @@ export class ProductHomeDetailComponent {
   mins: number;
   secs: number;
 
-  constructor(private activatedRoute: ActivatedRoute, private productService: ProductsService) {
+  cart: CartItem;
+  carts: CartItem[];
+
+  currentQuantity: number = 1;
+
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private productService: ProductsService,
+    private dataService: DataService
+  ) {
     this.activatedRoute.paramMap.subscribe(query => {
       this.id = query.get('id');
+      console.log(this.id);
     });
 
     this.loadData();
@@ -35,10 +50,11 @@ export class ProductHomeDetailComponent {
       .subscribe({
         next: (response: any) => {
           this.product = response;
+          console.log(this.product);
         },
-        error: e => {
-          console.log(e);
-        },
+        // error: e => {
+        //   console.log(e);
+        // },
       });
   }
 
@@ -54,5 +70,40 @@ export class ProductHomeDetailComponent {
       clearInterval(this.x);
       this.days = 'Offer is expired';
     }
-  }, 1000);
+  }, 300);
+
+  handleAddToCart = () => {
+    //update localStorage
+    const cartStorage = localStorage.getItem('carts');
+    if (cartStorage && this.product) {
+      //update
+      const carts = JSON.parse(cartStorage) as CartItem[];
+
+      //check exist
+      let isExistIndex = carts.findIndex(c => c.id === this.product.id);
+      if (isExistIndex > -1) {
+        carts[isExistIndex].quantity = carts[isExistIndex].quantity + this.currentQuantity;
+      } else {
+        carts.push({
+          id: this.product.id,
+          quantity: this.currentQuantity,
+          product: this.product,
+        });
+      }
+      localStorage.setItem('carts', JSON.stringify(carts));
+      this.carts = carts;
+    } else {
+      //create
+      const data = [
+        {
+          id: this.product.id,
+          quantity: this.currentQuantity,
+          product: this.product,
+        },
+      ];
+      localStorage.setItem('carts', JSON.stringify(data));
+      this.carts = data;
+    }
+    this.dataService.changeCarts(this.carts);
+  };
 }

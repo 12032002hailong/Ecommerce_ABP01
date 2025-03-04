@@ -47,16 +47,9 @@ export class ProductHomeComponent {
       .subscribe({
         next: (response: any) => {
           this.products = response.results;
-          console.log(this.products);
         },
         error: () => {},
       });
-  }
-
-  onChangeProduct() {
-    const id = this.selectedItems[0].id;
-
-    console.log('this.selectedItems[0]', this.selectedItems[0]);
   }
 
   pageChanged(event: any) {
