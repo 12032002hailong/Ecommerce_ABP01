@@ -39,7 +39,7 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
     private config: DynamicDialogConfig,
     private ref: DynamicDialogRef,
     private utilService: UtilityService,
-    private notificationSerivce: NotificationService,
+    private notificationService: NotificationService,
     private cd: ChangeDetectorRef,
     private sanitizer: DomSanitizer
   ) {}
@@ -163,7 +163,7 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
             this.ref.close(this.form.value);
           },
           error: err => {
-            this.notificationSerivce.showError(err.error.error.message);
+            this.notificationService.showError(err.error.error.message);
 
             this.toggleBlockUI(false);
           },
@@ -178,7 +178,7 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
             this.ref.close(this.form.value);
           },
           error: err => {
-            this.notificationSerivce.showError(err.error.error.message);
+            this.notificationService.showError(err.error.error.message);
             this.toggleBlockUI(false);
           },
         });

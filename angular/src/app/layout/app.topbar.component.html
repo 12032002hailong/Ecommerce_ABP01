@@ -30,11 +30,43 @@
     class="layout-topbar-menu"
     [ngClass]="{ 'layout-topbar-menu-mobile-active': layoutService.state.profileSidebarVisible }"
   >
+    <p-button (onClick)="op.toggle($event)" icon="pi pi-shopping-cart" label="Giỏ hàng">
+      <p-badge value="{{ carts.length }}" />
+    </p-button>
+    <p-overlayPanel #op>
+      <div class="card xl:flex xl:justify-content-center">
+        <p-orderList [value]="carts" [listStyle]="{ height: '25rem' }" header="List of Products">
+          <ng-template let-cart pTemplate="item">
+            <div class="flex flex-wrap p-2 align-items-center gap-3">
+              <div class="flex-1 flex flex-column gap-2">
+                <span class="font-bold">{{ cart.product.name }}</span>
+                <img
+                  src="https://primefaces.org/cdn/primeng/images/galleria/galleria10.jpg"
+                  [alt]="cart.product.name"
+                  class="w-4rem shadow-2 flex-shrink-0 border-round"
+                />
+                <div class="flex align-items-center gap-2">
+                  <i class="pi pi-tag text-sm"></i>
+                  <span>
+                    {{ cart.product.categoryName }}
+                  </span>
+                </div>
+              </div>
+              <span class="font-bold text-900">
+                {{ '$' + cart.product.sellPrice }}
+              </span>
+            </div>
+          </ng-template>
+        </p-orderList>
+      </div>
+      <p-button label="Đặt hàng" routerLink="/order" />
+    </p-overlayPanel>
+
     <button class="p-link layout-topbar-button" (click)="userMenu.toggle($event)">
       <i class="pi pi-user"></i>
-      <span>Tài khoản</span>
+      <span>Tài Khoản</span>
     </button>
-    <button class="p-link layout-topbar-button" [routerLink]="'/documentation'">
+    <button class="p-link layout-topbar-button">
       <i class="pi pi-cog"></i>
       <span>Cài đặt</span>
     </button>

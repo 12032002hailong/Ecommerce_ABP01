@@ -7213,14 +7213,14 @@ primeflex@^3.3.1:
   resolved "https://registry.npmjs.org/primeflex/-/primeflex-3.3.1.tgz"
   integrity sha512-zaOq3YvcOYytbAmKv3zYc+0VNS9Wg5d37dfxZnveKBFPr7vEIwfV5ydrpiouTft8MVW6qNjfkaQphHSnvgQbpQ==
 
-primeicons@6.0.1:
-  version "6.0.1"
-  resolved "https://registry.npmjs.org/primeicons/-/primeicons-6.0.1.tgz"
-  integrity sha512-KDeO94CbWI4pKsPnYpA1FPjo79EsY9I+M8ywoPBSf9XMXoe/0crjbUK7jcQEDHuc0ZMRIZsxH3TYLv4TUtHmAA==
+primeicons@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/primeicons/-/primeicons-7.0.0.tgz#6b25c3fdcb29bb745a3035bdc1ed5902f4a419cf"
+  integrity sha512-jK3Et9UzwzTsd6tzl2RmwrVY/b8raJ3QZLzoDACj+oTJ0oX7L9Hy+XnVwgo4QVKlKpnP/Ur13SXV/pVh4LzaDw==
 
 primeng@17.2.0:
   version "17.2.0"
-  resolved "https://registry.npmjs.org/primeng/-/primeng-17.2.0.tgz"
+  resolved "https://registry.yarnpkg.com/primeng/-/primeng-17.2.0.tgz#e0a97982935db98b6b372b0f4464807ddac8bc64"
   integrity sha512-pajexYLeJWE6+pmDy0gHrMiQ/zLq4il54EcRNWC0jTNgJvWhoz/K/7NL9kXf2H4eWexNcrEieLnO9ko5uj3cVg==
   dependencies:
     tslib "^2.3.0"

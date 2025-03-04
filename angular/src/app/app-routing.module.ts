@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppLayoutComponent } from './layout/app.layout.component';
 import { ProductHomeDetailComponent } from './pages/product-home/product-home-detail.component';
+import { OrderComponent } from './pages/order/order.component';
 
 const routes: Routes = [
   {
@@ -14,7 +15,16 @@ const routes: Routes = [
     path: 'auth',
     loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule),
   },
-  { path: 'product/:id', component: ProductHomeDetailComponent },
+  {
+    path: 'product',
+    component: AppLayoutComponent,
+    children: [{ path: ':id', component: ProductHomeDetailComponent }],
+  },
+  {
+    path: 'order',
+    component: AppLayoutComponent,
+    children: [{ path: '', component: OrderComponent }],
+  },
   {
     path: 'system',
     loadChildren: () => import('./system/system.module').then(m => m.SystemModule),

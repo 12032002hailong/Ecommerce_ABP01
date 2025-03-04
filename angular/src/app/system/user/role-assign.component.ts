@@ -1,8 +1,13 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit, EventEmitter, OnDestroy } from '@angular/core';
 import { RoleDto, RolesService } from '@proxy/system/roles';
 import { UserDto, UsersService } from '@proxy/system/users';
 import { DynamicDialogConfig, DynamicDialogRef } from 'primeng/dynamicdialog';
+import { PickListModule } from 'primeng/picklist';
 import { forkJoin, Subject, takeUntil } from 'rxjs';
+import { PanelModule } from 'primeng/panel';
+import { BlockUIModule } from 'primeng/blockui';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
 
 @Component({
   templateUrl: 'role-assign.component.html',
@@ -17,7 +22,7 @@ export class RoleAssignComponent implements OnInit, OnDestroy {
   public saveBtnName: string;
   public closeBtnName: string;
   public availableRoles: string[] = [];
-  public seletedRoles: string[] = [];
+  public selectedRoles: string[] = [];
   formSavedEventEmitter: EventEmitter<any> = new EventEmitter();
 
   constructor(
@@ -82,8 +87,8 @@ export class RoleAssignComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.ngUnsubscribe))
       .subscribe({
         next: (response: UserDto) => {
-          this.seletedRoles = response.roles;
-          this.availableRoles = this.availableRoles.filter(x => !this.seletedRoles.includes(x));
+          this.selectedRoles = response.roles;
+          this.availableRoles = this.availableRoles.filter(x => !this.selectedRoles.includes(x));
           this.toggleBlockUI(false);
         },
         error: () => {
@@ -99,7 +104,7 @@ export class RoleAssignComponent implements OnInit, OnDestroy {
 
   private saveData() {
     this.userService
-      .assignRoles(this.config.data.id, this.seletedRoles)
+      .assignRoles(this.config.data.id, this.selectedRoles)
       .pipe(takeUntil(this.ngUnsubscribe))
       .subscribe(() => {
         console.log('ok');

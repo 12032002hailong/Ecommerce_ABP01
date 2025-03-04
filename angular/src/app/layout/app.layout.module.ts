@@ -18,7 +18,9 @@ import { AppConfigModule } from './config/config.module';
 import { AppSidebarComponent } from './app.sidebar.component';
 import { AppLayoutComponent } from './app.layout.component';
 import { TieredMenuModule } from 'primeng/tieredmenu';
-
+import { OverlayPanelModule } from 'primeng/overlaypanel';
+import { ButtonModule } from 'primeng/button';
+import { OrderListModule } from 'primeng/orderlist';
 @NgModule({
   declarations: [
     AppMenuitemComponent,
@@ -42,6 +44,9 @@ import { TieredMenuModule } from 'primeng/tieredmenu';
     RouterModule,
     AppConfigModule,
     TieredMenuModule,
+    OverlayPanelModule,
+    ButtonModule,
+    OrderListModule,
   ],
   exports: [AppLayoutComponent],
 })
