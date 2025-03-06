@@ -37,7 +37,6 @@ export class ProductHomeDetailComponent {
   ) {
     this.activatedRoute.paramMap.subscribe(query => {
       this.id = query.get('id');
-      console.log(this.id);
     });
 
     this.loadData();
@@ -50,11 +49,10 @@ export class ProductHomeDetailComponent {
       .subscribe({
         next: (response: any) => {
           this.product = response;
-          console.log(this.product);
         },
-        // error: e => {
-        //   console.log(e);
-        // },
+        error: e => {
+          console.log(e);
+        },
       });
   }
 

@@ -24,6 +24,7 @@ import { ProductHomeComponent } from './product-home/product-home.component';
 import { ProductHomeDetailComponent } from './product-home/product-home-detail.component';
 import { OrderComponent } from './order/order.component';
 import { DataViewModule } from 'primeng/dataview';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [],
@@ -53,6 +54,7 @@ import { DataViewModule } from 'primeng/dataview';
     ProductHomeDetailComponent,
     OrderComponent,
     DataViewModule,
+    FormsModule,
   ],
 })
 export class PagesModule {}

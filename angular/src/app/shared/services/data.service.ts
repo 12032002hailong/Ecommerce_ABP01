@@ -12,4 +12,8 @@ export class DataService {
   changeCarts(carts: CartItem[]) {
     this.cartsSource.next(carts);
   }
+
+  updateCart(newCarts: CartItem[]): void {
+    this.cartsSource.next([...newCarts]);
+  }
 }

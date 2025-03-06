@@ -1,10 +1,10 @@
-<div class="container text-center">
+<div class="container">
   <div class="row">
-    <div class="card col-8">
+    <div class="col-8">
       <p-dataView #dv [value]="carts">
         <ng-template pTemplate="list" let-carts>
           <div class="grid grid-nogutter">
-            <div class="col-12" *ngFor="let item of carts; let first = first" class="col-12">
+            <div class="col-12" *ngFor="let cart of carts; let first = first" class="col-12">
               <div
                 class="flex flex-column sm:flex-row sm:align-items-center p-4 gap-3"
                 [ngClass]="{ 'border-top-1 surface-border': !first }"
@@ -13,13 +13,6 @@
                   <img
                     class="block xl:block mx-auto border-round w-full"
                     src="https://primefaces.org/cdn/primeng/images/galleria/galleria10.jpg"
-                  />
-                  <p-tag
-                    [value]="item.inventoryStatus"
-                    [severity]="getSeverity(item)"
-                    class="absolute"
-                    [style.left.px]="4"
-                    [style.top.px]="4"
                   />
                 </div>
                 <div
@@ -30,37 +23,38 @@
                   >
                     <div>
                       <span class="font-medium text-secondary text-sm">{{
-                        item.product.category
+                        cart.product.categoryName
                       }}</span>
-                      <div class="text-lg font-medium text-900 mt-2">{{ item.product.name }}</div>
-                    </div>
-                    <div class="surface-100 p-1" style="border-radius: 30px">
-                      <div
-                        class="surface-0 flex align-items-center gap-2 justify-content-center py-1 px-2"
-                        style="
-                          border-radius: 30px;
-                          box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.04),
-                            0px 1px 2px 0px rgba(0, 0, 0, 0.06);
-                        "
-                      >
-                        <span class="text-900 font-medium text-sm">Rating</span>
-                        <i class="pi pi-star-fill text-yellow-500"></i>
+                      <div class="text-lg font-medium text-900 mt-2">
+                        {{ cart.product.name }}
                       </div>
                     </div>
+                    <p-inputNumber
+                      [(ngModel)]="cart.quantity"
+                      mode="decimal"
+                      [showButtons]="true"
+                      inputId="minmax-buttons"
+                      [min]="0"
+                      [max]="100"
+                      (ngModelChange)="updateQuantity(cart, $event)"
+                    />
                   </div>
+
                   <div class="flex flex-column md:align-items-end gap-5">
                     <span class="text-xl font-semibold text-900">{{
-                      '$' + item.product.price
+                      '$' + cart.product.sellPrice
                     }}</span>
-                    <div class="flex flex-row-reverse md:flex-row gap-2">
-                      <p-button icon="pi pi-heart" [outlined]="true" />
-                      <p-button
-                        icon="pi pi-shopping-cart"
-                        class="flex-auto md:flex-initial white-space-nowrap"
-                        label="Buy Now"
-                        [disabled]="item.inventoryStatus === 'OUTOFSTOCK'"
-                      />
+                    <div class="flex-auto">
+                      <label for="Tổng tiền">Tổng tiền sản phẩm: {{ cart.product.name }} </label>
+                      <p>{{ cart.quantity * cart.product.sellPrice }}</p>
                     </div>
+                  </div>
+                  <div class="delete-cart">
+                    <i
+                      class="pi pi-trash"
+                      style="font-size: 2rem"
+                      (click)="handleRemoveCart(cart.id)"
+                    ></i>
                   </div>
                 </div>
               </div>
@@ -69,6 +63,12 @@
         </ng-template>
       </p-dataView>
     </div>
-    <div class="col-4">Column</div>
+    <div class="col-4 text-center">
+      <div class="flex-auto">
+        <h3>Tổng tiền cần thanh toán</h3>
+        <textarea rows="5" cols="30" pInputTextarea [(ngModel)]="totalPrice" label="Tổng tiền">
+        </textarea>
+      </div>
+    </div>
   </div>
 </div>
