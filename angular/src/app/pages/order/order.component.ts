@@ -1,15 +1,18 @@
-import { NgForOf } from '@angular/common';
-import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { CommonModule, NgForOf } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
 import { DataViewModule } from 'primeng/dataview';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { CartItem } from 'src/app/models/cartItem.models';
 import { DataService } from 'src/app/shared/services/data.service';
 import { FormsModule } from '@angular/forms';
+import { ButtonModule } from 'primeng/button';
+import { NotificationService } from 'src/app/shared/services/notification.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-order',
   standalone: true,
-  imports: [DataViewModule, NgForOf, InputNumberModule, FormsModule],
+  imports: [DataViewModule, NgForOf, InputNumberModule, FormsModule, CommonModule, ButtonModule],
   templateUrl: './order.component.html',
   styleUrl: './order.component.scss',
 })
@@ -17,7 +20,11 @@ export class OrderComponent implements OnInit {
   carts: CartItem[];
   totalPrice: number = 0;
 
-  constructor(private dataService: DataService) {}
+  constructor(
+    private dataService: DataService,
+    private notificationService: NotificationService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.dataService.currentCarts.subscribe(carts => {
@@ -50,5 +57,13 @@ export class OrderComponent implements OnInit {
 
       this.dataService.changeCarts(carts);
     }
+  }
+
+  handleOrderProduct() {
+    if (!this.carts.length) {
+      this.notificationService.showError('Không tồn tại sản phẩm trong giỏ hàng.');
+      return;
+    }
+    this.router.navigate(['/payment']);
   }
 }

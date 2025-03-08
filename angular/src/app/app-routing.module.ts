@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppLayoutComponent } from './layout/app.layout.component';
 import { ProductHomeDetailComponent } from './pages/product-home/product-home-detail.component';
 import { OrderComponent } from './pages/order/order.component';
+import { PaymentComponent } from './pages/payment/payment.component';
 
 const routes: Routes = [
   {
@@ -24,6 +25,11 @@ const routes: Routes = [
     path: 'order',
     component: AppLayoutComponent,
     children: [{ path: '', component: OrderComponent }],
+  },
+  {
+    path: 'payment',
+    component: AppLayoutComponent,
+    children: [{ path: '', component: PaymentComponent }],
   },
   {
     path: 'system',

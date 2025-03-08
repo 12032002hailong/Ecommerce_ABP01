@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col-8">
+    <div class="col-8" style="background: #fff">
       <p-dataView #dv [value]="carts">
         <ng-template pTemplate="list" let-carts>
           <div class="grid grid-nogutter">
@@ -34,7 +34,7 @@
                       mode="decimal"
                       [showButtons]="true"
                       inputId="minmax-buttons"
-                      [min]="0"
+                      [min]="1"
                       [max]="100"
                       (ngModelChange)="updateQuantity(cart, $event)"
                     />
@@ -63,11 +63,18 @@
         </ng-template>
       </p-dataView>
     </div>
-    <div class="col-4 text-center">
+    <div class="col-4 text-center" style="background: #fff">
       <div class="flex-auto">
         <h3>Tổng tiền cần thanh toán</h3>
-        <textarea rows="5" cols="30" pInputTextarea [(ngModel)]="totalPrice" label="Tổng tiền">
-        </textarea>
+        <p>{{ totalPrice | number : '1.0-3' }}đ</p>
+      </div>
+      <div button-order>
+        <button
+          pButton
+          label="Mua Hàng ({{ carts.length }})"
+          style="background: #ff4000"
+          (click)="handleOrderProduct()"
+        ></button>
       </div>
     </div>
   </div>

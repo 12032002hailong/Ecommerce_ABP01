@@ -1,0 +1,149 @@
+<div class="container">
+  <div class="row">
+    <div class="col-8" style="background: #fff">
+      <p-dataView #dv [value]="carts">
+        <ng-template pTemplate="list" let-carts>
+          <div class="grid grid-nogutter">
+            <div class="col-12" *ngFor="let cart of carts; let first = first" class="col-12">
+              <div
+                class="flex flex-column sm:flex-row sm:align-items-center p-4 gap-3"
+                [ngClass]="{ 'border-top-1 surface-border': !first }"
+              >
+                <div class="md:w-10rem relative">
+                  <img
+                    class="block xl:block mx-auto border-round w-full"
+                    src="https://primefaces.org/cdn/primeng/images/galleria/galleria10.jpg"
+                  />
+                </div>
+                <div
+                  class="flex flex-column md:flex-row justify-content-between md:align-items-center flex-1 gap-4"
+                >
+                  <div
+                    class="flex flex-row md:flex-column justify-content-between align-items-start gap-2"
+                  >
+                    <div>
+                      <span class="font-medium text-secondary text-sm">{{
+                        cart.product.categoryName
+                      }}</span>
+                      <div class="text-lg font-medium text-900 mt-2">
+                        {{ cart.product.name }}
+                      </div>
+                    </div>
+                    <p-inputNumber
+                      [(ngModel)]="cart.quantity"
+                      mode="decimal"
+                      [showButtons]="true"
+                      inputId="minmax-buttons"
+                      [min]="0"
+                      [max]="100"
+                      (ngModelChange)="updateQuantity(cart, $event)"
+                    />
+                  </div>
+
+                  <div class="flex flex-column md:align-items-end gap-5">
+                    <span class="text-xl font-semibold text-900">{{
+                      '$' + cart.product.sellPrice
+                    }}</span>
+                    <div class="flex-auto">
+                      <label for="Tổng tiền">Tổng tiền sản phẩm: {{ cart.product.name }} </label>
+                      <p>{{ cart.quantity * cart.product.sellPrice }}</p>
+                    </div>
+                  </div>
+                  <div class="delete-cart">
+                    <i
+                      class="pi pi-trash"
+                      style="font-size: 2rem"
+                      (click)="handleRemoveCart(cart.id)"
+                    ></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </p-dataView>
+    </div>
+
+    <div class="col-4 text-center" style="background: #fff">
+      <div class="card flex justify-content-center">
+        <div class="flex flex-column gap-3">
+          <h2 class="text-xl font-semibold mb-4 text-gray-700">Hình thức thanh toán</h2>
+          <div *ngFor="let paymentMethod of paymentMethods" class="field-checkbox">
+            <p-radioButton
+              [inputId]="paymentMethod.key"
+              name="paymentMethod"
+              [value]="paymentMethod"
+              [(ngModel)]="selectedPaymentMethod"
+            />
+            <label [for]="paymentMethod.key" class="ml-2">
+              {{ paymentMethod.name }}
+            </label>
+          </div>
+        </div>
+      </div>
+      <form [formGroup]="form" skipValidation (ngSubmit)="onSubmit()">
+        <div class="card bg-white p-6 rounded-lg shadow-md max-w-lg mx-auto">
+          <h2 class="text-xl font-semibold mb-4 text-gray-700">Thông tin người nhận hàng</h2>
+
+          <!-- Tên người nhận -->
+          <div class="mb-4">
+            <label for="customerName" class="text-gray-600 font-medium mb-1"
+              >Tên người nhận hàng:</label
+            >
+            <input
+              type="text"
+              pInputText
+              id="customerName"
+              formControlName="customerName"
+              class="w-full px-4 py-2 border rounded-md focus:ring focus:ring-blue-300"
+              placeholder="Nhập tên người nhận..."
+            />
+          </div>
+
+          <!-- Số điện thoại -->
+          <div class="mb-4">
+            <label for="customerPhoneNumber" class="text-gray-600 font-medium mb-1"
+              >Số điện thoại:</label
+            >
+            <input
+              type="number"
+              p-inputNumber
+              id="customerPhoneNumber"
+              formControlName="customerPhoneNumber"
+              class="w-full px-4 py-2 border rounded-md focus:ring focus:ring-blue-300"
+              placeholder="Nhập số điện thoại..."
+            />
+          </div>
+
+          <!-- Địa chỉ -->
+          <div class="mb-4">
+            <label for="customerAddress" class="text-gray-600 font-medium mb-1">Địa chỉ:</label>
+            <textarea
+              rows="3"
+              pInputTextarea
+              id="customerAddress"
+              formControlName="customerAddress"
+              class="w-full px-4 py-2 border rounded-md focus:ring focus:ring-blue-300 resize-none"
+              placeholder="Nhập địa chỉ..."
+            ></textarea>
+          </div>
+        </div>
+
+        <div class="card flex justify-content-center">
+          <div class="flex-auto">
+            <h3>Tổng tiền cần thanh toán</h3>
+            <p>{{ totalPrice | number : '1.0-3' }}đ</p>
+          </div>
+          <div button-order>
+            <button
+              pButton
+              label="Mua Hàng ({{ carts.length }})"
+              style="background: #ff4000"
+              [disabled]="!form.valid"
+            ></button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
