@@ -8,13 +8,14 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import { OrdersService } from '@proxy/orders';
 import { UserDto, UsersService } from '@proxy/system/users';
 import { jwtDecode } from 'jwt-decode';
 import { ButtonModule } from 'primeng/button';
 import { DataViewModule } from 'primeng/dataview';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { RadioButtonModule } from 'primeng/radiobutton';
-import { Subject, takeUntil } from 'rxjs';
+import { skipUntil, Subject, takeUntil } from 'rxjs';
 import { CartItem } from 'src/app/models/cartItem.models';
 import { DataService } from 'src/app/shared/services/data.service';
 import { NotificationService } from 'src/app/shared/services/notification.service';
@@ -43,7 +44,7 @@ export class PaymentComponent implements OnInit {
   totalPrice: number = 0;
   selectedPaymentMethod: any = null;
   selectedUser = {} as UserDto;
-  address: string = '';
+  customerAddress: string = '';
 
   public form: FormGroup;
 
@@ -51,14 +52,9 @@ export class PaymentComponent implements OnInit {
     private dataService: DataService,
     private notificationService: NotificationService,
     private fb: FormBuilder,
-    private usersService: UsersService
+    private usersService: UsersService,
+    private ordersService: OrdersService
   ) {}
-
-  validationMessages = {
-    userName: [{ type: 'required', message: 'Bạn phải nhập tên người nhận hàng' }],
-    phoneNumber: [{ type: 'required', message: 'Bạn phải nhập số điện thoại' }],
-    address: [{ type: 'required', message: 'Bạn phải nhập địa chỉ nhận hàng' }],
-  };
 
   paymentMethods: any[] = [
     { name: 'Thanh toán khi nhận hàng', key: 'A' },
@@ -83,7 +79,7 @@ export class PaymentComponent implements OnInit {
     this.form = this.fb.group({
       customerName: new FormControl(this.selectedUser.name, Validators.required),
       customerPhoneNumber: new FormControl(this.selectedUser.phoneNumber, Validators.required),
-      customerAddress: new FormControl(this.address, Validators.required),
+      customerAddress: new FormControl(this.customerAddress, Validators.required),
     });
   }
 
@@ -94,7 +90,6 @@ export class PaymentComponent implements OnInit {
       .subscribe({
         next: (res: UserDto) => {
           this.selectedUser = res;
-          console.log(res);
           this.buildForm();
         },
         error: e => {
@@ -137,6 +132,35 @@ export class PaymentComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.form.value);
+    const detailOrder = this.carts.map(item => {
+      return {
+        productId: item.product.id,
+        sku: item.product.sku,
+        quantity: item.quantity,
+        price: item.product.sellPrice,
+      };
+    });
+
+    const dataOrder: any = {
+      customerName: this.form.value.customerName,
+      customerPhoneNumber: this.form.value.customerPhoneNumber,
+      customerAddress: this.form.value.customerAddress,
+      customerUserId: this.id,
+      items: detailOrder,
+    };
+
+    const res = this.ordersService
+      .create(dataOrder)
+      .pipe(takeUntil(this.ngUnsubscribe))
+      .subscribe({
+        next: () => {
+          this.notificationService.showSuccess('Đặt hàng thành công');
+          this.carts = [];
+          localStorage.removeItem('carts');
+        },
+        error: err => {
+          this.notificationService.showError(err.error.error.message);
+        },
+      });
   }
 }

@@ -34,7 +34,7 @@
       </div>
       <div class="selling-col-3">
         <div class="selling-heading">
-          <p>{{ product.name }}</p>
+          <p>{{ product?.name }}</p>
           <div class="selling-rating">
             <i class="fa fa-star"></i>
             <i class="fa fa-star"></i>
@@ -44,10 +44,10 @@
           </div>
         </div>
         <p>
-          {{ product.seoMetaDescription }}
+          {{ product?.seoMetaDescription }}
         </p>
         <h3>
-          <span class="selling-amount">{{ product.sellPrice }}Đ</span>
+          <span class="selling-amount">{{ product?.sellPrice }}Đ</span>
           <span class="selling-discount">$202</span>
         </h3>
         <div class="delivery">
