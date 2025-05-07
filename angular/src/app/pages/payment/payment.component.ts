@@ -1,5 +1,5 @@
 import { CommonModule, NgForOf } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import {
   FormBuilder,
   FormControl,
@@ -16,9 +16,9 @@ import { DataViewModule } from 'primeng/dataview';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { skipUntil, Subject, takeUntil } from 'rxjs';
-import { CartItem } from 'src/app/models/cartItem.models';
 import { DataService } from 'src/app/shared/services/data.service';
 import { NotificationService } from 'src/app/shared/services/notification.service';
+import { CartItem } from '../../models/cartItem.models';
 
 @Component({
   selector: 'app-payment',
@@ -37,15 +37,12 @@ import { NotificationService } from 'src/app/shared/services/notification.servic
   styleUrl: './payment.component.scss',
 })
 export class PaymentComponent implements OnInit {
-  private ngUnsubscribe = new Subject<void>();
-
   id: string;
   carts: CartItem[];
   totalPrice: number = 0;
   selectedPaymentMethod: any = null;
   selectedUser = {} as UserDto;
   customerAddress: string = '';
-
   public form: FormGroup;
 
   constructor(
@@ -69,6 +66,13 @@ export class PaymentComponent implements OnInit {
     this.selectedPaymentMethod = this.paymentMethods[1];
   }
 
+  getCarts(): void {
+    this.dataService.currentCarts.subscribe(carts => {
+      this.carts = carts;
+      this.calculateTotalPrice();
+    });
+  }
+
   getUserId(): void {
     const tokenStorage = localStorage.getItem('token');
     const decodedToken: any = jwtDecode(tokenStorage);
@@ -84,24 +88,14 @@ export class PaymentComponent implements OnInit {
   }
 
   loadFormOrder(id: string) {
-    this.usersService
-      .get(id)
-      .pipe(takeUntil(this.ngUnsubscribe))
-      .subscribe({
-        next: (res: UserDto) => {
-          this.selectedUser = res;
-          this.buildForm();
-        },
-        error: e => {
-          console.log(e);
-        },
-      });
-  }
-
-  getCarts(): void {
-    this.dataService.currentCarts.subscribe(carts => {
-      this.carts = carts;
-      this.calculateTotalPrice();
+    this.usersService.get(id).subscribe({
+      next: (res: UserDto) => {
+        this.selectedUser = res;
+        this.buildForm();
+      },
+      error: e => {
+        console.log(e);
+      },
     });
   }
 
@@ -149,18 +143,23 @@ export class PaymentComponent implements OnInit {
       items: detailOrder,
     };
 
-    const res = this.ordersService
-      .create(dataOrder)
-      .pipe(takeUntil(this.ngUnsubscribe))
-      .subscribe({
-        next: () => {
-          this.notificationService.showSuccess('Đặt hàng thành công');
-          this.carts = [];
-          localStorage.removeItem('carts');
-        },
-        error: err => {
-          this.notificationService.showError(err.error.error.message);
-        },
-      });
+    console.log('dataOrder', dataOrder);
+
+    this.ordersService.create(dataOrder).subscribe({
+      next: () => {
+        this.notificationService.showSuccess('Đặt hàng thành công');
+        this.carts = [];
+        this.dataService.changeCarts(this.carts);
+        localStorage.removeItem('carts');
+      },
+      error: err => {
+        this.notificationService.showError(err.error.error.message);
+      },
+    });
   }
+
+  // ngOnDestroy(): void {
+  //   this.ngUnsubscribe.next();
+  //   this.ngUnsubscribe.complete();
+  // }
 }

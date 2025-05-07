@@ -4,6 +4,7 @@ import { AppLayoutComponent } from './layout/app.layout.component';
 import { ProductHomeDetailComponent } from './pages/product-home/product-home-detail.component';
 import { OrderComponent } from './pages/order/order.component';
 import { PaymentComponent } from './pages/payment/payment.component';
+import { HistoryComponent } from './pages/history/history.component';
 
 const routes: Routes = [
   {
@@ -30,6 +31,11 @@ const routes: Routes = [
     path: 'payment',
     component: AppLayoutComponent,
     children: [{ path: '', component: PaymentComponent }],
+  },
+  {
+    path: 'history',
+    component: AppLayoutComponent,
+    children: [{ path: '', component: HistoryComponent }],
   },
   {
     path: 'system',

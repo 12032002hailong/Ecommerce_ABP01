@@ -32,6 +32,18 @@ export class AppMenuComponent implements OnInit {
             routerLink: ['/catalog/attribute'],
             permission: 'TeduEcomAdminCatalog.Attribute',
           },
+          {
+            label: 'Danh sách nhà sản xuất',
+            icon: 'pi pi-fw pi-image',
+            routerLink: ['/catalog/manufacturer'],
+            permission: 'TeduEcomAdminCatalog.Manufacturer',
+          },
+          {
+            label: 'Danh sách loại sản phẩm',
+            icon: 'pi pi-fw pi-image',
+            routerLink: ['/catalog/productCategory'],
+            permission: 'TeduEcomAdminCatalog.ProductCategory',
+          },
         ],
       },
       {

@@ -80,11 +80,11 @@ export class ProductComponent implements OnInit, OnDestroy {
     });
   }
 
-  pageChanged(event: any) {
-    // this.skipCount = (event.page - 1) * this.maxResultCount;
-    // this.maxResultCount = event.rows;
-    this.loadData();
-  }
+  // pageChanged(event: any) {
+  //   // this.skipCount = (event.page - 1) * this.maxResultCount;
+  //   // this.maxResultCount = event.rows;
+  //   this.loadData();
+  // }
 
   showAddModal() {
     const ref = this.dialogService.open(ProductDetailComponent, {

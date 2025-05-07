@@ -70,9 +70,9 @@ export class UserDetailComponent implements OnInit, OnDestroy {
     })
       .pipe(takeUntil(this.ngUnsubscribe))
       .subscribe({
-        next: (repsonse: any) => {
+        next: (response: any) => {
           //Push categories to dropdown list
-          var roles = repsonse.roles as RoleDto[];
+          var roles = response.roles as RoleDto[];
           roles.forEach(element => {
             this.roles.push({
               value: element.id,

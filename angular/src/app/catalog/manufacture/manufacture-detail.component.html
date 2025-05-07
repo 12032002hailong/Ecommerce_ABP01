@@ -3,11 +3,11 @@
     <!--form grid-->
     <div class="formgrid grid">
       <div class="field col-12">
-        <label for="label" class="block">Nhãn <span class="required">*</span></label>
-        <input id="label" pInputText type="text" class="w-full" formControlName="label" />
+        <label for="name" class="block">Tên nhà sản xuất <span class="required">*</span></label>
+        <input id="name" pInputText type="text" class="w-full" formControlName="name" />
         <app-validation-message
           [entityForm]="form"
-          fileName="label"
+          fileName="name"
           [validationMessages]="validationMessages"
         ></app-validation-message>
       </div>
@@ -20,29 +20,22 @@
           [validationMessages]="validationMessages"
         ></app-validation-message>
       </div>
-
       <div class="field col-12">
-        <label for="productType" class="block">Kiểu dữ liệu <span class="required">*</span></label>
-        <p-dropdown
-          [options]="dataTypes"
-          formControlName="dataType"
-          placeholder="Chọn kiểu dữ liệu"
-          [showClear]="true"
-          autoWidth="false"
-          [style]="{ width: '100%' }"
-        ></p-dropdown>
+        <label for="slug" class="block">Slug <span class="required">*</span></label>
+        <input id="slug" pInputText type="text" formControlName="slug" />
         <app-validation-message
           [entityForm]="form"
-          fileName="dataType"
+          fileName="slug"
           [validationMessages]="validationMessages"
         ></app-validation-message>
       </div>
+
       <div class="field col-12">
-        <label for="sortOrder" class="block">Thứ tự <span class="required">*</span></label>
-        <p-inputNumber formControlName="sortOrder"></p-inputNumber>
+        <label for="coverPicture" class="block">coverPicture <span class="required">*</span></label>
+        <input id="coverPicture" pInputText type="text" formControlName="coverPicture" />
         <app-validation-message
           [entityForm]="form"
-          fileName="sortOrder"
+          fileName="coverPicture"
           [validationMessages]="validationMessages"
         ></app-validation-message>
       </div>
@@ -51,22 +44,20 @@
         <p-checkbox formControlName="visibility" binary="true" id="visibility"></p-checkbox>
         <label for="visibility">Hiển thị</label>
       </div>
+
       <div class="field-checkbox col-12 md:col-3">
         <p-checkbox formControlName="isActive" binary="true" id="isActive"></p-checkbox>
         <label for="isActive">Kích hoạt</label>
       </div>
-      <div class="field-checkbox col-12 md:col-3">
-        <p-checkbox formControlName="isRequired" binary="true" id="isRequired"></p-checkbox>
-        <label for="isRequired">Bắt buộc nhập</label>
-      </div>
-      <div class="field-checkbox col-12 md:col-3">
-        <p-checkbox formControlName="isUnique" binary="true" id="isUnique"></p-checkbox>
-        <label for="isUnique">Duy nhất</label>
-      </div>
 
       <div class="field col-12">
-        <label for="note" class="block">Ghi chú</label>
-        <textarea id="note" pInputTextarea class="w-full" formControlName="note"></textarea>
+        <label for="country" class="block">Quốc gia <span class="required">*</span></label>
+        <input id="country" pInputText type="text" formControlName="country" />
+        <app-validation-message
+          [entityForm]="form"
+          fileName="country"
+          [validationMessages]="validationMessages"
+        ></app-validation-message>
       </div>
     </div>
     <ng-template pTemplate="footer">

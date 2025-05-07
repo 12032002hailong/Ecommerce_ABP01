@@ -44,6 +44,12 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
     private sanitizer: DomSanitizer
   ) {}
 
+  ngOnInit(): void {
+    this.buildForm();
+    this.loadProductTypes();
+    this.initFormData();
+  }
+
   validationMessages = {
     code: [{ type: 'required', message: 'Bạn phải nhập mã duy nhất' }],
     name: [
@@ -58,20 +64,6 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
     sortOrder: [{ type: 'required', message: 'Bạn phải nhập thứ tự' }],
     sellPrice: [{ type: 'required', message: 'Bạn phải nhập giá bán' }],
   };
-
-  ngOnDestroy(): void {
-    if (this.ref) {
-      this.ref.close();
-    }
-    this.ngUnsubscribe.next();
-    this.ngUnsubscribe.complete();
-  }
-
-  ngOnInit(): void {
-    this.buildForm();
-    this.loadProductTypes();
-    this.initFormData();
-  }
 
   generateSlug() {
     this.form.controls['slug'].setValue(this.utilService.MakeSeoTitle(this.form.get('name').value));
@@ -164,7 +156,6 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
           },
           error: err => {
             this.notificationService.showError(err.error.error.message);
-
             this.toggleBlockUI(false);
           },
         });
@@ -262,5 +253,13 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
         this.cd.markForCheck();
       };
     }
+  }
+
+  ngOnDestroy(): void {
+    if (this.ref) {
+      this.ref.close();
+    }
+    this.ngUnsubscribe.next();
+    this.ngUnsubscribe.complete();
   }
 }

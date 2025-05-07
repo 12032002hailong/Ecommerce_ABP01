@@ -52,9 +52,7 @@ export class OrderComponent implements OnInit {
       carts = carts.filter(item => item.id !== id);
       localStorage.setItem('carts', JSON.stringify(carts));
       this.carts = carts;
-
       this.calculateTotalPrice();
-
       this.dataService.changeCarts(carts);
     }
   }

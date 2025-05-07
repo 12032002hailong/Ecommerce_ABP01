@@ -3,6 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { ProductComponent } from './product/product.component';
 import { AttributeComponent } from './attribute/attribute.component';
 import { permissionGuard } from '@abp/ng.core';
+import { ManufactureComponent } from './manufacture/manufacture.component';
+import { CategoryComponent } from './category/category.component';
 
 const routes: Routes = [
   {
@@ -19,6 +21,22 @@ const routes: Routes = [
     canActivate: [permissionGuard],
     data: {
       requiredPolicy: 'TeduEcomAdminCatalog.Attribute',
+    },
+  },
+  {
+    path: 'manufacturer',
+    component: ManufactureComponent,
+    canActivate: [permissionGuard],
+    data: {
+      requiredPolicy: 'TeduEcomAdminCatalog.Manufacturer',
+    },
+  },
+  {
+    path: 'productCategory',
+    component: CategoryComponent,
+    canActivate: [permissionGuard],
+    data: {
+      requiredPolicy: 'TeduEcomAdminCatalog.ProductCategory',
     },
   },
 ];

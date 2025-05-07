@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row">
+    <h2 class="title text-center">Lịch sử mua hàng</h2>
+    <br />
+    <p-table #pnl [value]="items">
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Mã</th>
+          <th>Tổng số tiền</th>
+          <th>Trạng thái</th>
+          <th>Phương thức thanh toán</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-row>
+        <tr [pSelectableRow]="row">
+          <td>{{ row.code }}</td>
+          <td>{{ row.subtotal | number : '1.0-0' }} đ</td>
+          <td>
+            <p-badge *ngIf="row.status === 1" severity="success" value="Thành Công"></p-badge>
+            <p-badge *ngIf="row.status === 0" severity="danger" value="Thất bại"></p-badge>
+          </td>
+          <td>
+            <p-badge
+              *ngIf="row.paymentMethod === 1"
+              severity="success"
+              value="Thanh toán khi đặt hàng"
+            ></p-badge>
+            <p-badge
+              *ngIf="row.paymentMethod === 0"
+              severity="danger"
+              value="Thanh toán online"
+            ></p-badge>
+          </td>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="summary">
+        <!-- <div style="text-align: left">Tổng số bản ghi: {{ totalCount | number }}</div> -->
+      </ng-template>
+    </p-table>
+  </div>
+</div>

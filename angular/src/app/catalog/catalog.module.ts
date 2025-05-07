@@ -25,6 +25,10 @@ import { AttributeDetailComponent } from './attribute/attribute-detail.component
 import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { InputNumberModule } from 'primeng/inputnumber';
+import { ManufactureComponent } from './manufacture/manufacture.component';
+import { CategoryComponent } from './category/category.component';
+import { ManufactureDetailComponent } from './manufacture/manufacture-detail.component';
+import { ProductCategoryDetailComponent } from './category/category-detail.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +37,8 @@ import { InputNumberModule } from 'primeng/inputnumber';
     ProductAttributeComponent,
     AttributeComponent,
     AttributeDetailComponent,
+    ManufactureDetailComponent,
+    ProductCategoryDetailComponent,
   ],
   imports: [
     SharedModule,
@@ -56,6 +62,8 @@ import { InputNumberModule } from 'primeng/inputnumber';
     ReactiveFormsModule,
     CommonModule,
     InputNumberModule,
+    ManufactureComponent,
+    CategoryComponent,
   ],
 })
 export class CatalogModule {}

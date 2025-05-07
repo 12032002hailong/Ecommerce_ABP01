@@ -1,0 +1,99 @@
+<p-panel header="Danh sách nhà sản xuất">
+  <!--Filter (search panel)-->
+  <div class="grid">
+    <div class="col-4">
+      <button
+        pButton
+        type="button"
+        (click)="showAddModal()"
+        icon="fa fa-plus"
+        iconPos="left"
+        label="Thêm"
+      ></button>
+      <button
+      pButton
+      type="button"
+      (click)="showEditModal()"
+      *ngIf="selectedItems.length === 1"
+      class="ml-1 p-button-help"
+      icon="fa fa-minus"
+      iconPos="left"
+      label="Sửa"
+    ></button>
+    <button
+      pButton
+      type="button"
+      (click)="deleteItems()"
+      *ngIf="selectedItems.length > 0"
+      class="ml-1 p-button-danger"
+      icon="fa fa-minus"
+      iconPos="left"
+      label="xoá"
+    ></button>
+    </div>
+    <div class="col-8">
+      <div class="formgroup-inline">
+        <div class="field">
+          <label for="txt-keyword" class="p-sr-only">Từ khóa</label>
+          <input
+            id="txt-keyword"
+            [(ngModel)]="keyword"
+            pInputText
+            type="text"
+            placeholder="Gõ từ khóa"
+          />
+        </div>
+        <button
+          type="button"
+          pButton
+          (click)="loadData()"
+          icon="fa fa-search"
+          iconPos="left"
+          label="Tìm"
+        ></button>
+      </div>
+    </div>
+  </div>
+
+<!--Table-->
+<p-table #pnl [value]="items" [(selection)]="selectedItems" selectionMode="multiple">
+  <ng-template pTemplate="header">
+    <tr>
+      <th style="width: 10px">
+        <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+      </th>
+      <th>Id</th>
+      <th>Tên</th>
+      <th>Code</th>
+      <th>Slug</th>
+      <th>Quốc gia</th>
+      <th>Kích hoạt</th>
+      <th>Hiển thị</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-row>
+    <tr [pSelectableRow]="row">
+      <td style="width: 10px">
+        <span class="ui-column-title">
+          <p-tableCheckbox [value]="row"></p-tableCheckbox>
+        </span>
+      </td>
+      <td>{{ row.id }}</td>
+      <td>{{ row.name }}</td>
+      <td>{{ row.code }}</td>
+      <td>{{ row.slug }}</td>
+      <td>{{ row.country }}</td>
+      <td>
+        <p-badge *ngIf="row.isActive === true" severity="success" value="Kích hoạt"></p-badge>
+        <p-badge *ngIf="row.isActive === false" severity="danger" value="Không"></p-badge>
+      </td>
+      <td>
+        <p-badge *ngIf="row.visibility === true" severity="success" value="Hiển thị"></p-badge>
+        <p-badge *ngIf="row.visibility === false" severity="danger" value="Ẩn"></p-badge>
+      </td>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="summary">
+    <div style="text-align: left">Tổng số bản ghi: {{ totalCount | number }}</div>
+  </ng-template>
+</p-table>

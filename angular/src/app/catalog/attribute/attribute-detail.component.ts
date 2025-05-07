@@ -29,7 +29,7 @@ export class AttributeDetailComponent implements OnInit, OnDestroy {
     private config: DynamicDialogConfig,
     private ref: DynamicDialogRef,
     private utilService: UtilityService,
-    private notificationSerivce: NotificationService
+    private notificationService: NotificationService
   ) {}
 
   validationMessages = {
@@ -96,7 +96,7 @@ export class AttributeDetailComponent implements OnInit, OnDestroy {
             this.ref.close(this.form.value);
           },
           error: err => {
-            this.notificationSerivce.showError(err.error.error.message);
+            this.notificationService.showError(err.error.error.message);
             this.toggleBlockUI(false);
           },
         });
@@ -110,7 +110,7 @@ export class AttributeDetailComponent implements OnInit, OnDestroy {
             this.ref.close(this.form.value);
           },
           error: err => {
-            this.notificationSerivce.showError(err.error.error.message);
+            this.notificationService.showError(err.error.error.message);
             this.toggleBlockUI(false);
           },
         });
