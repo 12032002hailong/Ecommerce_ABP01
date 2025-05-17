@@ -24,4 +24,5 @@ export const environment = {
       rootNamespace: 'TeduEcommerce.Admin',
     },
   },
+  BACKEND_PAYMENT_URL: 'http://localhost:8888',
 } as Environment;

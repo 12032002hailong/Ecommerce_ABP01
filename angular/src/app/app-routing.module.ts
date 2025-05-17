@@ -5,6 +5,7 @@ import { ProductHomeDetailComponent } from './pages/product-home/product-home-de
 import { OrderComponent } from './pages/order/order.component';
 import { PaymentComponent } from './pages/payment/payment.component';
 import { HistoryComponent } from './pages/history/history.component';
+import { VnPayComponent } from './component/vn-pay/vn-pay.component';
 
 const routes: Routes = [
   {
@@ -46,6 +47,10 @@ const routes: Routes = [
     path: 'catalog',
     loadChildren: () => import('./catalog/catalog.module').then(m => m.CatalogModule),
     component: AppLayoutComponent,
+  },
+  {
+    path: 'vnpay/return-url',
+    component: VnPayComponent,
   },
 
   // {

@@ -5,7 +5,9 @@ export interface CreateOrderDto {
   customerName?: string;
   customerPhoneNumber?: string;
   customerAddress?: string;
+  paymentMethod: PaymentMethod;
   customerUserId?: string;
+  paymentRef?: string;
   items: OrderItemDto[];
 }
 

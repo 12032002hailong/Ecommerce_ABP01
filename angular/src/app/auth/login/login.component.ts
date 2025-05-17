@@ -56,6 +56,7 @@ export class LoginComponent implements OnDestroy {
       .pipe(takeUntil(this.ngUnsubscribe))
       .subscribe({
         next: (res: LoginResponseDto) => {
+          console.log('res', res);
           this.tokenService.saveToken(res.access_token);
           this.tokenService.saveRefreshToken(res.refresh_token);
           this.toggleBlockUI(false);

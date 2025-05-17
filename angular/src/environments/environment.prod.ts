@@ -15,7 +15,7 @@ export const environment = {
     clientId: 'TeduEcommerce_App',
     responseType: 'code',
     scope: 'offline_access TeduEcommerce',
-    requireHttps: true
+    requireHttps: true,
   },
   apis: {
     default: {
@@ -23,4 +23,5 @@ export const environment = {
       rootNamespace: 'TeduEcommerce',
     },
   },
+  BACKEND_PAYMENT_URL: 'http://localhost:8888',
 } as Environment;

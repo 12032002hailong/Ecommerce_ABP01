@@ -8,7 +8,7 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { OrdersService } from '@proxy/orders';
+import { CreateOrderDto, OrdersService } from '@proxy/orders';
 import { UserDto, UsersService } from '@proxy/system/users';
 import { jwtDecode } from 'jwt-decode';
 import { ButtonModule } from 'primeng/button';
@@ -19,6 +19,9 @@ import { skipUntil, Subject, takeUntil } from 'rxjs';
 import { DataService } from 'src/app/shared/services/data.service';
 import { NotificationService } from 'src/app/shared/services/notification.service';
 import { CartItem } from '../../models/cartItem.models';
+import { TokenStorageService } from 'src/app/shared/services/token.service';
+import { v4 as uuidv4 } from 'uuid';
+import { getVNPayUrlAPI } from 'src/app/layout/service/api';
 
 @Component({
   selector: 'app-payment',
@@ -50,12 +53,13 @@ export class PaymentComponent implements OnInit {
     private notificationService: NotificationService,
     private fb: FormBuilder,
     private usersService: UsersService,
-    private ordersService: OrdersService
+    private ordersService: OrdersService,
+    private tokenService: TokenStorageService
   ) {}
 
   paymentMethods: any[] = [
-    { name: 'Thanh toán khi nhận hàng', key: 'A' },
-    { name: 'Chuyển khoản ngân hàng', key: 'B' },
+    { name: 'Thanh toán khi nhận hàng', key: '1' },
+    { name: 'Thanh toán bằng VnPay', key: '2' },
   ];
 
   ngOnInit(): void {
@@ -63,7 +67,7 @@ export class PaymentComponent implements OnInit {
     this.getCarts();
     this.buildForm();
     this.loadFormOrder(this.id);
-    this.selectedPaymentMethod = this.paymentMethods[1];
+    this.selectedPaymentMethod = this.paymentMethods[0];
   }
 
   getCarts(): void {
@@ -74,7 +78,7 @@ export class PaymentComponent implements OnInit {
   }
 
   getUserId(): void {
-    const tokenStorage = localStorage.getItem('token');
+    const tokenStorage = this.tokenService.getToken();
     const decodedToken: any = jwtDecode(tokenStorage);
     this.id = decodedToken.sub;
   }
@@ -125,7 +129,7 @@ export class PaymentComponent implements OnInit {
     }
   }
 
-  onSubmit() {
+  async onSubmit() {
     const detailOrder = this.carts.map(item => {
       return {
         productId: item.product.id,
@@ -135,27 +139,53 @@ export class PaymentComponent implements OnInit {
       };
     });
 
-    const dataOrder: any = {
+    const dataOrder: CreateOrderDto = {
       customerName: this.form.value.customerName,
       customerPhoneNumber: this.form.value.customerPhoneNumber,
       customerAddress: this.form.value.customerAddress,
       customerUserId: this.id,
+      paymentMethod: this.selectedPaymentMethod.key,
       items: detailOrder,
     };
 
-    console.log('dataOrder', dataOrder);
+    const paymentRef = uuidv4();
+    const dataOrderVnPay: CreateOrderDto = {
+      customerName: this.form.value.customerName,
+      customerPhoneNumber: this.form.value.customerPhoneNumber,
+      customerAddress: this.form.value.customerAddress,
+      customerUserId: this.id,
+      paymentMethod: this.selectedPaymentMethod.key,
+      paymentRef: paymentRef,
+      items: detailOrder,
+    };
+    const paymentUrl: any = await getVNPayUrlAPI(this.totalPrice, 'vn', paymentRef);
 
-    this.ordersService.create(dataOrder).subscribe({
-      next: () => {
-        this.notificationService.showSuccess('Đặt hàng thành công');
-        this.carts = [];
-        this.dataService.changeCarts(this.carts);
-        localStorage.removeItem('carts');
-      },
-      error: err => {
-        this.notificationService.showError(err.error.error.message);
-      },
-    });
+    if (this.selectedPaymentMethod.key === 1) {
+      this.ordersService.create(dataOrder).subscribe({
+        next: (response: any) => {
+          localStorage.removeItem('carts');
+          this.carts = [];
+          this.notificationService.showSuccess('Mua hàng thành công');
+        },
+        error: err => {
+          this.notificationService.showError(err.error.error.message);
+        },
+      });
+    } else {
+      this.ordersService.create(dataOrderVnPay).subscribe({
+        next: (response: any) => {
+          if (paymentUrl?.data?.url) {
+            window.location.href = paymentUrl.data.url;
+            localStorage.removeItem('carts');
+            this.carts = [];
+            this.notificationService.showSuccess('Mua hàng thành công');
+          }
+        },
+        error: err => {
+          this.notificationService.showError(err.error.error.message);
+        },
+      });
+    }
   }
 
   // ngOnDestroy(): void {

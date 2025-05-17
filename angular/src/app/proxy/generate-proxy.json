@@ -9407,10 +9407,34 @@
           "regex": null
         },
         {
+          "name": "PaymentMethod",
+          "jsonName": null,
+          "type": "TeduEcommerce.Orders.PaymentMethod",
+          "typeSimple": "TeduEcommerce.Orders.PaymentMethod",
+          "isRequired": false,
+          "minLength": null,
+          "maxLength": null,
+          "minimum": null,
+          "maximum": null,
+          "regex": null
+        },
+        {
           "name": "CustomerUserId",
           "jsonName": null,
           "type": "System.Guid?",
           "typeSimple": "string?",
+          "isRequired": false,
+          "minLength": null,
+          "maxLength": null,
+          "minimum": null,
+          "maximum": null,
+          "regex": null
+        },
+        {
+          "name": "PaymentRef",
+          "jsonName": null,
+          "type": "System.String",
+          "typeSimple": "string",
           "isRequired": false,
           "minLength": null,
           "maxLength": null,
