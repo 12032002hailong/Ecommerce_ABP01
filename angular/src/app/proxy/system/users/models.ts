@@ -2,7 +2,7 @@ import type { AuditedEntityDto } from '@abp/ng.core';
 
 export interface CreateUserDto {
   name?: string;
-  surname?: string;
+  surName?: string;
   email?: string;
   userName?: string;
   password?: string;
@@ -16,7 +16,7 @@ export interface SetPasswordDto {
 
 export interface UpdateUserDto {
   name?: string;
-  surname?: string;
+  surName?: string;
   email?: string;
   phoneNumber?: string;
 }
@@ -25,7 +25,7 @@ export interface UserDto extends AuditedEntityDto<string> {
   name?: string;
   userName?: string;
   email?: string;
-  surname?: string;
+  surName?: string;
   phoneNumber?: string;
   roles: string[];
   isActive: boolean;
@@ -33,8 +33,8 @@ export interface UserDto extends AuditedEntityDto<string> {
 
 export interface UserInListDto extends AuditedEntityDto<string> {
   name?: string;
-  surname?: string;
+  surName?: string;
   email?: string;
-  username?: string;
+  userName?: string;
   phoneNumber?: string;
 }

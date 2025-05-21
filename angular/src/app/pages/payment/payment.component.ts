@@ -40,6 +40,8 @@ import { getVNPayUrlAPI } from 'src/app/layout/service/api';
   styleUrl: './payment.component.scss',
 })
 export class PaymentComponent implements OnInit {
+  private ngUnsubscribe = new Subject<void>();
+
   id: string;
   carts: CartItem[];
   totalPrice: number = 0;
@@ -188,8 +190,8 @@ export class PaymentComponent implements OnInit {
     }
   }
 
-  // ngOnDestroy(): void {
-  //   this.ngUnsubscribe.next();
-  //   this.ngUnsubscribe.complete();
-  // }
+  ngOnDestroy(): void {
+    this.ngUnsubscribe.next();
+    this.ngUnsubscribe.complete();
+  }
 }

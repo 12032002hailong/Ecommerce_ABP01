@@ -28,6 +28,7 @@ import { PickListModule } from 'primeng/picklist';
 import { RoleAssignComponent } from './user/role-assign.component';
 import { KeyFilterModule } from 'primeng/keyfilter';
 import { SetPasswordComponent } from './user/set-password.component';
+import { PanelMenuModule } from 'primeng/panelmenu';
 
 @NgModule({
   declarations: [
@@ -62,6 +63,7 @@ import { SetPasswordComponent } from './user/set-password.component';
     SystemRoutingModule,
     PickListModule,
     KeyFilterModule,
+    PanelMenuModule,
   ],
 })
 export class SystemModule {}

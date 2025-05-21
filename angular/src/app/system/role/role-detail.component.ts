@@ -18,11 +18,9 @@ export class RoleDetailComponent implements OnInit, OnDestroy {
   public form: FormGroup;
   public title: string;
   public btnDisabled = false;
-  public saveBtnName: string;
+  public saveBtnName: string = 'Thêm mới';
   public closeBtnName: string;
   selectedEntity = {} as RoleDto;
-
-  formSavedEventEmitter: EventEmitter<any> = new EventEmitter();
 
   constructor(
     public ref: DynamicDialogRef,
@@ -33,13 +31,9 @@ export class RoleDetailComponent implements OnInit, OnDestroy {
     private fb: FormBuilder
   ) {}
 
-  public generateSlug() {
-    var slug = this.utilService.MakeSeoTitle(this.form.get('name').value);
-    this.form.controls['slug'].setValue(slug);
-  }
   ngOnInit() {
     this.buildForm();
-    if (this.utilService.isEmpty(this.config.data?.id) == false) {
+    if (this.utilService.isEmpty(this.config.data.id) == false) {
       this.loadDetail(this.config.data.id);
       this.saveBtnName = 'Cập nhật';
       this.closeBtnName = 'Hủy';
@@ -47,6 +41,20 @@ export class RoleDetailComponent implements OnInit, OnDestroy {
       this.saveBtnName = 'Thêm';
       this.closeBtnName = 'Đóng';
     }
+  }
+
+  buildForm() {
+    this.form = this.fb.group({
+      name: new FormControl(
+        this?.selectedEntity?.name || null,
+        Validators.compose([
+          Validators.required,
+          Validators.maxLength(255),
+          Validators.minLength(3),
+        ])
+      ),
+      description: new FormControl(this?.selectedEntity?.description || null),
+    });
   }
 
   // Validate
@@ -68,7 +76,6 @@ export class RoleDetailComponent implements OnInit, OnDestroy {
       .subscribe({
         next: (response: RoleDto) => {
           this.selectedEntity = response;
-          console.log(this.selectedEntity);
           this.buildForm();
           this.toggleBlockUI(false);
         },
@@ -80,41 +87,36 @@ export class RoleDetailComponent implements OnInit, OnDestroy {
   saveChange() {
     this.toggleBlockUI(true);
     this.saveData();
-    console.log('form' + this.form.value);
   }
 
   private saveData() {
+    console.log(this.form.value);
+
+    let dataRole = {
+      name: this.form.value.name,
+      description: this.form.value.description,
+    };
+
     if (this.utilService.isEmpty(this.config.data?.id)) {
       this.roleService
-        .create(this.form.value)
+        .create(dataRole)
         .pipe(takeUntil(this.ngUnsubscribe))
         .subscribe(() => {
+          console.log(dataRole);
           this.ref.close(this.form.value);
           this.toggleBlockUI(false);
         });
     } else {
       this.roleService
-        .update(this.config.data.id, this.form.value)
+        .update(this.config.data.id, dataRole)
         .pipe(takeUntil(this.ngUnsubscribe))
         .subscribe(() => {
+          console.log(this.form.value);
+          console.log('dataRole', dataRole);
           this.toggleBlockUI(false);
           this.ref.close(this.form.value);
         });
     }
-  }
-
-  buildForm() {
-    this.form = this.fb.group({
-      name: new FormControl(
-        this.selectedEntity.name || null,
-        Validators.compose([
-          Validators.required,
-          Validators.maxLength(255),
-          Validators.minLength(3),
-        ])
-      ),
-      description: new FormControl(this.selectedEntity.description || null),
-    });
   }
 
   private toggleBlockUI(enabled: boolean) {

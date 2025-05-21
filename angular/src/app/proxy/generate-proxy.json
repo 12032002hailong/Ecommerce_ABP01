@@ -9958,7 +9958,7 @@
           "regex": null
         },
         {
-          "name": "Surname",
+          "name": "SurName",
           "jsonName": null,
           "type": "System.String",
           "typeSimple": "string",
@@ -10072,7 +10072,7 @@
           "regex": null
         },
         {
-          "name": "Surname",
+          "name": "SurName",
           "jsonName": null,
           "type": "System.String",
           "typeSimple": "string",
@@ -10153,7 +10153,7 @@
           "regex": null
         },
         {
-          "name": "Surname",
+          "name": "SurName",
           "jsonName": null,
           "type": "System.String",
           "typeSimple": "string",
@@ -10222,7 +10222,7 @@
           "regex": null
         },
         {
-          "name": "Surname",
+          "name": "SurName",
           "jsonName": null,
           "type": "System.String",
           "typeSimple": "string",
@@ -10246,7 +10246,7 @@
           "regex": null
         },
         {
-          "name": "Username",
+          "name": "UserName",
           "jsonName": null,
           "type": "System.String",
           "typeSimple": "string",

@@ -37,11 +37,6 @@ export class RoleComponent implements OnInit, OnDestroy {
     private confirmationService: ConfirmationService
   ) {}
 
-  ngOnDestroy(): void {
-    this.ngUnsubscribe.next();
-    this.ngUnsubscribe.complete();
-  }
-
   ngOnInit() {
     this.loadData();
   }
@@ -173,5 +168,10 @@ export class RoleComponent implements OnInit, OnDestroy {
         this.blockedPanel = false;
       }, 1000);
     }
+  }
+
+  ngOnDestroy(): void {
+    this.ngUnsubscribe.next();
+    this.ngUnsubscribe.complete();
   }
 }

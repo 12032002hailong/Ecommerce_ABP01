@@ -36,17 +36,11 @@ export class UserDetailComponent implements OnInit, OnDestroy {
     private utilService: UtilityService,
     private fb: FormBuilder
   ) {}
-  ngOnDestroy(): void {
-    if (this.ref) {
-      this.ref.close();
-    }
-    this.ngUnsubscribe.next();
-    this.ngUnsubscribe.complete();
-  }
+
   // Validate
   validationMessages = {
     name: [{ type: 'required', message: 'Bạn phải nhập tên' }],
-    surname: [{ type: 'required', message: 'Bạn phải URL duy nhất' }],
+    surName: [{ type: 'required', message: 'Bạn phải URL duy nhất' }],
     email: [{ type: 'required', message: 'Bạn phải nhập email' }],
     userName: [{ type: 'required', message: 'Bạn phải nhập tài khoản' }],
     password: [
@@ -92,6 +86,26 @@ export class UserDetailComponent implements OnInit, OnDestroy {
         },
       });
   }
+
+  buildForm() {
+    this.form = this.fb.group({
+      name: new FormControl(this.selectedEntity.name || null, Validators.required),
+      surName: new FormControl(this.selectedEntity.surName || null, Validators.required),
+      userName: new FormControl(this.selectedEntity.userName || null, Validators.required),
+      email: new FormControl(this.selectedEntity.email || null, Validators.required),
+      phoneNumber: new FormControl(this.selectedEntity.phoneNumber || null, Validators.required),
+      password: new FormControl(
+        null,
+        Validators.compose([
+          Validators.required,
+          Validators.pattern(
+            '^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-zd$@$!%*?&].{8,}$'
+          ),
+        ])
+      ),
+    });
+  }
+
   loadFormDetails(id: string) {
     this.userService
       .get(id)
@@ -110,13 +124,20 @@ export class UserDetailComponent implements OnInit, OnDestroy {
   }
 
   saveChange() {
-    this.toggleBlockUI(true);
+    // this.toggleBlockUI(true);
     this.saveData();
   }
 
   private saveData() {
-    this.toggleBlockUI(true);
-    console.log(this.form.value);
+    console.log('dataform', this.form.value);
+    // this.toggleBlockUI(true);
+    let dataUpdate = {
+      name: this.form.value.name,
+      surName: this.form.value.surName,
+      email: this.selectedEntity.email,
+      phoneNumber: this.form.value.phoneNumber,
+    };
+
     if (this.utilService.isEmpty(this.config.data?.id)) {
       this.userService
         .create(this.form.value)
@@ -132,15 +153,16 @@ export class UserDetailComponent implements OnInit, OnDestroy {
         });
     } else {
       this.userService
-        .update(this.config.data?.id, this.form.value)
+        .update(this.config.data?.id, dataUpdate)
         .pipe(takeUntil(this.ngUnsubscribe))
         .subscribe({
           next: () => {
             this.toggleBlockUI(false);
             this.ref.close(this.form.value);
           },
-          error: () => {
+          error: error => {
             this.toggleBlockUI(false);
+            console.log(error.error.error);
           },
         });
     }
@@ -174,22 +196,12 @@ export class UserDetailComponent implements OnInit, OnDestroy {
       this.form.controls['password'].enable();
     }
   }
-  buildForm() {
-    this.form = this.fb.group({
-      name: new FormControl(this.selectedEntity.name || null, Validators.required),
-      surname: new FormControl(this.selectedEntity.surname || null, Validators.required),
-      userName: new FormControl(this.selectedEntity.userName || null, Validators.required),
-      email: new FormControl(this.selectedEntity.email || null, Validators.required),
-      phoneNumber: new FormControl(this.selectedEntity.phoneNumber || null, Validators.required),
-      password: new FormControl(
-        null,
-        Validators.compose([
-          Validators.required,
-          Validators.pattern(
-            '^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-zd$@$!%*?&].{8,}$'
-          ),
-        ])
-      ),
-    });
+
+  ngOnDestroy(): void {
+    if (this.ref) {
+      this.ref.close();
+    }
+    this.ngUnsubscribe.next();
+    this.ngUnsubscribe.complete();
   }
 }

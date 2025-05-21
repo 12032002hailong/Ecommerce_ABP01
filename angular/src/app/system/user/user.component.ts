@@ -58,7 +58,7 @@ export class UserComponent implements OnInit, OnDestroy {
       .subscribe({
         next: (response: any) => {
           this.items = response.results;
-          console.log(response);
+          console.log('user', this.items);
           this.totalCount = response.totalCount;
           if (selectionId != null && this.items.length > 0) {
             this.selectedItems = this.items.filter(x => x.id == selectionId);
